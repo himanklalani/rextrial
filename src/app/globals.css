@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand-green: #174D38;
+  --color-brand-green-light: #246B4E;
+  --color-brand-green-dark: #0F3325;
+  
+  --color-brand-maroon: #4D1717;
+  --color-brand-maroon-light: #6E2222;
+  
+  --color-brand-gray: #CBCBCB;
+  --color-brand-gray-light: #E5E5E5;
+  
+  --color-brand-white: #F2F2F2;
+  --color-brand-white-pure: #FFFFFF;
+  
+  --color-brand-dark: #1A1A1A;
+  --color-brand-dark-muted: #4A4A4A;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-outfit: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 10px 30px rgba(23, 77, 56, 0.1);
+  --radius-card: 12px;
+  --radius-button: 6px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-brand-white);
+    color: var(--color-brand-dark);
+    @apply antialiased selection:bg-brand-green/20 selection:text-brand-green-dark;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit text-brand-dark;
+  }
+  
+  p {
+    @apply text-brand-dark-muted leading-relaxed;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  .container-inner {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  .heading-hero {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-green tracking-tight leading-tight;
+  }
+  .heading-section {
+    @apply text-3xl md:text-4xl font-bold text-brand-green mb-4 font-outfit;
+  }
+  .heading-card {
+    @apply text-xl font-bold text-brand-dark mb-2 font-outfit;
+  }
+  .text-subtle {
+    @apply text-brand-dark-muted text-sm md:text-base;
+  }
+  .card-base {
+    @apply bg-brand-white-pure rounded-[var(--radius-card)] border border-brand-gray/40 shadow-card transition-all duration-300;
+  }
+  .card-hoverable {
+    @apply hover:shadow-card-hover hover:-translate-y-1;
+  }
+  .btn-base {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-button)] font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-button)] font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed bg-brand-green text-brand-white-pure hover:bg-brand-green-light focus:ring-brand-green shadow-sm hover:shadow;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-button)] font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed bg-brand-white-pure text-brand-green border border-brand-green/30 hover:border-brand-green hover:bg-brand-green/5 focus:ring-brand-green;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-[var(--radius-button)] font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed bg-brand-maroon text-brand-white-pure hover:bg-brand-maroon-light focus:ring-brand-maroon shadow-sm hover:shadow;
+  }
+  .input-base {
+    @apply w-full border border-brand-gray/50 bg-brand-white-pure rounded-[var(--radius-button)] px-4 py-3 text-brand-dark transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-green/30 focus:border-brand-green;
+  }
+  .label-base {
+    @apply block text-sm font-semibold text-brand-dark mb-1.5 uppercase tracking-wide;
+  }
 }

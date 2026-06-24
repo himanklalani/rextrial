@@ -1,65 +1,60 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { Suspense } from 'react';
+import { Metadata } from 'next';
+import ScrollytellHero from '@/components/features/ScrollytellHero';
+import { WhatsAppCTA } from '@/components/ui/WhatsAppCTA';
+import { createWhatsAppGeneralUrl } from '@/lib/utils';
+import { ScrollChoreography } from '@/components/ui/scroll-choreography';
+import LegacyTrustSection from '@/components/features/LegacyTrustSection';
+import HardwareSection from '@/components/features/HardwareSection';
+import FinalCTA from '@/components/features/FinalCTA';
 
-export default function Home() {
+import HeroOverlay from '@/components/features/HeroOverlay';
+
+export const metadata: Metadata = {
+  title: 'Industrial Printer Repair & AMC Services in Mumbai | Rex International',
+  description: 'Rex International — Mumbai’s most trusted printer specialist since 1994. Expert repair, corporate AMC contracts & sales of dotmatrix, laser, and ink tank printers. Mulund, Thane & Mumbai-wide service.',
+  alternates: { canonical: '/' },
+  keywords: ['printer repair Mumbai', 'dotmatrix printer repair Mumbai', 'printer AMC Mumbai', 'laser printer service Mumbai', 'ink tank printer Mumbai', 'Rex International']
+};
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
+const choreoImages = {
+  topLeft: "https://images.unsplash.com/photo-1741454570867-4a10f31fc5e3?q=100&w=2832&fm=webp&auto=format&fit=crop",
+  topRight: "https://images.unsplash.com/photo-1755456068400-fbcdce2f795a?q=100&w=2832&fm=webp&auto=format&fit=crop",
+  bottomLeft: "https://images.unsplash.com/photo-1755456068249-13d384440902?q=100&w=2832&fm=webp&auto=format&fit=crop",
+  bottomRight: "https://images.unsplash.com/photo-1741454570904-a22d9d6ea511?q=100&w=2832&fm=webp&auto=format&fit=crop",
+};
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="flex-1 flex flex-col">
+      {/*
+        ScrollytellHero:
+          - Renders a full-screen <canvas> fixed to the viewport.
+          - Scrubs through 186 frames as the user scrolls.
+          - After the final frame, the <HeroContent> children fade in on top.
+      */}
+      <Suspense fallback={<div className="min-h-screen bg-brand-white" />}>
+        <ScrollytellHero>
+          <HeroOverlay />
+        </ScrollytellHero>
+      </Suspense>
+
+      {/* Legacy/Trust Section replaces the old static badges */}
+      <LegacyTrustSection />
+
+      {/* Scroll Choreography Section */}
+      <section className="relative w-full bg-brand-white z-10">
+        <ScrollChoreography images={choreoImages} />
+      </section>
+
+      {/* Hardware Section */}
+      <HardwareSection />
+
+      {/* Final CTA */}
+      <FinalCTA />
+    </main>
   );
 }
