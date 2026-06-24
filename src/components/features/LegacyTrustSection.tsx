@@ -20,7 +20,7 @@ const countUp = (end: number, duration: number, setCounter: (val: number) => voi
   window.requestAnimationFrame(step);
 };
 
-const containerVariants = {
+const containerVariants: import('framer-motion').Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -28,7 +28,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: import('framer-motion').Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 };
