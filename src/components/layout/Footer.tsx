@@ -85,8 +85,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {siteSettings.name}. All rights reserved. Built for Industry.
           </p>
           <div className="flex gap-6 text-xs text-brand-gray-light/50 font-medium">
-            <Link href="#" className="hover:text-brand-white-pure transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-brand-white-pure transition-colors">Terms of Service</Link>
+            <Link href="/legal/privacy" className="hover:text-brand-white-pure transition-colors">Privacy Policy</Link>
+            <Link href="/legal/terms" className="hover:text-brand-white-pure transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
