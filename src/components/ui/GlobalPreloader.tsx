@@ -50,7 +50,7 @@ export default function GlobalPreloader() {
     }
   }, [pathname]);
 
-  const pixelVariants = {
+  const pixelVariants: import('framer-motion').Variants = {
     initial: { opacity: 1, scale: 1.02 },
     exit: (custom: number) => ({
       opacity: 0,
