@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const STATS = [
-  { value: "30+", label: "Years of Service" },
+  { value: "45+", label: "Years of Service" },
   { value: "4hr", label: "Emergency Response" },
   { value: "100%", label: "OEM Parts" },
   { value: "All", label: "Brands Covered" },

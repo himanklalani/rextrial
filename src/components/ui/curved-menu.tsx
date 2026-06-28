@@ -1,7 +1,7 @@
 "use client";
-import React, {useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 
-import {motion, useMotionValue, AnimatePresence} from "framer-motion";
+import { motion, useMotionValue, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Mail, Phone, Globe, MessageCircle } from "lucide-react";
 
@@ -28,11 +28,11 @@ interface iHeaderProps {
 }
 
 const MENU_SLIDE_ANIMATION = {
-	initial: {x: "calc(100% + 100px)"},
-	enter: {x: "0", transition: {duration: 0.8, ease: [0.76, 0, 0.24, 1] as const}},
+	initial: { x: "calc(100% + 100px)" },
+	enter: { x: "0", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as const } },
 	exit: {
 		x: "calc(100% + 100px)",
-		transition: {duration: 0.8, ease: [0.76, 0, 0.24, 1] as const},
+		transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as const },
 	},
 };
 
@@ -58,7 +58,7 @@ const defaultNavItems: iNavItem[] = [
 	{
 		heading: "About",
 		href: "/about",
-		subheading: "30+ years of industry excellence",
+		subheading: "45+ years of industry excellence",
 		imgSrc: "https://images.unsplash.com/photo-1741454570904-a22d9d6ea511?q=100&w=2832&fm=webp&auto=format&fit=crop",
 	},
 	{
@@ -120,7 +120,7 @@ const NavLink: React.FC<iNavLinkProps> = ({
 
 	const isExternalLink = false;
 	const linkProps = isExternalLink
-		? {target: "_blank", rel: "noopener noreferrer"}
+		? { target: "_blank", rel: "noopener noreferrer" }
 		: {};
 
 	return (
@@ -130,9 +130,9 @@ const NavLink: React.FC<iNavLinkProps> = ({
 			className="group relative border-b border-black/30 transition-colors duration-500 uppercase"
 			{...linkProps}
 		>
-			<Link 
-				ref={ref} 
-				onMouseMove={handleMouseMove} 
+			<Link
+				ref={ref}
+				onMouseMove={handleMouseMove}
 				href={href}
 				onClick={handleClick}
 				className="flex items-center justify-between w-full py-3 md:py-6"
@@ -144,8 +144,8 @@ const NavLink: React.FC<iNavLinkProps> = ({
 					<div className="flex flex-row gap-2">
 						<motion.span
 							variants={{
-								initial: {x: 0},
-								whileHover: {x: -16},
+								initial: { x: 0 },
+								whileHover: { x: -16 },
 							}}
 							transition={{
 								type: "spring",
@@ -159,10 +159,10 @@ const NavLink: React.FC<iNavLinkProps> = ({
 									<motion.span
 										key={i}
 										variants={{
-											initial: {x: 0},
-											whileHover: {x: 16},
+											initial: { x: 0 },
+											whileHover: { x: 16 },
 										}}
-										transition={{type: "spring"}}
+										transition={{ type: "spring" }}
 										className="inline-block"
 									>
 										{letter}
@@ -195,26 +195,26 @@ const Curve: React.FC = () => {
 	const targetPath = `M100 0 L200 0 L200 ${pathHeight} L100 ${pathHeight} Q100 ${pathHeight / 2} 100 0`;
 
 	const curve = {
-		initial: {d: initialPath},
+		initial: { d: initialPath },
 		enter: {
 			d: targetPath,
-			transition: {duration: 1, ease: [0.76, 0, 0.24, 1] as const},
+			transition: { duration: 1, ease: [0.76, 0, 0.24, 1] as const },
 		},
 		exit: {
 			d: initialPath,
-			transition: {duration: 0.8, ease: [0.76, 0, 0.24, 1] as const},
+			transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as const },
 		},
 	};
 
 	// Return an empty SVG on SSR to prevent hydration mismatch
 	if (!pathHeight) {
-		return <svg className="absolute top-0 -left-[99px] w-[100px] stroke-none h-full" style={{fill: "#ffffff"}} />;
+		return <svg className="absolute top-0 -left-[99px] w-[100px] stroke-none h-full" style={{ fill: "#ffffff" }} />;
 	}
 
 	return (
 		<svg
 			className="absolute top-0 -left-[99px] w-[100px] stroke-none h-full"
-			style={{fill: "#ffffff"}}
+			style={{ fill: "#ffffff" }}
 		>
 			<motion.path
 				variants={curve}
@@ -227,8 +227,8 @@ const Curve: React.FC = () => {
 };
 
 const CurvedNavbar: React.FC<
-	iCurvedNavbarProps & {footer?: React.ReactNode}
-> = ({setIsActive, navItems, footer}) => {
+	iCurvedNavbarProps & { footer?: React.ReactNode }
+> = ({ setIsActive, navItems, footer }) => {
 	return (
 		<motion.div
 			variants={MENU_SLIDE_ANIMATION}

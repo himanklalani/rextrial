@@ -12,7 +12,7 @@ import FinalCTA from '@/components/features/FinalCTA';
 import HeroOverlay from '@/components/features/HeroOverlay';
 
 export const metadata: Metadata = {
-  title: 'Industrial Printer Repair & AMC Services in Mumbai | Rex International',
+  title: 'Printer Repair & AMC Services in Mumbai | Rex International',
   description: 'Rex International — Mumbai’s most trusted printer specialist since 1980. Expert repair, corporate AMC contracts & sales of dotmatrix, laser, and ink tank printers. Mulund, Thane & Mumbai-wide service.',
   alternates: { canonical: '/' },
   keywords: ['printer repair Mumbai', 'dotmatrix printer repair Mumbai', 'printer AMC Mumbai', 'laser printer service Mumbai', 'ink tank printer Mumbai', 'Rex International']

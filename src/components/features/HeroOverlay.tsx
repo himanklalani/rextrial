@@ -40,7 +40,7 @@ export default function HeroOverlay() {
           borderColor: 'rgba(23,77,56,0.2)',
         }}
       >
-        30+ Years of Industry Excellence
+        45+ Years of Industry Excellence
       </motion.div>
 
       <motion.h1
@@ -57,7 +57,7 @@ export default function HeroOverlay() {
         variants={itemVariants}
         className="text-lg md:text-xl mb-12 leading-relaxed max-w-3xl mx-auto text-brand-dark-muted"
       >
-        30+ years of trusted dotmatrix, laser, and ink tank printer repair,
+        45+ years of trusted dotmatrix, laser, and ink tank printer repair,
         corporate AMC contracts, and hardware supply across Mumbai, Thane,
         and Navi Mumbai. Serving enterprises since 1980.
       </motion.p>

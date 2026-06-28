@@ -8,17 +8,17 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 const hardwareCategories = [
   {
     title: 'Dotmatrix Systems',
-    desc: 'Heavy-duty continuous printing solutions for banking, logistics, and billing.',
+    desc: 'Heavy duty continuous printing solutions for banking, logistics, and billing.',
     img: 'https://images.unsplash.com/photo-1741454570867-4a10f31fc5e3?q=100&w=1200&fm=webp',
   },
   {
     title: 'Laser Printers',
-    desc: 'High-speed, crisp monochrome and color laser arrays for enterprise networks.',
+    desc: 'High speed, crisp monochrome and color laser arrays for enterprise networks.',
     img: 'https://images.unsplash.com/photo-1755456068400-fbcdce2f795a?q=100&w=1200&fm=webp',
   },
   {
     title: 'Ink Tank Technology',
-    desc: 'Cost-effective, high-yield photo and document printing for design and office use.',
+    desc: 'Cost effective, high yield monochrome as well as coloured photo and document printing for design and office use.',
     img: 'https://images.unsplash.com/photo-1755456068249-13d384440902?q=100&w=1200&fm=webp',
   },
   {
@@ -39,7 +39,7 @@ export default function HardwareSection() {
             <TextType 
               as="h2"
               className="text-4xl font-bold font-outfit mb-4 text-brand-green"
-              text="Industrial Grade Hardware."
+              text="High quality printing Hardware"
               typingSpeed={50}
               startOnVisible={true}
               loop={false}
@@ -84,14 +84,14 @@ export default function HardwareSection() {
             <TextType 
               as="h2"
               className="text-5xl lg:text-6xl font-bold font-outfit mb-6 leading-tight text-brand-green"
-              text={["Industrial Grade", "Hardware."]}
+              text={["High Quality", "Printing Hardware."]}
               typingSpeed={50}
               startOnVisible={true}
               loop={false}
             />
             <div className="text-lg text-brand-dark-muted max-w-sm">
               <ScrollReveal baseOpacity={0} blurStrength={5} enableBlur={true}>
-                We supply and maintain the machines that keep global businesses moving. From high-speed laser networks to rugged dotmatrix billing systems.
+                We supply and maintain the machines that keep global businesses moving. From high speed laser networks to rugged dotmatrix billing systems.
               </ScrollReveal>
             </div>
           </div>

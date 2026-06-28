@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return {
     title: `Corporate Profile | ${settings.name} Mumbai`,
-    description: `${settings.name} — Mumbai's trusted wholesale printer supplier and corporate printer AMC provider since 1980. 30+ years of industry excellence in dotmatrix, laser & ink tank systems.`,
+    description: `${settings.name} — Mumbai's trusted wholesale printer supplier and corporate printer AMC provider since 1980. 45+ years of industry excellence in dotmatrix, laser & ink tank systems.`,
     alternates: { canonical: '/about' }
   };
 }
@@ -204,7 +204,7 @@ export default async function AboutPage() {
           />
           <div className="text-brand-dark-muted text-lg mb-12">
             <ScrollReveal baseOpacity={0} blurStrength={5} enableBlur={true}>
-              In an era of disposable consumer electronics, we specialize in industrial-grade durability. We serve clients who cannot afford a single misprinted invoice or a delayed logistics label. When you partner with Rex International, you are securing an IT backbone that will outlast industry standards.
+              In an era of disposable consumer electronics, we specialize in maximal durability. We serve clients who cannot afford a single misprinted invoice or a delayed logistics label. When you partner with Rex International, you are securing an IT backbone that will outlast industry standards.
             </ScrollReveal>
           </div>
         </div>

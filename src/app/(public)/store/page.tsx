@@ -5,7 +5,7 @@ import TextType from "@/components/ui/TextType";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata = {
-  title: "Industrial Printers & Parts Catalog | Rex International Mumbai",
+  title: "Printers & Parts Catalog | Rex International Mumbai",
   description: "Browse Rex International's hardware catalog of industrial dotmatrix, laser, and ink tank printers in Mumbai. Epson, HP, Canon, Brother, TVS. B2B pricing available.",
   alternates: { canonical: '/store' }
 };

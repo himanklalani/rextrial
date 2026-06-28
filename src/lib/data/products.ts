@@ -6,7 +6,7 @@ export const products: Product[] = [
     slug: "epson-lq-310-dotmatrix",
     name: "Epson LQ-310 Dotmatrix Printer",
     categoryId: "cat-dotmatrix",
-    shortDescription: "High-speed 24-pin impact printer for retail and commercial billing.",
+    shortDescription: "High speed 24-pin impact printer for retail and commercial billing.",
     detailedDescription: "The Epson LQ-310 is a purpose-built 24-pin dot matrix printer designed for demanding high-volume environments where reliability is non-negotiable. Featuring a print speed of up to 416 characters per second and a robust carriage mechanism rated for 10,000 power-on hours, the LQ-310 is the go-to machine for retail billing counters, pharmaceutical invoicing, and logistics dispatch printing. Its compact footprint makes it ideal for space-constrained POS environments, and its USB, serial, and parallel interface options ensure compatibility with legacy ERP and billing software without any driver modification.",
     priceRange: "₹12,000 - ₹15,000",
     features: ["Fast print speed up to 416 cps", "High MTBF reliability rating", "USB, Serial and Parallel Interfaces", "Compact footprint", "Compatible with all major billing software"],
@@ -35,7 +35,7 @@ export const products: Product[] = [
     isAvailable: true,
     seo: {
       title: "Epson LQ-310 Dotmatrix Printer | Buy in Mumbai",
-      description: "Buy the Epson LQ-310 24-pin dotmatrix printer in Mumbai from Rex International. ₹12,000–₹15,000. Ideal for retail billing, pharma invoicing & warehouse dispatch. 30+ years expertise."
+      description: "Buy the Epson LQ-310 24-pin dotmatrix printer in Mumbai from Rex International. ₹12,000–₹15,000. Ideal for retail billing, pharma invoicing & warehouse dispatch. 45+ years expertise."
     }
   },
   {
@@ -87,7 +87,7 @@ export const products: Product[] = [
     useCases: [
       {
         title: "In-House Marketing & Design",
-        description: "Design agencies, small marketing teams, and business owners who produce colour brochures, proposals, and presentations in-house will find the L3250 to be the most cost-effective colour printing solution available, with a cost-per-page up to 90% lower than traditional inkjet cartridges."
+        description: "Design agencies, small marketing teams, and business owners who produce colour brochures, proposals, and presentations in-house will find the L3250 to be the most cost effective colour printing solution available, with a cost-per-page up to 90% lower than traditional inkjet cartridges."
       },
       {
         title: "School & Educational Institutions",
@@ -154,7 +154,7 @@ export const products: Product[] = [
     slug: "tvs-msp-250-champion",
     name: "TVS MSP 250 Champion",
     categoryId: "cat-dotmatrix",
-    shortDescription: "Heavy-duty 80 column dotmatrix printer built for Indian commercial conditions.",
+    shortDescription: "Heavy duty 80 column dotmatrix printer built for Indian commercial conditions.",
     detailedDescription: "The TVS MSP 250 Champion is India's most trusted dotmatrix printer for rugged commercial environments. Engineered and tested specifically for Indian operating conditions — including wide voltage fluctuations, high ambient temperatures, and dusty workshop environments — the MSP 250 Champion delivers uninterrupted high-volume printing at 450 characters per second. Its 9-pin print head with an 80-column print width handles standard A4 paper, multi-part stationery, and continuous roll paper with equal reliability. The MSP 250 Champion's ink bank technology delivers a 40 million character ribbon life — approximately 3–4 times the life of standard dotmatrix ribbons — dramatically reducing consumable costs over a 5-year operational lifespan. It is the preferred choice for Indian retail, pharmaceutical, and FMCG distribution operations.",
     priceRange: "₹9,000 - ₹11,000",
     features: ["Voltage fluctuation tolerance", "450 cps print speed", "Ink bank technology (40M char life)", "1 Original + 3 Copies", "Dustproof mechanism"],
@@ -191,7 +191,7 @@ export const products: Product[] = [
     slug: "brother-hl-l2321d",
     name: "Brother HL-L2321D",
     categoryId: "cat-laser",
-    shortDescription: "Single-function auto-duplex laser printer with high-speed output.",
+    shortDescription: "Single-function auto-duplex laser printer with high speed output.",
     detailedDescription: "The Brother HL-L2321D is a straightforward, no-compromise single-function laser printer built for high-speed monochrome output with automatic duplex printing as standard. At 30 pages per minute with a 2400 x 600 dpi effective resolution, the HL-L2321D produces sharp, smudge-free text output that is indistinguishable from professional offset printing. Its auto-duplex feature is particularly valuable for organisations wanting to reduce paper consumption without sacrificing print volume. The Brother HL-L2321D is one of the most popular choices for back-office, accounts, and data-entry environments in the Indian SME sector, where the combination of speed, duplex capability, and low total cost of ownership is the primary decision criterion.",
     priceRange: "₹10,000 - ₹12,000",
     features: ["Auto 2-Sided Duplex Print", "30 ppm High-Speed Output", "2400 x 600 dpi Effective Resolution", "250 Sheet Paper Tray", "USB 2.0 High-Speed Interface"],
@@ -214,7 +214,7 @@ export const products: Product[] = [
       "Print Speed": "Up to 30 ppm",
       "Resolution": "Up to 2400 x 600 dpi",
       "Duplex": "Automatic",
-      "Interface": "USB 2.0 High-Speed"
+      "Interface": "USB 2.0 High Speed"
     },
     imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000",
     isAvailable: true,

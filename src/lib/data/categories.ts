@@ -19,7 +19,7 @@ export const productCategories: ProductCategory[] = [
     id: "cat-inktank",
     slug: "inktank-printers",
     name: "Ink Tank Printers",
-    description: "Cost-effective ink tank solutions for high volume printing.",
+    description: "Cost effective ink tank solutions for high volume printing.",
     seo: { title: "Ink Tank Printers | Rex International", description: "Best ink tank printers for home and office." }
   },
   {
