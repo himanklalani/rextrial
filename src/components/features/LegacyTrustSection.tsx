@@ -90,7 +90,7 @@ export default function LegacyTrustSection() {
             />
 
             <div className="md:pl-12">
-              <p className="text-6xl md:text-8xl font-bold font-outfit tabular-nums text-brand-green">{years}+</p>
+              <p className="text-6xl md:text-8xl font-bold font-outfit tabular-nums text-brand-green">45+</p>
               <p className="text-brand-dark-muted mt-2 uppercase tracking-widest text-sm font-semibold">Years Active</p>
             </div>
             <div>
