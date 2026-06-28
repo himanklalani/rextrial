@@ -30,7 +30,7 @@ export const products: Product[] = [
       "Paper Paths": "Manual Insertion, Tractor",
       "MTBF": "10,000 POH"
     },
-    imageUrl: "https://images.unsplash.com/photo-1612815154858-60aa4c59eea6?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782653597/ub0fz4fjv6ineu68wtrb.png",
     isAvailable: true,
     seo: {
       title: "Epson LQ-310 Dotmatrix Printer | Buy in Mumbai",
@@ -174,7 +174,7 @@ export const products: Product[] = [
       "Copy Capability": "1 Original + 3 Copies",
       "Ribbon Life": "40 Million Characters"
     },
-    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782653425/rq7b0y7wivzkoiywzooy.webp",
     isAvailable: true,
     seo: {
       title: "TVS MSP 250 Champion Dotmatrix Printer | Buy in Mumbai",
@@ -298,6 +298,39 @@ export const products: Product[] = [
     seo: {
       title: "Canon MAXIFY GX2070 MegaTank Printer | Buy in Mumbai",
       description: "Buy the Canon MAXIFY GX2070 compact MegaTank wireless all-in-one printer in Mumbai. High-volume color printing with pigment inks."
+    }
+  },
+  {
+    id: "prod-11",
+    slug: "epson-lq-2090ii-dotmatrix",
+    name: "Epson LQ-2090II Dot Matrix Printer",
+    categoryId: "cat-dotmatrix",
+    shortDescription: "Wide-format 24-pin impact printer built for demanding print environments.",
+    detailedDescription: "The Epson LQ-2090II is a fast 24-pin, 136-column dot matrix printer that offers outstanding reliability and an extremely low total cost of ownership (TCO). Designed for demanding print environments, it delivers a blazing speed of 550 characters per second at 10 characters per inch. Its increased reliability boasts a mean time between failure (MTBF) of 25,000 power-on hours. With flexible wide-format printing and the ability to produce an original plus six copies, it meets all your high-volume invoicing and logistics needs using the same trusted consumables as previous models.",
+    features: ["Fast print speed: 550 cps", "High reliability: MTBF of 25,000 POH", "24-pin, 136-column wide format", "Original plus 6 copies", "Low total cost of ownership (TCO)"],
+    useCases: [
+      {
+        title: "Logistics and Shipping",
+        description: "Perfect for printing wide-format multipart shipping documents and manifests where physical carbon copies are required."
+      },
+      {
+        title: "Demanding Print Environments",
+        description: "Ideal for industrial, warehousing, and wholesale environments needing robust, continuous operation with minimal downtime."
+      }
+    ],
+    specifications: {
+      "Print Method": "Impact dot matrix",
+      "Number of Pins": "24 pins",
+      "Print Speed": "Up to 550 cps (10 cpi)",
+      "Print Width": "136 columns",
+      "Copy Capability": "1 Original + 6 Copies",
+      "MTBF": "25,000 POH"
+    },
+    imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782653824/zp4nwjwqcpcmhjp5scj2.jpg",
+    isAvailable: true,
+    seo: {
+      title: "Epson LQ-2090II Dot Matrix Printer | Buy in Mumbai",
+      description: "Buy the Epson LQ-2090II wide-format 24-pin dot matrix printer in Mumbai. 550 cps speed, 136 columns, and original + 6 copies for demanding environments."
     }
   }
 ];
