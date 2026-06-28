@@ -212,13 +212,13 @@ export default async function AboutPage() {
 
       {/* HORIZONTAL SCROLL GALLERY FOR INFRASTRUCTURE/FEATURE CARDS */}
       <HorizontalScrollGallery
-        heading="Our Infrastructure"
+        heading="Our Capabilities"
         cards={[
-          { id: 1, title: "Main Headquarters", subtitle: "Based in the heart of Mumbai's commercial hub", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" },
-          { id: 2, title: "Diagnostic Labs", subtitle: "State-of-the-art repair facilities", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" },
-          { id: 3, title: "Inventory Warehouse", subtitle: "Housing over 10,000 spare components", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" },
-          { id: 4, title: "Logistics Fleet", subtitle: "Ensuring same-day deployment across the city", image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1000" },
-          { id: 5, title: "Client Support", subtitle: "Dedicated technical support agents", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1000" }
+          { id: 1, title: "Corporate AMC Contracts", subtitle: "Comprehensive fleet maintenance for enterprise networks", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" },
+          { id: 2, title: "Component-Level Repair", subtitle: "Advanced logic board and printhead diagnostics", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000" },
+          { id: 3, title: "OEM Parts Sourcing", subtitle: "Authentic fusers, tractors, and consumables in stock", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" },
+          { id: 4, title: "On-Site Deployment", subtitle: "Rapid-response technician network across Mumbai", image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=1000" },
+          { id: 5, title: "Legacy Hardware Support", subtitle: "Extending the lifespan of critical billing systems", image: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654150/xjkp0hyunyvw5j1bzvxk.png" }
         ]}
       />
     </main>
