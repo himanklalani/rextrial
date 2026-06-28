@@ -21,10 +21,10 @@ export const metadata: Metadata = {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 const choreoImages = {
-  topLeft: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654150/xjkp0hyunyvw5j1bzvxk.png",
-  topRight: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654247/xir2i0sot6mbbvp8vghe.jpg",
-  bottomLeft: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654200/s81miperhij7z71hc8ph.png",
-  bottomRight: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782653824/zp4nwjwqcpcmhjp5scj2.jpg",
+  topLeft: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656160/nvqsiexrp4hs3hpb5xeh.jpg",
+  topRight: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656103/fs779w3mvfhn1ik1hwul.jpg",
+  bottomLeft: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656162/huz4wrrodkqmnfukuzur.jpg",
+  bottomRight: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656162/aulrqkri1piicyggnpjx.jpg",
 };
 
 export default function HomePage() {
