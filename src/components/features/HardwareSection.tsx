@@ -9,22 +9,22 @@ const hardwareCategories = [
   {
     title: 'Dotmatrix Systems',
     desc: 'Heavy duty continuous printing solutions for banking, logistics, and billing.',
-    img: 'https://images.unsplash.com/photo-1741454570867-4a10f31fc5e3?q=100&w=1200&fm=webp',
+    img: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654150/xjkp0hyunyvw5j1bzvxk.png',
   },
   {
     title: 'Laser Printers',
     desc: 'High speed, crisp monochrome and color laser arrays for enterprise networks.',
-    img: 'https://images.unsplash.com/photo-1755456068400-fbcdce2f795a?q=100&w=1200&fm=webp',
+    img: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782648331/zfevpcqdgzulzq6mupa5.png',
   },
   {
     title: 'Ink Tank Technology',
     desc: 'Cost effective, high yield monochrome as well as coloured photo and document printing for design and office use.',
-    img: 'https://images.unsplash.com/photo-1755456068249-13d384440902?q=100&w=1200&fm=webp',
+    img: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654200/s81miperhij7z71hc8ph.png',
   },
   {
     title: 'Peripherals & Parts',
     desc: 'OEM logic boards, tractor feeds, fuser units, and consumables.',
-    img: 'https://images.unsplash.com/photo-1741454570904-a22d9d6ea511?q=100&w=1200&fm=webp',
+    img: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782653425/rq7b0y7wivzkoiywzooy.webp',
   }
 ];
 
