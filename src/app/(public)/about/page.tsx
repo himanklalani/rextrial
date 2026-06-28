@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return {
     title: `Corporate Profile | ${settings.name} Mumbai`,
-    description: `${settings.name} — Mumbai's trusted wholesale printer supplier and corporate printer AMC provider since 1994. 30+ years of industry excellence in dotmatrix, laser & ink tank systems.`,
+    description: `${settings.name} — Mumbai's trusted wholesale printer supplier and corporate printer AMC provider since 1980. 30+ years of industry excellence in dotmatrix, laser & ink tank systems.`,
     alternates: { canonical: '/about' }
   };
 }
@@ -22,7 +22,7 @@ export default async function AboutPage() {
     <main className="flex-1 bg-brand-white">
       <section className="py-16 md:py-24 border-b border-brand-gray/20 bg-brand-white-pure">
         <div className="container-inner text-center max-w-4xl mx-auto">
-          <TextType 
+          <TextType
             as="h1"
             className="heading-section text-4xl md:text-5xl"
             text="Corporate Profile"
@@ -37,7 +37,7 @@ export default async function AboutPage() {
           </div>
         </div>
       </section>
-      
+
       <section className="section-padding">
         <div className="container-inner">
           <div className="card-base p-8 md:p-16 max-w-5xl mx-auto shadow-xl">
@@ -69,23 +69,23 @@ export default async function AboutPage() {
                 />
                 <ul className="space-y-3 text-brand-dark-muted font-medium">
                   <li className="flex items-center gap-3">
-                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> 
+                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                     Dotmatrix Printers & Ribbon Gears
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> 
+                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                     Laser Systems & Toner Cartridges
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> 
+                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                     High-Volume Ink Tank Hardware
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> 
+                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                     Internal Hardware Peripherals
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> 
+                    <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                     Component-Level Repair Services
                   </li>
                 </ul>
@@ -105,7 +105,7 @@ export default async function AboutPage() {
                   At Rex International, we do not simply sell boxes; we engineer uptime. We understand that whether you are operating a local retail outlet relying on a dotmatrix bill printer, or a corporate back-office heavily utilizing laser systems, hardware failure is not an option. Our sourcing guarantees premium OEM and highly vetted compatible parts.
                 </ScrollReveal>
               </div>
-              
+
               <div className="grid sm:grid-cols-3 gap-6 pt-10 mt-10 border-t border-brand-gray/20">
                 <div className="text-center p-6 bg-brand-white rounded-xl border border-brand-gray/20">
                   <span className="block text-5xl font-bold text-brand-green mb-3 font-outfit">{settings.experienceYears}+</span>
@@ -141,7 +141,7 @@ export default async function AboutPage() {
             </div>
           </div>
           <div className="mt-8">
-            <StaggerCards 
+            <StaggerCards
               items={[
                 {
                   title: "Direct OEM Access",
@@ -158,7 +158,7 @@ export default async function AboutPage() {
                   content: "Maintaining a vast local inventory in Mumbai ensures that we can dispatch critical replacement parts within hours, not weeks.",
                   imgSrc: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=200"
                 }
-              ]} 
+              ]}
             />
           </div>
         </div>
@@ -168,22 +168,22 @@ export default async function AboutPage() {
       <section className="py-24 bg-brand-white">
         <div className="container-inner max-w-5xl mx-auto px-6">
           <div className="flex flex-col gap-6">
-            <BlockTextReveal 
-              blockColor="var(--color-brand-green)" 
+            <BlockTextReveal
+              blockColor="var(--color-brand-green)"
               delay={0}
               className="text-2xl md:text-4xl font-bold font-outfit text-brand-dark max-w-3xl leading-tight"
             >
               We believe in hardware that never quits.
             </BlockTextReveal>
-            <BlockTextReveal 
-              blockColor="var(--color-brand-dark)" 
+            <BlockTextReveal
+              blockColor="var(--color-brand-dark)"
               delay={0.3}
               className="text-2xl md:text-4xl font-bold font-outfit text-brand-dark max-w-3xl leading-tight"
             >
               In logistics that operate 24/7 without fail.
             </BlockTextReveal>
-            <BlockTextReveal 
-              blockColor="var(--color-brand-gray)" 
+            <BlockTextReveal
+              blockColor="var(--color-brand-gray)"
               delay={0.6}
               className="text-2xl md:text-4xl font-bold font-outfit text-brand-dark max-w-3xl leading-tight"
             >
@@ -211,7 +211,7 @@ export default async function AboutPage() {
       </section>
 
       {/* HORIZONTAL SCROLL GALLERY FOR INFRASTRUCTURE/FEATURE CARDS */}
-      <HorizontalScrollGallery 
+      <HorizontalScrollGallery
         heading="Our Infrastructure"
         cards={[
           { id: 1, title: "Main Headquarters", subtitle: "Based in the heart of Mumbai's commercial hub", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" },

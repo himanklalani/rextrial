@@ -25,7 +25,7 @@ export default function HeroOverlay() {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="w-full h-full flex flex-col items-center justify-center text-center px-6 py-12"
       initial="hidden"
       animate="visible"
@@ -59,7 +59,7 @@ export default function HeroOverlay() {
       >
         30+ years of trusted dotmatrix, laser, and ink tank printer repair,
         corporate AMC contracts, and hardware supply across Mumbai, Thane,
-        and Navi Mumbai. Serving enterprises since 1994.
+        and Navi Mumbai. Serving enterprises since 1980.
       </motion.p>
 
       <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">

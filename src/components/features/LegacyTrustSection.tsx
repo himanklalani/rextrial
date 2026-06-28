@@ -36,7 +36,7 @@ const itemVariants: import('framer-motion').Variants = {
 export default function LegacyTrustSection() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
+
   const [years, setYears] = useState(0);
   const [clients, setClients] = useState(0);
 
@@ -51,21 +51,21 @@ export default function LegacyTrustSection() {
     <section className="bg-brand-white-pure text-brand-dark py-24 md:py-40 relative z-10" ref={ref}>
       <div className="container-inner max-w-6xl mx-auto px-6 relative">
         {/* Animated decorative accent */}
-        <motion.div 
+        <motion.div
           className="absolute -top-12 left-6 w-12 h-1 bg-brand-green"
           initial={{ scaleX: 0, originX: 0 }}
           animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         />
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="flex flex-col md:flex-row gap-12 md:gap-24 items-start"
         >
           <div className="flex-1">
-            <TextType 
+            <TextType
               as="h2"
               className="text-5xl md:text-7xl font-bold font-outfit leading-tight mb-6 text-brand-dark"
               text={["Three Decades of", "Unbroken Trust."]}
@@ -75,20 +75,20 @@ export default function LegacyTrustSection() {
             />
             <div className="text-lg md:text-xl text-brand-dark-muted max-w-xl">
               <ScrollReveal baseOpacity={0} blurStrength={5} enableBlur={true}>
-                Since 1994, Rex International has been the silent backbone for enterprises, ensuring high-volume printing operations never stop. 
+                Since 1980, Rex International has been the silent backbone for enterprises, ensuring high-volume printing operations never stop.
               </ScrollReveal>
             </div>
           </div>
-          
+
           <motion.div variants={itemVariants} className="flex-1 grid grid-cols-2 gap-8 w-full border-t border-brand-gray/30 pt-8 md:border-none md:pt-0 relative">
             {/* Desktop vertical divider */}
-            <motion.div 
+            <motion.div
               className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-brand-gray/30"
               initial={{ scaleY: 0, originY: 0 }}
               animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
             />
-            
+
             <div className="md:pl-12">
               <p className="text-6xl md:text-8xl font-bold font-outfit tabular-nums text-brand-green">{years}+</p>
               <p className="text-brand-dark-muted mt-2 uppercase tracking-widest text-sm font-semibold">Years Active</p>

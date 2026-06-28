@@ -161,7 +161,7 @@ export default async function ServicesPage() {
             Component-level. Not just swap-and-go.
           </BlockTextReveal>
           <BlockTextReveal blockColor="var(--color-brand-gray)" delay={0.6} className="text-2xl md:text-4xl font-bold font-outfit text-brand-dark leading-tight">
-            Trusted by enterprises since 1994.
+            Trusted by enterprises since 1980.
           </BlockTextReveal>
         </div>
       </section>
@@ -191,7 +191,7 @@ export default async function ServicesPage() {
                 className="inline-flex items-center gap-2 bg-brand-dark text-brand-white-pure font-bold text-sm px-6 py-3 rounded-lg hover:bg-brand-green transition-colors"
               >
                 Get AMC Quote
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
               </a>
             </div>
             <div className="grid grid-cols-1 gap-3">
