@@ -10,8 +10,8 @@ export function createWhatsAppUrl(message: string): string {
   return `https://wa.me/${siteSettings.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
-export function createWhatsAppProductUrl(productName: string, priceRange: string): string {
-  const text = `Hi Rex International, I am interested in the product: ${productName} (Price Range: ${priceRange}). Please provide more details.`;
+export function createWhatsAppProductUrl(productName: string): string {
+  const text = `Hi Rex International, I am interested in the product: ${productName}. Please provide more details.`;
   return createWhatsAppUrl(text);
 }
 

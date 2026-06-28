@@ -34,7 +34,6 @@ export interface Product {
   categoryId: string;
   shortDescription: string;
   detailedDescription: string;
-  priceRange: string;
   features: string[];
   useCases?: { title: string; description: string }[];
   specifications?: Record<string, string>;

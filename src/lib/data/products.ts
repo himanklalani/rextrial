@@ -8,7 +8,6 @@ export const products: Product[] = [
     categoryId: "cat-dotmatrix",
     shortDescription: "High speed 24-pin impact printer for retail and commercial billing.",
     detailedDescription: "The Epson LQ-310 is a purpose-built 24-pin dot matrix printer designed for demanding high volume environments where reliability is non-negotiable. Featuring a print speed of up to 416 characters per second and a robust carriage mechanism rated for 10,000 power-on hours, the LQ-310 is the go-to machine for retail billing counters, pharmaceutical invoicing, and logistics dispatch printing. Its compact footprint makes it ideal for space-constrained POS environments, and its USB, serial, and parallel interface options ensure compatibility with legacy ERP and billing software without any driver modification.",
-    priceRange: "₹12,000 - ₹15,000",
     features: ["Fast print speed up to 416 cps", "High MTBF reliability rating", "USB, Serial and Parallel Interfaces", "Compact footprint", "Compatible with all major billing software"],
     useCases: [
       {
@@ -45,7 +44,6 @@ export const products: Product[] = [
     categoryId: "cat-laser",
     shortDescription: "Multifunction monochrome laser printer for office and enterprise environments.",
     detailedDescription: "The HP LaserJet Pro M1136 is one of the most reliable workhorse multifunction printers in the Indian office market. Offering print, copy, and scan functionality in a compact chassis, the M1136 is built for teams that need consistent, high-quality monochrome output at high monthly duty cycles. HP's proven LaserJet toner delivery system produces sharp, smudge-resistant text at resolutions up to 1200 dpi effective, making it equally suited for client-facing correspondence, internal reports, and regulatory compliance documents. The M1136 also features HP's Smart Install technology, allowing driver-free connection to any Windows PC via USB.",
-    priceRange: "₹15,000 - ₹18,000",
     features: ["Print, Copy, Scan (MFP)", "Compact office-ready size", "Energy Star certified", "Smart Install — no driver CD needed", "Up to 18 ppm"],
     useCases: [
       {
@@ -82,7 +80,6 @@ export const products: Product[] = [
     categoryId: "cat-inktank",
     shortDescription: "Wi-Fi All-in-One Ink Tank Printer with ultra-low cost per page.",
     detailedDescription: "The Epson EcoTank L3250 redefines the economics of colour office printing. Its refillable ink tank system eliminates the expensive cartridge replacement cycle that makes conventional inkjet printers so costly to operate — a full set of L3250 ink bottles delivers approximately 4,500 monochrome and 7,500 colour pages, reducing cost-per-page to a fraction of any cartridge-based system. The L3250 offers wireless connectivity via Wi-Fi and Wi-Fi Direct, borderless photo-quality printing, and full mobile printing support through Epson's iPrint application. For businesses producing colour marketing materials, customer proposals, or high volume colour documentation in-house, the L3250 represents an exceptional return on investment.",
-    priceRange: "₹13,000 - ₹16,000",
     features: ["Wi-Fi & Wi-Fi Direct", "Borderless A4 printing", "4,500 pages per black bottle", "7,500 pages per colour set", "Mobile printing via Epson iPrint"],
     useCases: [
       {
@@ -119,7 +116,6 @@ export const products: Product[] = [
     categoryId: "cat-laser",
     shortDescription: "Wireless Monochrome Laser MFP with automatic duplex printing.",
     detailedDescription: "The Canon imageCLASS MF244dw is a feature-rich wireless multifunction laser printer built for small to medium businesses that demand fast, high-quality output and professional document handling. Its automatic duplex (double-sided) printing capability — a feature often reserved for higher-end models — reduces paper consumption by up to 50%, delivering both environmental and cost benefits. Printing at up to 28 pages per minute with a true 1200 x 1200 dpi resolution, the MF244dw produces sharp, professional-grade text and graphics. Wireless connectivity allows the device to be shared seamlessly across all office computers and mobile devices without any cabling, while Canon's UFRII LT driver ensures compatibility with all standard document management workflows.",
-    priceRange: "₹22,000 - ₹26,000",
     features: ["Automatic Duplex Printing", "Wireless & USB Connectivity", "28 ppm Print Speed", "1200 x 1200 dpi resolution", "250-sheet paper cassette"],
     useCases: [
       {
@@ -156,7 +152,6 @@ export const products: Product[] = [
     categoryId: "cat-dotmatrix",
     shortDescription: "Heavy duty 80 column dotmatrix printer built for Indian commercial conditions.",
     detailedDescription: "The TVS MSP 250 Champion is India's most trusted dotmatrix printer for rugged commercial environments. Engineered and tested specifically for Indian operating conditions — including wide voltage fluctuations, high ambient temperatures, and dusty workshop environments — the MSP 250 Champion delivers uninterrupted high volume printing at 450 characters per second. Its 9-pin print head with an 80-column print width handles standard A4 paper, multi-part stationery, and continuous roll paper with equal reliability. The MSP 250 Champion's ink bank technology delivers a 40 million character ribbon life — approximately 3–4 times the life of standard dotmatrix ribbons — dramatically reducing consumable costs over a 5-year operational lifespan. It is the preferred choice for Indian retail, pharmaceutical, and FMCG distribution operations.",
-    priceRange: "₹9,000 - ₹11,000",
     features: ["Voltage fluctuation tolerance", "450 cps print speed", "Ink bank technology (40M char life)", "1 Original + 3 Copies", "Dustproof mechanism"],
     useCases: [
       {
@@ -193,7 +188,6 @@ export const products: Product[] = [
     categoryId: "cat-laser",
     shortDescription: "Single-function auto-duplex laser printer with high speed output.",
     detailedDescription: "The Brother HL-L2321D is a straightforward, no-compromise single-function laser printer built for high-speed monochrome output with automatic duplex printing as standard. At 30 pages per minute with a 2400 x 600 dpi effective resolution, the HL-L2321D produces sharp, smudge-free text output that is indistinguishable from professional offset printing. Its auto-duplex feature is particularly valuable for organisations wanting to reduce paper consumption without sacrificing print volume. The Brother HL-L2321D is one of the most popular choices for back-office, accounts, and data-entry environments in the Indian SME sector, where the combination of speed, duplex capability, and low total cost of ownership is the primary decision criterion.",
-    priceRange: "₹10,000 - ₹12,000",
     features: ["Auto 2-Sided Duplex Print", "30 ppm High-Speed Output", "2400 x 600 dpi Effective Resolution", "250 Sheet Paper Tray", "USB 2.0 High-Speed Interface"],
     useCases: [
       {
@@ -221,6 +215,39 @@ export const products: Product[] = [
     seo: {
       title: "Brother HL-L2321D Laser Printer | Buy in Mumbai",
       description: "Buy the Brother HL-L2321D auto-duplex laser printer in Mumbai. ₹10,000–₹12,000. 30 ppm, automatic 2-sided printing. Ideal for accounts departments & back-office operations."
+    }
+  },
+  {
+    id: "prod-7",
+    slug: "hp-laserjet-pro-mfp-m126nw-plus",
+    name: "HP LaserJet Pro MFP M126nw plus",
+    categoryId: "cat-laser",
+    shortDescription: "Multifunction monochrome laser printer with Print, scan and copy functions.",
+    detailedDescription: "The HP LaserJet Pro MFP M126nw plus is a compact and efficient monochrome laser printer designed for smaller teams of up to 5 users. It handles print, scan, and copy tasks effortlessly with speeds up to 20 pages per minute (A4) and a sharp 600 x 600 dpi resolution. Offering robust connectivity with Ethernet, Wi-Fi 802.11b/g/n, and seamless mobile printing via Apple AirPrint and the HP app, it adapts easily to dynamic office setups. It has a monthly duty cycle of up to 8,000 pages, ensuring reliable daily performance.",
+    features: ["Print, scan and copy", "Up to 20 ppm print speed", "Wi-Fi, Ethernet & USB connectivity", "Mobile printing (AirPrint, Mopria)", "Up to 8,000 pages monthly duty cycle"],
+    useCases: [
+      {
+        title: "Small Office Teams",
+        description: "Perfect for teams of 1-5 users who need a shared, reliable multifunction device with seamless wireless and network connectivity."
+      },
+      {
+        title: "Administrative Workflows",
+        description: "Ideal for printing high-volume monochrome documents like invoices, ledgers, and reports with quick print speeds of 20 ppm."
+      }
+    ],
+    specifications: {
+      "Functions": "Print, scan and copy",
+      "Print Speed": "Up to 20 ppm (A4)",
+      "Resolution": "Up to 600 x 600 dpi",
+      "Connectivity": "USB 2.0, Ethernet 10/100, Wi-Fi 802.11b/g/n",
+      "Memory": "128 MB",
+      "Duty Cycle": "Up to 8,000 pages/month"
+    },
+    imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto/q_auto/v1782647718/rmu8z1wduimmaza7odva.avif",
+    isAvailable: true,
+    seo: {
+      title: "HP LaserJet Pro MFP M126nw plus | Buy in Mumbai",
+      description: "Buy the HP LaserJet Pro MFP M126nw plus wireless multifunction laser printer in Mumbai. Print, scan, copy with Wi-Fi & Ethernet connectivity."
     }
   }
 ];

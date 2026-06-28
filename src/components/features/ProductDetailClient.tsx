@@ -56,10 +56,7 @@ export default function ProductDetailClient({ product, whatsappUrl }: Props) {
               {product.name}
             </motion.h1>
             
-            <motion.div variants={itemVariants} className="mb-8 pb-8 border-b border-brand-gray/30">
-              <span className="text-sm font-bold text-brand-dark-muted uppercase tracking-wide block mb-1">Value Range</span>
-              <span className="text-2xl font-bold text-brand-dark">{product.priceRange}</span>
-            </motion.div>
+
             
             <motion.div variants={itemVariants} className="prose max-w-none mb-10">
               <p className="text-brand-dark-muted text-lg leading-relaxed">{product.detailedDescription}</p>

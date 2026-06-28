@@ -30,7 +30,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const product = await getProductBySlug(slug);
   if (!product) notFound();
   
-  const whatsappUrl = createWhatsAppProductUrl(product.name, product.priceRange);
+  const whatsappUrl = createWhatsAppProductUrl(product.name);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -50,8 +50,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "INR",
-      "availability": product.isAvailable ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      "description": `Value Range: ${product.priceRange}`
+      "availability": product.isAvailable ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
