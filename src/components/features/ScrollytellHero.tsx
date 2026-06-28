@@ -62,7 +62,6 @@ export default function ScrollytellHero({ children }: ScrollytellHeroProps) {
   );
 
   const [allLoaded,    setAllLoaded]    = useState(false);
-  const [minTimePassed, setMinTimePassed] = useState(false);
   const [heroOpacity,  setHeroOpacity]  = useState(0);
   const [scrollPromptOpacity, setScrollPromptOpacity] = useState(1);
 
@@ -75,11 +74,6 @@ export default function ScrollytellHero({ children }: ScrollytellHeroProps) {
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
     setConfig(isMobile ? mobileConfig : desktopConfig);
-    
-    // Enforce a minimum display time so the premium loader is actually visible
-    // even if images are cached or load instantly.
-    const timer = setTimeout(() => setMinTimePassed(true), 2500);
-    return () => clearTimeout(timer);
   }, []);
 
   // ── Draw one frame (object-fit: cover math) ──────────────────────────────
@@ -211,8 +205,8 @@ export default function ScrollytellHero({ children }: ScrollytellHeroProps) {
     return () => images.forEach(img => { img.onload = null; img.onerror = null; });
   }, [config]);
 
-  // ── Start everything once all frames are cached and min time passed ───────
-  const showLoader = !allLoaded || !minTimePassed;
+  // ── Start everything once all frames are cached ───────
+  const showLoader = !allLoaded;
 
   useEffect(() => {
     if (showLoader || !config) return;
