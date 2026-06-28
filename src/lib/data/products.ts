@@ -66,7 +66,7 @@ export const products: Product[] = [
       "Connectivity": "Hi-Speed USB 2.0 port",
       "Duty Cycle": "Up to 8,000 pages per month"
     },
-    imageUrl: "https://images.unsplash.com/photo-1595079676339-1534801ad6cb?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782652273/tbqvri1wlikbur3j8jiy.avif",
     isAvailable: true,
     seo: {
       title: "HP LaserJet Pro M1136 MFP | Buy in Mumbai",
@@ -138,7 +138,7 @@ export const products: Product[] = [
       "Resolution": "Up to 1200 x 1200 dpi",
       "Paper Capacity": "250-sheet cassette"
     },
-    imageUrl: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782652385/ju8fgsxo0ijagsxl7c9t.jpg",
     isAvailable: true,
     seo: {
       title: "Canon imageCLASS MF244dw Laser Printer | Buy in Mumbai",
@@ -208,7 +208,7 @@ export const products: Product[] = [
       "Memory": "128 MB",
       "Duty Cycle": "Up to 8,000 pages/month"
     },
-    imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto/q_auto/v1782647718/rmu8z1wduimmaza7odva.avif",
+    imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782647718/rmu8z1wduimmaza7odva.avif",
     isAvailable: true,
     seo: {
       title: "HP LaserJet Pro MFP M126nw plus | Buy in Mumbai",
