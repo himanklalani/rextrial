@@ -55,7 +55,7 @@ export default async function AboutPage() {
                 </p>
                 <div className="leading-relaxed text-brand-dark-muted text-lg">
                   <ScrollReveal baseOpacity={0} blurStrength={5} enableBlur={true}>
-                    What originated as a focused hardware venture has evolved into a comprehensive B2B and B2C enterprise, specializing strictly in high-reliability printing infrastructure — from dotmatrix billing printers to enterprise laser networks.
+                    We began our journey in 1980 by manufacturing high-quality ribbons for dotmatrix and heavy-duty printers. What started as a specialized manufacturing venture has since evolved into a comprehensive B2B and B2C enterprise. Even today, we remain one of the biggest pioneers in this field, continuing our legacy as a foundational pillar for high-reliability printing infrastructure.
                   </ScrollReveal>
                 </div>
               </div>
