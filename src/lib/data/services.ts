@@ -47,7 +47,7 @@ export const services: Service[] = [
     faqs: [
       {
         question: "How often should a laser printer be serviced?",
-        answer: "For standard office use (500–1000 pages per month), an annual service is sufficient. For high-volume environments printing over 5,000 pages per month, we recommend a 6-month service cycle to prevent toner buildup from causing drum and fuser damage."
+        answer: "For standard office use (500–1000 pages per month), an annual service is sufficient. For high volume environments printing over 5,000 pages per month, we recommend a 6-month service cycle to prevent toner buildup from causing drum and fuser damage."
       },
       {
         question: "My laser printer has vertical black streaks. What causes this?",
@@ -171,7 +171,7 @@ export const services: Service[] = [
       },
       {
         question: "How long do replacement rollers last?",
-        answer: "OEM pickup rollers typically have a rated lifespan of 100,000–200,000 page impressions. In a standard office environment printing 2,000 pages per month, this translates to a roller life of approximately 4–8 years. High-volume environments will require more frequent replacement."
+        answer: "OEM pickup rollers typically have a rated lifespan of 100,000–200,000 page impressions. In a standard office environment printing 2,000 pages per month, this translates to a roller life of approximately 4–8 years. High volume environments will require more frequent replacement."
       },
       {
         question: "Can you replace rollers on-site?",

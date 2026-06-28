@@ -32,7 +32,7 @@ export default async function AboutPage() {
           />
           <div className="text-lg md:text-xl text-brand-dark-muted mt-4">
             <ScrollReveal baseOpacity={0} blurStrength={10} enableBlur={true}>
-              Three decades of trust, hardware excellence, and unmatched technical service in the printing industry.
+              Four decades of trust, hardware excellence, and unmatched technical service in the printing industry.
             </ScrollReveal>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default async function AboutPage() {
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                    High-Volume Ink Tank Hardware
+                    High Volume Ink Tank Hardware
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="text-brand-green flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>

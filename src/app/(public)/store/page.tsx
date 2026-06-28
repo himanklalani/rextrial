@@ -89,7 +89,7 @@ export default async function StorePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 text-left">
             <div className="p-5 md:p-8 border border-brand-white-pure/10 rounded-2xl bg-brand-white-pure/5">
               <h3 className="text-base md:text-xl font-bold font-outfit mb-2 md:mb-3 text-brand-green">Volume Sourcing</h3>
-              <p className="text-sm text-brand-gray-light/60">Direct OEM partnerships for high-volume orders with aggressive pricing.</p>
+              <p className="text-sm text-brand-gray-light/60">Direct OEM partnerships for high volume orders with aggressive pricing.</p>
             </div>
             <div className="p-5 md:p-8 border border-brand-white-pure/10 rounded-2xl bg-brand-white-pure/5">
               <h3 className="text-base md:text-xl font-bold font-outfit mb-2 md:mb-3 text-brand-green">Legacy Parts</h3>

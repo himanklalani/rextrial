@@ -13,7 +13,7 @@ export type HorizontalCardData = {
 };
 
 const defaultCards: HorizontalCardData[] = [
-  { id: 1, title: "Dotmatrix Reliability", subtitle: "High-volume invoice printing", image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eea6?auto=format&fit=crop&q=80&w=1000" },
+  { id: 1, title: "Dotmatrix Reliability", subtitle: "High volume invoice printing", image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eea6?auto=format&fit=crop&q=80&w=1000" },
   { id: 2, title: "Laser Precision", subtitle: "Enterprise document solutions", image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cb?auto=format&fit=crop&q=80&w=1000" },
   { id: 3, title: "OEM Consumables", subtitle: "Authentic fusers and toners", image: "https://images.unsplash.com/photo-1598440809249-f5424263158c?auto=format&fit=crop&q=80&w=1000" },
   { id: 4, title: "Logic Board Repair", subtitle: "Component-level fixes", image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=1000" },

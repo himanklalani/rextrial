@@ -7,7 +7,7 @@ export const products: Product[] = [
     name: "Epson LQ-310 Dotmatrix Printer",
     categoryId: "cat-dotmatrix",
     shortDescription: "High speed 24-pin impact printer for retail and commercial billing.",
-    detailedDescription: "The Epson LQ-310 is a purpose-built 24-pin dot matrix printer designed for demanding high-volume environments where reliability is non-negotiable. Featuring a print speed of up to 416 characters per second and a robust carriage mechanism rated for 10,000 power-on hours, the LQ-310 is the go-to machine for retail billing counters, pharmaceutical invoicing, and logistics dispatch printing. Its compact footprint makes it ideal for space-constrained POS environments, and its USB, serial, and parallel interface options ensure compatibility with legacy ERP and billing software without any driver modification.",
+    detailedDescription: "The Epson LQ-310 is a purpose-built 24-pin dot matrix printer designed for demanding high volume environments where reliability is non-negotiable. Featuring a print speed of up to 416 characters per second and a robust carriage mechanism rated for 10,000 power-on hours, the LQ-310 is the go-to machine for retail billing counters, pharmaceutical invoicing, and logistics dispatch printing. Its compact footprint makes it ideal for space-constrained POS environments, and its USB, serial, and parallel interface options ensure compatibility with legacy ERP and billing software without any driver modification.",
     priceRange: "₹12,000 - ₹15,000",
     features: ["Fast print speed up to 416 cps", "High MTBF reliability rating", "USB, Serial and Parallel Interfaces", "Compact footprint", "Compatible with all major billing software"],
     useCases: [
@@ -81,7 +81,7 @@ export const products: Product[] = [
     name: "Epson EcoTank L3250",
     categoryId: "cat-inktank",
     shortDescription: "Wi-Fi All-in-One Ink Tank Printer with ultra-low cost per page.",
-    detailedDescription: "The Epson EcoTank L3250 redefines the economics of colour office printing. Its refillable ink tank system eliminates the expensive cartridge replacement cycle that makes conventional inkjet printers so costly to operate — a full set of L3250 ink bottles delivers approximately 4,500 monochrome and 7,500 colour pages, reducing cost-per-page to a fraction of any cartridge-based system. The L3250 offers wireless connectivity via Wi-Fi and Wi-Fi Direct, borderless photo-quality printing, and full mobile printing support through Epson's iPrint application. For businesses producing colour marketing materials, customer proposals, or high-volume colour documentation in-house, the L3250 represents an exceptional return on investment.",
+    detailedDescription: "The Epson EcoTank L3250 redefines the economics of colour office printing. Its refillable ink tank system eliminates the expensive cartridge replacement cycle that makes conventional inkjet printers so costly to operate — a full set of L3250 ink bottles delivers approximately 4,500 monochrome and 7,500 colour pages, reducing cost-per-page to a fraction of any cartridge-based system. The L3250 offers wireless connectivity via Wi-Fi and Wi-Fi Direct, borderless photo-quality printing, and full mobile printing support through Epson's iPrint application. For businesses producing colour marketing materials, customer proposals, or high volume colour documentation in-house, the L3250 represents an exceptional return on investment.",
     priceRange: "₹13,000 - ₹16,000",
     features: ["Wi-Fi & Wi-Fi Direct", "Borderless A4 printing", "4,500 pages per black bottle", "7,500 pages per colour set", "Mobile printing via Epson iPrint"],
     useCases: [
@@ -91,7 +91,7 @@ export const products: Product[] = [
       },
       {
         title: "School & Educational Institutions",
-        description: "High-volume colour printing for worksheets, question papers, and certificates is a constant requirement in educational institutions. The L3250's massive ink yield makes it far more economical than any cartridge-based alternative for this use case."
+        description: "High volume colour printing for worksheets, question papers, and certificates is a constant requirement in educational institutions. The L3250's massive ink yield makes it far more economical than any cartridge-based alternative for this use case."
       },
       {
         title: "Home Office & Freelancers",
@@ -155,7 +155,7 @@ export const products: Product[] = [
     name: "TVS MSP 250 Champion",
     categoryId: "cat-dotmatrix",
     shortDescription: "Heavy duty 80 column dotmatrix printer built for Indian commercial conditions.",
-    detailedDescription: "The TVS MSP 250 Champion is India's most trusted dotmatrix printer for rugged commercial environments. Engineered and tested specifically for Indian operating conditions — including wide voltage fluctuations, high ambient temperatures, and dusty workshop environments — the MSP 250 Champion delivers uninterrupted high-volume printing at 450 characters per second. Its 9-pin print head with an 80-column print width handles standard A4 paper, multi-part stationery, and continuous roll paper with equal reliability. The MSP 250 Champion's ink bank technology delivers a 40 million character ribbon life — approximately 3–4 times the life of standard dotmatrix ribbons — dramatically reducing consumable costs over a 5-year operational lifespan. It is the preferred choice for Indian retail, pharmaceutical, and FMCG distribution operations.",
+    detailedDescription: "The TVS MSP 250 Champion is India's most trusted dotmatrix printer for rugged commercial environments. Engineered and tested specifically for Indian operating conditions — including wide voltage fluctuations, high ambient temperatures, and dusty workshop environments — the MSP 250 Champion delivers uninterrupted high volume printing at 450 characters per second. Its 9-pin print head with an 80-column print width handles standard A4 paper, multi-part stationery, and continuous roll paper with equal reliability. The MSP 250 Champion's ink bank technology delivers a 40 million character ribbon life — approximately 3–4 times the life of standard dotmatrix ribbons — dramatically reducing consumable costs over a 5-year operational lifespan. It is the preferred choice for Indian retail, pharmaceutical, and FMCG distribution operations.",
     priceRange: "₹9,000 - ₹11,000",
     features: ["Voltage fluctuation tolerance", "450 cps print speed", "Ink bank technology (40M char life)", "1 Original + 3 Copies", "Dustproof mechanism"],
     useCases: [

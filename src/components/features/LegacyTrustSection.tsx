@@ -68,14 +68,14 @@ export default function LegacyTrustSection() {
             <TextType
               as="h2"
               className="text-5xl md:text-7xl font-bold font-outfit leading-tight mb-6 text-brand-dark"
-              text={["Three Decades of", "Unbroken Trust."]}
+              text={["Four Decades of", "Unbroken Trust."]}
               typingSpeed={50}
               startOnVisible={true}
               loop={false}
             />
             <div className="text-lg md:text-xl text-brand-dark-muted max-w-xl">
               <ScrollReveal baseOpacity={0} blurStrength={5} enableBlur={true}>
-                Since 1980, Rex International has been the silent backbone for enterprises, ensuring high-volume printing operations never stop.
+                Since 1980, Rex International has been the silent backbone for enterprises, ensuring high volume printing operations never stop.
               </ScrollReveal>
             </div>
           </div>
