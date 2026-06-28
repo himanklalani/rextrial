@@ -9,7 +9,7 @@ export const services: Service[] = [
     shortDescription: "Component-level repair for all major dotmatrix printheads with genuine parts.",
     detailedDescription: "When a dotmatrix printhead starts dropping pins or printing with gaps, most vendors will just tell you to buy a new one. That's usually terrible advice. These printheads are built like tanks, and in 90% of cases, we can repair them down to the component level for a fraction of the replacement cost. We literally open up the printhead, diagnose the exact burnt pin coil or worn wire, and replace it using genuine OEM parts sourced directly from Japan and Taiwan. We don't guess—we test. Every head we rebuild goes through a brutal 100-page continuous print test before we even think about handing it back to you. We've been doing this for decades, which is why we confidently back our repairs with a solid 3-month warranty.",
     startingPrice: "₹800",
-    features: ["Genuine OEM parts", "24hr turnaround", "3-month warranty", "On-site available", "100-page burn-in test", "All 9-pin and 24-pin models"],
+    features: ["Genuine OEM parts", "24hr turnaround", "3-month warranty", "On-site available", "10-page burn-in test", "All 9-pin and 24-pin models"],
     supportedBrands: ["Epson LQ Series", "TVS MSP Series", "Olivetti PR Series", "Star NX Series", "Citizen iDP Series", "Wipro Series"],
     faqs: [
       {
@@ -41,9 +41,9 @@ export const services: Service[] = [
     categoryId: "scat-repair",
     shortDescription: "Full interior cleaning, fuser check, roller replacement, and print quality testing.",
     detailedDescription: "People buy a laser printer, plug it in, and ignore it until it starts printing with thick black streaks or making grinding noises. If you wait that long, you're going to pay for an expensive fuser or drum replacement. Laser printers generate immense heat and static, which sucks in paper dust. That dust mixes with stray toner to form an abrasive paste that grinds down your gears. Our annual servicing strips the machine down. We vacuum the interior, clean the corona wires, deglaze the pickup rollers, and inspect the fuser pressure rollers. We service every major brand across Mumbai. It's basic preventive maintenance—you spend a little on servicing to avoid spending a fortune on parts.",
-    startingPrice: "₹1,200",
+    startingPrice: "₹900",
     features: ["Interior cleaning", "Fuser inspection & cleaning", "Roller check & replacement", "Corona wire service", "Test print certification", "Formal service report"],
-    supportedBrands: ["HP LaserJet Series", "Canon imageCLASS Series", "Brother HL Series", "Xerox WorkCentre", "Ricoh SP Series", "Samsung Xpress"],
+    supportedBrands: ["HP LaserJet Series", "Canon imageCLASS Series", "Xerox WorkCentre", "Ricoh SP Series", "Samsung Xpress"],
     faqs: [
       {
         question: "How often should a laser printer be serviced?",
@@ -70,7 +70,7 @@ export const services: Service[] = [
     categoryId: "scat-amc",
     shortDescription: "Annual contracts for worry-free printer uptime across your entire office fleet.",
     detailedDescription: "I talk to finance managers all the time who think skipping an AMC saves money. Then an invoicing printer goes down on the last day of the month, dispatch halts, and suddenly they're panic-calling technicians who overcharge for emergency visits. Our Corporate AMC is designed to stop breakdowns before they happen. You pay a predictable annual fee, and we take complete ownership of your printer fleet. We do regular preventive maintenance visits so machines don't fail when you need them most. If something does break, we guarantee a technician at your desk within 4 hours. We offer both Comprehensive (parts included) and Non-Comprehensive (labour only) plans, covering everything from 5 desktop inkjets to 500-machine enterprise networks.",
-    startingPrice: "₹5,000/year",
+    startingPrice: "₹2,500/year",
     features: ["Comprehensive & non-comprehensive options", "Monthly preventive visits", "4-hour breakdown SLA", "All printer types covered", "Detailed maintenance records", "Priority technician access"],
     supportedBrands: ["All Epson Models", "HP LaserJet & DeskJet", "Canon imageRUNNER & imageCLASS", "Brother HL & MFC", "TVS & Wipro Dotmatrix", "Ricoh & Xerox"],
     faqs: [
@@ -103,7 +103,7 @@ export const services: Service[] = [
     categoryId: "scat-repair",
     shortDescription: "Full nozzle flush, head alignment, and clog removal for Epson & Canon ink tanks.",
     detailedDescription: "If your Epson EcoTank or Canon G-Series is printing pages with horizontal white lines, the built-in 'head cleaning' button isn't going to save you. Pressing it over and over just wastes expensive ink and fills up your waste pad. The issue is dried ink physically blocking the microscopic nozzles in the printhead. We perform a manual, chemical flush using specialized solutions that break down the clogs without stripping the delicate internal lining of the head. It's a meticulous process. After the flush, we realign the head and recalibrate the colours to get the print quality back to factory standards. If you've been using cheap compatible inks or left the printer off for months, this is exactly what you need.",
-    startingPrice: "₹600",
+    startingPrice: "₹950",
     features: ["Professional nozzle flush", "All colour channels checked", "Head alignment", "Colour calibration", "Same-day service", "Post-clean quality test"],
     supportedBrands: ["Epson EcoTank L Series", "Epson L3110 / L3150 / L3250", "Canon PIXMA G Series", "Canon G2010 / G3010", "HP DeskJet GT Series", "Brother InkBenefit Series"],
     faqs: [
@@ -132,7 +132,7 @@ export const services: Service[] = [
     categoryId: "scat-onsite",
     shortDescription: "Same-day technician dispatch across Mumbai for critical printer breakdowns.",
     detailedDescription: "Mumbai traffic is a nightmare. You don't want to strap a 25-kilogram office printer to a scooter and drag it to a repair shop while your staff can't print invoices. That's why we built our on-site emergency repair service. When you call us, we ask for a quick video of the error on WhatsApp. This lets us diagnose the issue remotely so our technician arrives carrying the exact parts needed to fix it on the spot. Most common faults—like snapped belts, worn fuser rollers, or jammed sensors—are fixed right at your desk in under an hour. Best of all, we run a strict no-fix, no-fee policy. If we can't solve the problem, you don't pay for the visit.",
-    startingPrice: "₹500 + parts",
+    startingPrice: "₹1,000 + parts",
     features: ["4-hour dispatch SLA", "Mumbai-wide coverage", "Parts carried on-site", "No fix, no fee guarantee", "All printer types", "Same-day resolution in most cases"],
     supportedBrands: ["Epson All Models", "HP All Models", "Canon All Models", "Brother All Models", "TVS & Wipro Dotmatrix", "Ricoh, Xerox & Kyocera"],
     faqs: [
@@ -152,35 +152,6 @@ export const services: Service[] = [
     seo: {
       title: "On-Site Emergency Printer Repair Mumbai",
       description: "Same-day on-site printer repair across Mumbai. 4-hour dispatch SLA, no fix no fee guarantee. Covers Mulund, Thane, South Mumbai, Western & Eastern suburbs."
-    }
-  },
-  {
-    id: "srv-6",
-    slug: "roller-gear-replacement",
-    name: "Roller & Gear Replacement",
-    categoryId: "scat-repair",
-    shortDescription: "Paper feed, pickup, and separation roller replacement for all printer models.",
-    detailedDescription: "Stop yanking jammed paper out of your printer by force. You're going to snap a plastic sensor flag, turning a cheap fix into an expensive disaster. If your printer keeps jamming halfway out of the tray or pulls three sheets at once, the problem is almost certainly your pickup roller. Rubber hardens and glazes over time. It loses its grip, the paper slips, and the logic board throws a jam error. It's completely normal wear and tear. We stock OEM pickup rollers and separation pads for basically every printer in existence. A technician can swap out a worn roller at your desk in ten minutes. It's a cheap, permanent fix that instantly stops the daily paper jam headaches.",
-    startingPrice: "₹400 + parts",
-    features: ["All brands covered", "OEM rollers in stock", "Same-visit calibration", "Multi-tray test", "Quick turnaround", "Jam-free guarantee"],
-    supportedBrands: ["HP LaserJet (All Series)", "Canon imageRUNNER & imageCLASS", "Epson Dot Matrix & Inkjet", "Brother HL & MFC", "Ricoh SP & MP Series", "Xerox WorkCentre"],
-    faqs: [
-      {
-        question: "How do I know if my paper jam is caused by worn rollers?",
-        answer: "If your printer consistently jams in the same location, fails to pick up paper from the tray, or picks up multiple pages at once, the pickup roller and separation pad are the primary suspects. A paper jam that only occurs occasionally is more likely a paper weight or humidity issue. Our technician can diagnose this in minutes."
-      },
-      {
-        question: "How long do replacement rollers last?",
-        answer: "OEM pickup rollers typically have a rated lifespan of 100,000–200,000 page impressions. In a standard office environment printing 2,000 pages per month, this translates to a roller life of approximately 4–8 years. High volume environments will require more frequent replacement."
-      },
-      {
-        question: "Can you replace rollers on-site?",
-        answer: "Yes. Roller replacement is one of the most commonly performed on-site repairs. Our technicians carry rollers for all major HP, Canon, and Brother models as standard, and can complete a full roller replacement and test in under an hour at your location."
-      }
-    ],
-    seo: {
-      title: "Printer Roller & Gear Replacement Mumbai",
-      description: "Professional printer roller and gear replacement in Mumbai. Fix paper jams, multiple pickups & feed failures. All brands covered with OEM rollers. Same-day service available."
     }
   }
 ];
