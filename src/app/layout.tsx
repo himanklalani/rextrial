@@ -60,10 +60,10 @@ export default function RootLayout({
       "@type": "OfferCatalog",
       "name": "Printer Repair & Hardware Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dotmatrix Printhead Repair" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Printer Servicing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dotmatrix Printers Repair & Services" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Printers Repair & Services" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Printer AMC" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ink Tank Deep Cleaning" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ink Tank Printers Repair & Services" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "On-Site Emergency Repair" } }
       ]
     }

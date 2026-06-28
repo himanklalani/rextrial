@@ -4,7 +4,7 @@ export const services: Service[] = [
   {
     id: "srv-1",
     slug: "dotmatrix-head-repair",
-    name: "Dotmatrix Printhead Repair",
+    name: "Dotmatrix Printers Repair & Services",
     categoryId: "scat-repair",
     shortDescription: "Component-level repair for all major dotmatrix printheads with genuine parts.",
     detailedDescription: "When a dotmatrix printhead starts dropping pins or printing with gaps, most vendors will just tell you to buy a new one. That's usually terrible advice. These printheads are built like tanks, and in 90% of cases, we can repair them down to the component level for a fraction of the replacement cost. We literally open up the printhead, diagnose the exact burnt pin coil or worn wire, and replace it using genuine OEM parts sourced directly from Japan and Taiwan. We don't guess—we test. Every head we rebuild goes through a brutal 100-page continuous print test before we even think about handing it back to you. We've been doing this for decades, which is why we confidently back our repairs.",
