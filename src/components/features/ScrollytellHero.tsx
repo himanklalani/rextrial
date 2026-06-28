@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState, ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import { usePreload } from '@/lib/contexts/PreloadContext';
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 const SCROLL_PER_FRAME = 12;   // px of scroll travel per frame
@@ -42,6 +43,7 @@ interface ScrollytellHeroProps {
 }
 
 export default function ScrollytellHero({ children }: ScrollytellHeroProps) {
+  const { setProgress, setIsLoaded } = usePreload();
   const canvasRef    = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const imagesRef    = useRef<HTMLImageElement[]>([]);
@@ -59,7 +61,6 @@ export default function ScrollytellHero({ children }: ScrollytellHeroProps) {
     desktopConfig.totalFrames * SCROLL_PER_FRAME + 900 // fallback estimate
   );
 
-  const [loadProgress, setLoadProgress] = useState(0);
   const [allLoaded,    setAllLoaded]    = useState(false);
   const [minTimePassed, setMinTimePassed] = useState(false);
   const [heroOpacity,  setHeroOpacity]  = useState(0);
@@ -195,8 +196,11 @@ export default function ScrollytellHero({ children }: ScrollytellHeroProps) {
       const onSettle = () => {
         count++;
         // If it finishes loading before minTimePassed, progress goes to 100% and stays there.
-        setLoadProgress(Math.floor((count / config.totalFrames) * 100));
-        if (count === config.totalFrames) setAllLoaded(true);
+        setProgress(Math.floor((count / config.totalFrames) * 100));
+        if (count === config.totalFrames) {
+          setAllLoaded(true);
+          setIsLoaded(true);
+        }
       };
       img.onload  = onSettle;
       img.onerror = onSettle;

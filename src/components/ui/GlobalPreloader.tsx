@@ -3,12 +3,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import { usePreload } from '@/lib/contexts/PreloadContext';
 
 const COLUMNS = 15;
 const ROWS = 15;
 const TOTAL_BLOCKS = COLUMNS * ROWS;
 
 export default function GlobalPreloader() {
+  const { progress: realProgress, isLoaded } = usePreload();
   const [loadProgress, setLoadProgress] = useState(0);
   const [showLoader, setShowLoader] = useState(true);
   const [loaderType, setLoaderType] = useState<'counter' | 'pixel'>('counter');
@@ -16,32 +18,13 @@ export default function GlobalPreloader() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Show loader initially on navigation
     setShowLoader(true);
 
-    if (pathname === '/' && isFirstLoadRef.current) {
-      setLoaderType('counter');
-      isFirstLoadRef.current = false;
-      
-      // Fake a rapid loading progress for the homepage
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += Math.floor(Math.random() * 8) + 3;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(interval);
-          setTimeout(() => {
-            setShowLoader(false);
-          }, 400); // Wait a bit at 100%
-        }
-        setLoadProgress(progress);
-      }, 100);
-
-      return () => clearInterval(interval);
-    } else {
+    if (pathname !== '/' || !isFirstLoadRef.current) {
+      // For sub-pages or subsequent visits to home, do a quick pixel transition
       setLoaderType('pixel');
       isFirstLoadRef.current = false;
-      
-      // On navigation to other pages, we just want a quick pixel transition
       const timeout = setTimeout(() => {
         setShowLoader(false);
       }, 300);
@@ -49,6 +32,23 @@ export default function GlobalPreloader() {
       return () => clearTimeout(timeout);
     }
   }, [pathname]);
+
+  useEffect(() => {
+    // For the initial homepage load
+    if (pathname === '/' && isFirstLoadRef.current) {
+      setLoaderType('counter');
+      setLoadProgress(realProgress);
+
+      if (isLoaded) {
+        isFirstLoadRef.current = false;
+        const timeout = setTimeout(() => {
+          setShowLoader(false);
+        }, 400); // Wait a bit at 100% before hiding
+
+        return () => clearTimeout(timeout);
+      }
+    }
+  }, [pathname, realProgress, isLoaded]);
 
   const pixelVariants: import('framer-motion').Variants = {
     initial: { opacity: 1, scale: 1.02 },

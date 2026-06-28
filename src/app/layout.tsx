@@ -7,6 +7,7 @@ import { siteSettings } from "@/lib/data/site-settings";
 import { defaultMetadata, getBaseUrl } from "@/lib/seo";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import GlobalPreloader from "@/components/ui/GlobalPreloader";
+import { PreloadProvider } from "@/lib/contexts/PreloadContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -78,11 +79,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
-        <GlobalPreloader />
-        <Header />
-        <div className="flex-1 flex flex-col">{children}</div>
-        <Footer />
-        <CookieConsent />
+        <PreloadProvider>
+          <GlobalPreloader />
+          <Header />
+          <div className="flex-1 flex flex-col">{children}</div>
+          <Footer />
+          <CookieConsent />
+        </PreloadProvider>
       </body>
     </html>
   );
