@@ -5,13 +5,13 @@ import { connectDB, Blog } from '@/lib/db';
 import { staticBlogs } from '@/lib/data/blogs';
 
 export const metadata: Metadata = {
-  title: 'Insights & Technical Guides | Rex International Mumbai',
-  description: 'Authoritative engineering guides on dotmatrix gear maintenance, laser fuser repairs, and enterprise printer AMCs from Rex International.',
+  title: 'Technical Insights & Engineering Guides | Rex International Mumbai',
+  description: 'Authoritative engineering guides on corporate printer AMCs, Epson EcoTank nozzle chemical flushes, industrial dotmatrix printers, and banking passbook SLAs.',
   alternates: { canonical: '/blogs' }
 };
 
 export default async function BlogsPage() {
-  let blogs: Array<{
+  let dbBlogs: Array<{
     _id: string;
     title: string;
     slug: string;
@@ -20,54 +20,62 @@ export default async function BlogsPage() {
     author: string;
     category?: string;
     readTime?: string;
+    imageUrl?: string;
   }> = [];
 
   try {
     await connectDB();
     const blogsRaw = await Blog.find({}).sort({ publishedAt: -1 }).lean();
     if (blogsRaw && blogsRaw.length > 0) {
-      blogs = blogsRaw.map(b => ({
+      dbBlogs = blogsRaw.map(b => ({
         ...b,
         _id: b._id.toString(),
-        publishedAt: b.publishedAt || new Date()
+        publishedAt: b.publishedAt || new Date(),
+        imageUrl: (b as any).imageUrl || "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656160/nvqsiexrp4hs3hpb5xeh.jpg"
       }));
     }
   } catch {
-    // Graceful fallback to static authority articles if DB is unreachable
-    blogs = [];
+    dbBlogs = [];
   }
 
-  // If DB has no blogs yet, seamlessly provide our curated authority articles
-  if (blogs.length === 0) {
-    blogs = staticBlogs.map(b => ({
-      _id: b.id,
-      title: b.title,
-      slug: b.slug,
-      excerpt: b.excerpt,
-      publishedAt: b.publishedAt,
-      author: b.author,
-      category: b.category,
-      readTime: b.readTime
-    }));
-  }
+  // Curated static authority articles are ALWAYS the primary pillar guides
+  const staticArticles = staticBlogs.map(b => ({
+    _id: b.id,
+    title: b.title,
+    slug: b.slug,
+    excerpt: b.excerpt,
+    publishedAt: b.publishedAt,
+    author: b.author,
+    category: b.category,
+    readTime: b.readTime,
+    imageUrl: b.imageUrl
+  }));
+
+  // Combine static authority pillars first, then append any unique DB blogs
+  const staticSlugs = new Set(staticArticles.map(s => s.slug));
+  const uniqueDbBlogs = dbBlogs.filter(d => !staticSlugs.has(d.slug));
+  const blogs = [...staticArticles, ...uniqueDbBlogs];
 
   return (
-    <main className="flex-1 bg-brand-white pt-32 pb-12">
-      <div className="container-inner max-w-5xl mx-auto px-4">
+    <main className="flex-1 bg-brand-white pt-32 pb-16">
+      <div className="container-inner max-w-6xl mx-auto px-4 sm:px-6">
         
-        <div className="grid md:grid-cols-12 gap-8 mb-16 md:mb-24 items-end border-b border-brand-gray/30 pb-12">
+        <div className="grid md:grid-cols-12 gap-8 mb-14 md:mb-20 items-end border-b border-brand-gray/30 pb-12">
           <div className="md:col-span-8 lg:col-span-9">
+            <span className="text-xs font-mono font-bold tracking-widest uppercase text-brand-green mb-3 block">
+              Rex Technical Knowledge Base
+            </span>
             <TextType
               as="h1"
-              className="text-5xl sm:text-6xl lg:text-[7rem] font-bold font-outfit text-brand-dark tracking-[-0.04em] leading-[0.9]"
+              className="text-4xl sm:text-6xl lg:text-[5.5rem] font-bold font-outfit text-brand-dark tracking-[-0.04em] leading-[0.95]"
               text="Technical Insights"
               startOnVisible={true}
               loop={false}
             />
           </div>
           <div className="md:col-span-4 lg:col-span-3">
-            <p className="text-brand-dark-muted text-base md:text-lg border-l border-brand-green pl-6 py-2">
-              Expert knowledge base on enterprise printing hardware, maintenance best practices, and cost-saving strategies.
+            <p className="text-brand-dark-muted text-base md:text-lg border-l-2 border-brand-green pl-5 py-1">
+              Field-tested maintenance blueprints, hardware teardowns, and procurement guides backed by 45+ years of bench engineering.
             </p>
           </div>
         </div>
@@ -77,44 +85,101 @@ export default async function BlogsPage() {
             <p className="text-brand-dark-muted">No technical insights published yet. Check back soon!</p>
           </div>
         ) : (
-          <div className="flex flex-col">
-            {/* Featured First Post */}
+          <div className="flex flex-col gap-12">
+            {/* Featured Hero Post */}
             {blogs[0] && (
-              <Link key={blogs[0]._id} href={`/blogs/${blogs[0].slug}`} className="group block mb-16 md:mb-24 relative">
-                <div className="absolute -inset-8 bg-brand-gray-light/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl -z-10 hidden md:block"></div>
-                <time className="text-sm font-bold tracking-widest uppercase text-brand-green mb-6 block" suppressHydrationWarning>
-                  {new Date(blogs[0].publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
-                </time>
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-outfit font-bold text-brand-dark mb-6 tracking-tighter leading-[1.05] group-hover:text-brand-green transition-colors duration-300">
-                  {blogs[0].title}
-                </h2>
-                <p className="text-xl md:text-2xl text-brand-dark-muted leading-relaxed max-w-4xl">
-                  {blogs[0].excerpt}
-                </p>
+              <Link
+                key={blogs[0]._id}
+                href={`/blogs/${blogs[0].slug}`}
+                className="group block bg-brand-white-pure rounded-3xl border border-brand-gray/20 p-6 md:p-10 hover:shadow-xl hover:border-brand-green/40 transition-all duration-300"
+              >
+                <div className="grid md:grid-cols-12 gap-8 items-center">
+                  <div className="md:col-span-7 flex flex-col justify-between">
+                    <div>
+                      <div className="flex flex-wrap items-center gap-3 text-xs font-mono mb-4">
+                        {blogs[0].category && (
+                          <span className="bg-brand-green/15 text-brand-green px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                            {blogs[0].category}
+                          </span>
+                        )}
+                        <span className="text-brand-dark-muted">•</span>
+                        <span className="text-brand-dark-muted font-bold">{blogs[0].readTime || '8 min read'}</span>
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-outfit font-bold text-brand-dark mb-4 tracking-tight leading-snug group-hover:text-brand-green transition-colors">
+                        {blogs[0].title}
+                      </h2>
+                      <p className="text-brand-dark-muted text-base md:text-lg leading-relaxed mb-6 line-clamp-3">
+                        {blogs[0].excerpt}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pt-4 border-t border-brand-gray/20 text-sm">
+                      <span className="font-mono text-brand-dark font-medium">By {blogs[0].author}</span>
+                      <span className="text-brand-green font-bold font-mono group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                        Read Blueprint →
+                      </span>
+                    </div>
+                  </div>
+                  <div className="md:col-span-5">
+                    <div className="relative aspect-16/10 rounded-2xl overflow-hidden bg-brand-dark/5">
+                      <img
+                        src={blogs[0].imageUrl || "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656160/nvqsiexrp4hs3hpb5xeh.jpg"}
+                        alt={blogs[0].title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="eager"
+                      />
+                    </div>
+                  </div>
+                </div>
               </Link>
             )}
 
-            {/* Remaining Posts List */}
+            {/* Grid of Remaining Posts */}
             {blogs.length > 1 && (
-              <div className="border-t border-brand-gray/30 pt-16">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-brand-dark-muted mb-12">Previous Entries</h3>
-                <div className="flex flex-col divide-y divide-brand-gray/20">
-                  {blogs.slice(1).map((blog) => (
-                    <Link key={blog._id} href={`/blogs/${blog.slug}`} className="group py-8 md:py-12 flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 hover:bg-brand-gray-light/10 transition-colors px-4 -mx-4 rounded-xl">
-                      <time className="text-sm font-bold tracking-wider uppercase text-brand-dark-muted md:w-48 shrink-0" suppressHydrationWarning>
-                        {new Date(blog.publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
-                      </time>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {blogs.slice(1).map((blog) => (
+                  <Link
+                    key={blog._id}
+                    href={`/blogs/${blog.slug}`}
+                    className="group flex flex-col bg-brand-white-pure rounded-2xl border border-brand-gray/20 overflow-hidden hover:shadow-lg hover:border-brand-green/40 transition-all duration-300"
+                  >
+                    <div className="relative aspect-16/10 overflow-hidden bg-brand-dark/5">
+                      <img
+                        src={blog.imageUrl || "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782653597/ub0fz4fjv6ineu68wtrb.png"}
+                        alt={blog.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      {blog.category && (
+                        <span className="absolute top-3 left-3 bg-brand-dark/80 backdrop-blur-sm text-brand-white-pure text-[11px] font-mono font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
+                          {blog.category}
+                        </span>
+                      )}
+                    </div>
+                    <div className="p-6 flex flex-col flex-1 justify-between">
                       <div>
-                        <h2 className="text-2xl md:text-3xl font-outfit font-bold text-brand-dark mb-3 group-hover:text-brand-green transition-colors tracking-tight">
+                        <div className="flex items-center gap-2 text-xs font-mono text-brand-dark-muted mb-3">
+                          <time suppressHydrationWarning>
+                            {new Date(blog.publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                          </time>
+                          <span>•</span>
+                          <span>{blog.readTime || '7 min read'}</span>
+                        </div>
+                        <h3 className="text-xl font-outfit font-bold text-brand-dark mb-3 leading-snug group-hover:text-brand-green transition-colors line-clamp-2">
                           {blog.title}
-                        </h2>
-                        <p className="text-brand-dark-muted leading-relaxed max-w-3xl text-lg">
+                        </h3>
+                        <p className="text-brand-dark-muted text-sm leading-relaxed mb-6 line-clamp-3">
                           {blog.excerpt}
                         </p>
                       </div>
-                    </Link>
-                  ))}
-                </div>
+                      <div className="pt-4 border-t border-brand-gray/15 flex items-center justify-between text-xs font-mono">
+                        <span className="text-brand-dark/70">By {blog.author}</span>
+                        <span className="text-brand-green font-bold group-hover:translate-x-1 transition-transform">
+                          Read Guide →
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
               </div>
             )}
           </div>
@@ -130,8 +195,8 @@ export default async function BlogsPage() {
               <h3 className="text-2xl font-outfit font-bold mb-3 text-brand-white-pure">
                 Looking for Corporate Fleet AMCs?
               </h3>
-              <p className="text-brand-gray-light leading-relaxed mb-6">
-                Protect banking teller printers, logistics waybill continuous units, and healthcare MFPs with 4-hour breakdown SLAs, preventive maintenance, and standby printer buffers.
+              <p className="text-brand-gray-light leading-relaxed mb-6 text-sm">
+                Protect banking teller passbook printers, logistics waybill continuous units, and healthcare MFPs with 4-hour breakdown SLAs, preventive maintenance, and standby printer buffers.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -158,8 +223,8 @@ export default async function BlogsPage() {
               <h3 className="text-2xl font-outfit font-bold mb-3 text-brand-dark">
                 Urgent Machine Repair in Mumbai?
               </h3>
-              <p className="text-brand-dark-muted leading-relaxed mb-6">
-                Walk into our central Mulund West service workshop (Office No. 8, Ground Floor, Kamala Nehru Shopping Centre, next to Vikas Centre) for a free 30-minute diagnostic check.
+              <p className="text-brand-dark-muted leading-relaxed mb-6 text-sm">
+                Walk into our central Mulund West service workshop (Office No. 8, Ground Floor, Kamala Nehru Shopping Centre, next to Vikas Centre) between 10:00 AM and 6:30 PM, Monday through Saturday, for a free 30-minute diagnostic check.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

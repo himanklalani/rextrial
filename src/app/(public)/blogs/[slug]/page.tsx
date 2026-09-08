@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { services } from '@/lib/data/services';
 import { connectDB, Blog } from '@/lib/db';
 import { getBaseUrl } from '@/lib/seo';
-
 import { staticBlogs } from '@/lib/data/blogs';
 
 export async function generateStaticParams() {
@@ -17,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   
   // Check static blogs first
-  let blog: { title: string; excerpt: string; slug: string } | null = staticBlogs.find(b => b.slug === slug) || null;
+  let blog: { title: string; excerpt: string; slug: string; imageUrl?: string } | null = staticBlogs.find(b => b.slug === slug) || null;
   
   if (!blog) {
     try {
@@ -36,11 +35,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: {
       canonical: `${getBaseUrl()}/blogs/${blog.slug}`,
     },
+    openGraph: {
+      title: blog.title,
+      description: blog.excerpt,
+      url: `${getBaseUrl()}/blogs/${blog.slug}`,
+      type: 'article',
+      images: [
+        {
+          url: blog.imageUrl || 'https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656160/nvqsiexrp4hs3hpb5xeh.jpg',
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        }
+      ]
+    }
   };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const siteUrl = getBaseUrl();
   
   // Check static blogs first
   let blog: any = staticBlogs.find(b => b.slug === slug) || null;
@@ -57,18 +71,69 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!blog) return notFound();
 
   const relatedService = services.find(s => s.slug === blog.relatedServiceSlug);
+  const heroImage = blog.imageUrl || "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656160/nvqsiexrp4hs3hpb5xeh.jpg";
 
-  // JSON-LD Article Schema
+  // JSON-LD Article Schema + BreadcrumbList
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": blog.title,
-    "author": { "@type": "Organization", "name": "Rex International" },
-    "datePublished": blog.publishedAt,
-    "publisher": {
-      "@type": "Organization",
-      "name": "Rex International"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteUrl
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Technical Insights",
+            "item": `${siteUrl}/blogs`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": blog.title,
+            "item": `${siteUrl}/blogs/${blog.slug}`
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": `${siteUrl}/blogs/${blog.slug}#article`,
+        "isPartOf": {
+          "@type": "WebPage",
+          "@id": `${siteUrl}/blogs/${blog.slug}`
+        },
+        "headline": blog.title,
+        "description": blog.excerpt,
+        "image": heroImage,
+        "author": {
+          "@type": "Person",
+          "name": blog.author || "Virat Lalani",
+          "jobTitle": "Lead Printing Systems Engineer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Rex International",
+            "url": siteUrl
+          }
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Rex International",
+          "url": siteUrl,
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${siteUrl}/icon.png`
+          }
+        },
+        "datePublished": blog.publishedAt,
+        "dateModified": blog.publishedAt,
+        "mainEntityOfPage": `${siteUrl}/blogs/${blog.slug}`
+      }
+    ]
   };
 
   return (
@@ -78,24 +143,53 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <div className="max-w-3xl mx-auto px-6">
-        <Link href="/blogs" className="text-brand-green font-bold hover:text-brand-green/80 text-sm font-mono uppercase tracking-wider mb-8 inline-block">
-          ← Back to Insights
-        </Link>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        {/* Breadcrumb Navigation */}
+        <nav className="flex items-center gap-2 text-xs font-mono text-brand-dark-muted mb-8" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-brand-green transition-colors">Home</Link>
+          <span>/</span>
+          <Link href="/blogs" className="hover:text-brand-green transition-colors">Insights</Link>
+          <span>/</span>
+          <span className="text-brand-dark font-medium truncate max-w-xs">{blog.title}</span>
+        </nav>
         
         <header className="mb-10 pb-8 border-b border-brand-gray/20">
-          <h1 className="text-4xl md:text-5xl font-outfit font-bold text-brand-dark mb-4 leading-tight">
+          <div className="flex flex-wrap items-center gap-3 text-xs font-mono mb-4">
+            {blog.category && (
+              <span className="bg-brand-green/15 text-brand-green px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                {blog.category}
+              </span>
+            )}
+            <span className="text-brand-dark-muted">•</span>
+            <span className="text-brand-dark-muted font-bold">{blog.readTime || '7 min read'}</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-outfit font-bold text-brand-dark mb-6 leading-tight tracking-tight">
             {blog.title}
           </h1>
+
           <div className="flex items-center gap-4 text-sm text-brand-dark-muted font-mono">
-            <span>By {blog.author}</span>
+            <span className="font-semibold text-brand-dark">By {blog.author}</span>
             <span>•</span>
-            <time suppressHydrationWarning>{new Date(blog.publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</time>
+            <time suppressHydrationWarning>
+              {new Date(blog.publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+            </time>
+          </div>
+
+          {/* Hero Featured Article Image */}
+          <div className="mt-8 relative aspect-16/9 rounded-3xl overflow-hidden bg-brand-dark/5 border border-brand-gray/20 shadow-md">
+            <img
+              src={heroImage}
+              alt={blog.title}
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
           </div>
         </header>
 
+        {/* Article Body Content */}
         <div 
-          className="prose prose-lg prose-brand max-w-none text-brand-dark/80"
+          className="prose prose-lg prose-brand max-w-none text-brand-dark/85 leading-relaxed font-sans"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
@@ -116,7 +210,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   Corporate Printer AMC & On-Site Fleet Support
                 </h3>
                 <p className="text-sm text-brand-gray-light leading-relaxed mb-6">
-                  Managing banking teller printers, high-volume logistics dispatch dotmatrix units, or diagnostic lab MFPs? We provide 4-hour breakdown response SLAs, dedicated standby machines, and genuine OEM parts dispatched across Mumbai and Thane from our Mulund workshop.
+                  Managing banking teller passbook units, high-volume continuous dotmatrix dispatch machines, or diagnostic lab MFPs? We provide 4-hour breakdown response SLAs, dedicated standby buffer units, and genuine OEM parts dispatched across Mumbai and Thane from our Mulund workshop.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -145,7 +239,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   Free 30-Min Diagnostic at Mulund Workshop
                 </h3>
                 <p className="text-sm text-brand-dark-muted leading-relaxed mb-6">
-                  Facing blank lines, toner streaks, paper jams, or head pin issues? Walk into our Mulund West workshop (Office No. 8, Ground Floor, Kamala Nehru Shopping Centre, next to Vikas Centre) between 10:00 AM and 6:30 PM, Monday through Saturday.
+                  Facing blank lines, toner streaks, paper jams, or printhead errors? Walk into our Mulund West workshop (Office No. 8, Ground Floor, Kamala Nehru Shopping Centre, next to Vikas Centre) between 10:00 AM and 6:30 PM, Monday through Saturday.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -171,7 +265,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <div>
                 <span className="text-xs font-mono text-brand-green font-bold uppercase tracking-wider block">Direct Service Match</span>
                 <p className="text-brand-dark font-semibold">
-                  Looking specifically for {relatedService.name}?
+                  Looking specifically for professional {relatedService.name}?
                 </p>
               </div>
               <Link
