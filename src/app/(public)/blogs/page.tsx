@@ -2,23 +2,54 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import TextType from '@/components/ui/TextType';
 import { connectDB, Blog } from '@/lib/db';
-
-export const dynamic = 'force-dynamic';
+import { staticBlogs } from '@/lib/data/blogs';
 
 export const metadata: Metadata = {
-  title: 'Insights & Technical Blogs | Rex International',
-  description: 'Expert articles, printer maintenance tips, and industry insights from the enterprise printing specialists.',
+  title: 'Insights & Technical Guides | Rex International Mumbai',
+  description: 'Authoritative engineering guides on dotmatrix gear maintenance, laser fuser repairs, and enterprise printer AMCs from Rex International.',
   alternates: { canonical: '/blogs' }
 };
 
 export default async function BlogsPage() {
-  await connectDB();
-  const blogsRaw = await Blog.find({}).sort({ publishedAt: -1 }).lean();
-  
-  const blogs = blogsRaw.map(b => ({
-    ...b,
-    _id: b._id.toString()
-  }));
+  let blogs: Array<{
+    _id: string;
+    title: string;
+    slug: string;
+    excerpt: string;
+    publishedAt: string | Date;
+    author: string;
+    category?: string;
+    readTime?: string;
+  }> = [];
+
+  try {
+    await connectDB();
+    const blogsRaw = await Blog.find({}).sort({ publishedAt: -1 }).lean();
+    if (blogsRaw && blogsRaw.length > 0) {
+      blogs = blogsRaw.map(b => ({
+        ...b,
+        _id: b._id.toString(),
+        publishedAt: b.publishedAt || new Date()
+      }));
+    }
+  } catch {
+    // Graceful fallback to static authority articles if DB is unreachable
+    blogs = [];
+  }
+
+  // If DB has no blogs yet, seamlessly provide our curated authority articles
+  if (blogs.length === 0) {
+    blogs = staticBlogs.map(b => ({
+      _id: b.id,
+      title: b.title,
+      slug: b.slug,
+      excerpt: b.excerpt,
+      publishedAt: b.publishedAt,
+      author: b.author,
+      category: b.category,
+      readTime: b.readTime
+    }));
+  }
 
   return (
     <main className="flex-1 bg-brand-white pt-32 pb-12">

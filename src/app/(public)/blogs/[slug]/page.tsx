@@ -5,17 +5,33 @@ import { services } from '@/lib/data/services';
 import { connectDB, Blog } from '@/lib/db';
 import { getBaseUrl } from '@/lib/seo';
 
-export const dynamic = 'force-dynamic';
+import { staticBlogs } from '@/lib/data/blogs';
+
+export async function generateStaticParams() {
+  return staticBlogs.map(blog => ({
+    slug: blog.slug,
+  }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  await connectDB();
-  const blog = await Blog.findOne({ slug }).lean();
+  
+  // Check static blogs first
+  let blog: { title: string; excerpt: string; slug: string } | null = staticBlogs.find(b => b.slug === slug) || null;
+  
+  if (!blog) {
+    try {
+      await connectDB();
+      blog = await Blog.findOne({ slug }).lean();
+    } catch {
+      blog = null;
+    }
+  }
   
   if (!blog) return { title: 'Not Found' };
 
   return {
-    title: `${blog.title} | Rex Insights`,
+    title: `${blog.title} | Rex Technical Insights`,
     description: blog.excerpt,
     alternates: {
       canonical: `${getBaseUrl()}/blogs/${blog.slug}`,
@@ -25,8 +41,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  await connectDB();
-  const blog = await Blog.findOne({ slug }).lean();
+  
+  // Check static blogs first
+  let blog: any = staticBlogs.find(b => b.slug === slug) || null;
+
+  if (!blog) {
+    try {
+      await connectDB();
+      blog = await Blog.findOne({ slug }).lean();
+    } catch {
+      blog = null;
+    }
+  }
   
   if (!blog) return notFound();
 

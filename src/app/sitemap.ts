@@ -3,6 +3,7 @@ import { services } from '@/lib/data/services';
 import { products } from '@/lib/data/products';
 import { industries } from '@/lib/data/industries';
 import { repairs } from '@/lib/data/repairs';
+import { staticBlogs } from '@/lib/data/blogs';
 import { connectDB, Blog } from '@/lib/db';
 import { getBaseUrl } from '@/lib/seo';
 
@@ -62,20 +63,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.85,
   }));
 
-  // Dynamic blog articles from MongoDB (if any published)
-  let blogRoutes: MetadataRoute.Sitemap = [];
+  // Static authority blog articles (4 pillar articles)
+  const staticBlogRoutes: MetadataRoute.Sitemap = staticBlogs.map(b => ({
+    url: `${SITE_URL}/blogs/${b.slug}`,
+    lastModified: new Date(b.publishedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }));
+
+  // Additional dynamic blog articles from MongoDB (if any published)
+  let dynamicBlogRoutes: MetadataRoute.Sitemap = [];
   try {
     await connectDB();
-    const blogs = await Blog.find({}).select('slug updatedAt publishedAt').lean();
-    blogRoutes = blogs.map((b: { slug: string; updatedAt?: Date; publishedAt?: Date }) => ({
+    const blogs = await Blog.find({
+      slug: { $nin: staticBlogs.map(b => b.slug) }
+    }).select('slug updatedAt publishedAt').lean();
+    
+    dynamicBlogRoutes = blogs.map((b: { slug: string; updatedAt?: Date; publishedAt?: Date }) => ({
       url: `${SITE_URL}/blogs/${b.slug}`,
       lastModified: b.updatedAt || b.publishedAt || new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     }));
   } catch {
-    // If DB is unreachable during build or static export, continue gracefully
-    blogRoutes = [];
+    dynamicBlogRoutes = [];
   }
 
   return [
@@ -84,7 +95,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...industryRoutes,
     ...repairRoutes,
     ...productRoutes,
-    ...blogRoutes,
+    ...staticBlogRoutes,
+    ...dynamicBlogRoutes,
   ];
 }
 
