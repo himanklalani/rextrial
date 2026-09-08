@@ -109,9 +109,8 @@ export default function RootLayout({
           <NextPageCTA />
           <Footer />
           <CookieConsent />
-          {process.env.NEXT_PUBLIC_GA_ID && (
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-          )}
+          {/* Google Analytics 4 */}
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || 'G-YCCQ16EBD5'} />
         </PreloadProvider>
       </body>
     </html>
