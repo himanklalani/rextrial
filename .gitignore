@@ -50,6 +50,15 @@ AGENTS.md
 CLAUDE.md
 Rules.md
 
+# internal agent instructions, playbooks, and roadmap files
+playbook.md
+playbook2
+CHANGELOG.md
+DISCARDED_CHANGES.md
+PLANNED_ROADMAP.md
+ai_instructions.md
+master_execution_strategy.md
+
 # external client documents
 *.docx
 leadfunnel.txt
