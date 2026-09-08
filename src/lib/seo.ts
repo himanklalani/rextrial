@@ -1,11 +1,10 @@
 import { siteSettings } from './data/site-settings';
 import { Metadata } from 'next';
 
-// This will be replaced by process.env.NEXT_PUBLIC_SITE_URL in production
 export const getBaseUrl = () => {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  if (process.env.NODE_ENV === 'production') return 'https://rexinternational.store';
+  if (process.env.NODE_ENV === 'production') return 'https://www.rexinternational.store';
+  if (process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return 'http://localhost:3000';
 };
 
