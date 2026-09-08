@@ -46,14 +46,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services & Solutions */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h4 className="font-bold text-brand-white-pure mb-6 uppercase tracking-widest text-sm">Services</h4>
+            <h4 className="font-bold text-brand-white-pure mb-6 uppercase tracking-widest text-sm">Services & Repairs</h4>
             <ul className="space-y-4">
-              <li><Link href="/services" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">OEM Part Procurement</Link></li>
-              <li><Link href="/services" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">B2B & B2C Bulk Supply</Link></li>
-              <li><Link href="/services" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Component Repair</Link></li>
-              <li><Link href="/services" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Logistics Integration</Link></li>
+              <li><Link href="/services/corporate-amc" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Corporate Printer AMC</Link></li>
+              <li><Link href="/industries" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Industry Fleet Solutions</Link></li>
+              <li><Link href="/repairs/walk-in-mulund" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Mulund Walk-In Workshop</Link></li>
+              <li><Link href="/repairs" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Troubleshooting & Repairs</Link></li>
             </ul>
           </div>
 

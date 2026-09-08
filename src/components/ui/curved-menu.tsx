@@ -58,6 +58,18 @@ const defaultNavItems: iNavItem[] = [
 		imgSrc: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654200/s81miperhij7z71hc8ph.png",
 	},
 	{
+		heading: "Industries",
+		href: "/industries",
+		subheading: "B2B Fleet AMCs & Solutions",
+		imgSrc: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654200/s81miperhij7z71hc8ph.png",
+	},
+	{
+		heading: "Repairs",
+		href: "/repairs/walk-in-mulund",
+		subheading: "Mulund West diagnostic workshop",
+		imgSrc: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654247/xir2i0sot6mbbvp8vghe.jpg",
+	},
+	{
 		heading: "About",
 		href: "/about",
 		subheading: "45+ years of industry excellence",
