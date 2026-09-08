@@ -88,6 +88,65 @@ export default async function BlogsPage() {
             )}
           </div>
         )}
+
+        {/* Dual-Intent B2B + B2C Bridge Banner */}
+        <div className="mt-20 pt-12 border-t border-brand-gray/30 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-brand-dark text-brand-white p-8 rounded-2xl border-l-4 border-brand-green flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green mb-2 block">
+                Enterprise & Operations
+              </span>
+              <h3 className="text-2xl font-outfit font-bold mb-3 text-brand-white-pure">
+                Looking for Corporate Fleet AMCs?
+              </h3>
+              <p className="text-brand-gray-light leading-relaxed mb-6">
+                Protect banking teller printers, logistics waybill continuous units, and healthcare MFPs with 4-hour breakdown SLAs, preventive maintenance, and standby printer buffers.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/services/corporate-amc"
+                className="bg-brand-green text-brand-dark font-bold px-5 py-2.5 rounded text-sm hover:bg-brand-white-pure transition-colors"
+              >
+                Explore Corporate AMC
+              </Link>
+              <Link
+                href="/industries"
+                className="border border-white/20 text-white font-medium px-5 py-2.5 rounded text-sm hover:bg-white/10 transition-colors"
+              >
+                Browse Industries
+              </Link>
+            </div>
+          </div>
+
+          <div className="bg-brand-white-pure p-8 rounded-2xl border border-brand-gray/30 shadow-sm flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green mb-2 block">
+                Local Walk-In Diagnostic
+              </span>
+              <h3 className="text-2xl font-outfit font-bold mb-3 text-brand-dark">
+                Urgent Machine Repair in Mumbai?
+              </h3>
+              <p className="text-brand-dark-muted leading-relaxed mb-6">
+                Walk into our central Mulund West service workshop (Office No. 8, Ground Floor, Kamala Nehru Shopping Centre, next to Vikas Centre) for a free 30-minute diagnostic check.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/repairs/walk-in-mulund"
+                className="bg-brand-dark text-brand-white font-bold px-5 py-2.5 rounded text-sm hover:bg-brand-green hover:text-brand-dark transition-colors"
+              >
+                Mulund Workshop Info
+              </Link>
+              <Link
+                href="/repairs"
+                className="border border-brand-dark/20 text-brand-dark font-medium px-5 py-2.5 rounded text-sm hover:bg-brand-dark/5 transition-colors"
+              >
+                Repair Solutions
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );

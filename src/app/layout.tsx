@@ -83,6 +83,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} h-full`}>
       <head>
+        {/* Preload initial LCP hero frames for instant paint */}
+        <link
+          rel="preload"
+          as="image"
+          href="/animation_herosection/00001.jpg"
+          media="(min-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/animation-mobileherosection/00001.jpg"
+          media="(max-width: 767px)"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
