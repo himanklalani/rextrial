@@ -2,6 +2,7 @@ import React from 'react';
 import { getSiteSettings } from '@/lib/data/queries';
 import { WhatsAppCTA } from './WhatsAppCTA';
 import { createWhatsAppGeneralUrl } from '@/lib/utils';
+import { TrackedLink } from './TrackedLink';
 
 export async function ContactCard() {
   const settings = await getSiteSettings();
@@ -16,7 +17,21 @@ export async function ContactCard() {
           </div>
           <div>
             <h4 className="font-bold text-xs text-brand-gray-light/60 uppercase tracking-wider mb-1">Phones</h4>
-            <p className="font-medium text-lg text-brand-white-pure">{settings.phones.join(" / ")}</p>
+            <div className="flex flex-wrap gap-x-2 font-medium text-lg text-brand-white-pure">
+              {settings.phones.map((phone, idx) => (
+                <React.Fragment key={phone}>
+                  <TrackedLink
+                    href={`tel:${phone.replace(/\s+/g, '')}`}
+                    eventType="phone_click"
+                    eventLabel={`contact_card_phone_${phone}`}
+                    className="hover:text-brand-green transition-colors"
+                  >
+                    {phone}
+                  </TrackedLink>
+                  {idx < settings.phones.length - 1 && <span>/</span>}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
         </div>
         <div className="flex items-start gap-4">
@@ -25,7 +40,14 @@ export async function ContactCard() {
           </div>
           <div>
             <h4 className="font-bold text-xs text-brand-gray-light/60 uppercase tracking-wider mb-1">Email</h4>
-            <p className="font-medium text-lg text-brand-white-pure">{settings.email}</p>
+            <TrackedLink
+              href={`mailto:${settings.email}`}
+              eventType="email_click"
+              eventLabel="contact_card_email"
+              className="font-medium text-lg text-brand-white-pure hover:text-brand-green transition-colors block"
+            >
+              {settings.email}
+            </TrackedLink>
           </div>
         </div>
         <div className="flex items-start gap-4">

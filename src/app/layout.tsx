@@ -9,6 +9,7 @@ import { defaultMetadata, getBaseUrl } from "@/lib/seo";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import GlobalPreloader from "@/components/ui/GlobalPreloader";
 import { PreloadProvider } from "@/lib/contexts/PreloadContext";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -31,6 +32,14 @@ export default function RootLayout({
     "telephone": siteSettings.phones[0],
     "email": siteSettings.email,
     "priceRange": "₹₹",
+    "foundingDate": "1980",
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Hansraj Lalani",
+        "@id": `${getBaseUrl()}/about#hansraj-lalani`
+      }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Office No. 8, Ground Floor, Next to Vikas Centre, Kamala Nehru Shopping Centre, Netaji Subhash Road",
@@ -87,6 +96,9 @@ export default function RootLayout({
           <NextPageCTA />
           <Footer />
           <CookieConsent />
+          {process.env.NEXT_PUBLIC_GA_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+          )}
         </PreloadProvider>
       </body>
     </html>

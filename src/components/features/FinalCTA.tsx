@@ -6,8 +6,20 @@ import Link from 'next/link';
 import TextType from '@/components/ui/TextType';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import GlowHorizonFM from '@/components/ui/glow-horizon';
+import { trackEvent } from '@/lib/analytics';
+import { siteSettings } from '@/lib/data/site-settings';
+import { createWhatsAppGeneralUrl } from '@/lib/utils';
 
 export default function FinalCTA() {
+  const whatsappUrl = createWhatsAppGeneralUrl();
+
+  const handleWhatsAppClick = () => {
+    trackEvent('whatsapp_click', {
+      service: 'homepage_final_cta',
+      target_url: whatsappUrl
+    });
+  };
+
   return (
     <section className="bg-brand-dark text-brand-white-pure py-32 md:py-48 relative z-10 overflow-hidden">
       <GlowHorizonFM variant="bottom" className="opacity-60" />
@@ -42,7 +54,13 @@ export default function FinalCTA() {
               <span className="absolute inset-0 flex items-center justify-center translate-y-12 group-hover:translate-y-0 transition-transform duration-500">Get a Quote</span>
             </Link>
             
-            <a href="https://wa.me/919323906493" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 text-brand-white-pure font-bold text-lg px-8 py-5 hover:text-brand-gray-light transition-colors w-full sm:w-auto">
+            <a 
+              href={whatsappUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              onClick={handleWhatsAppClick}
+              className="group flex items-center justify-center gap-2 text-brand-white-pure font-bold text-lg px-8 py-5 hover:text-brand-gray-light transition-colors w-full sm:w-auto"
+            >
               Chat on WhatsApp
               <motion.span 
                 className="inline-block"

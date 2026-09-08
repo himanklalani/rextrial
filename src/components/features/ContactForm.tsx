@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { submitContactForm } from '@/app/actions/contact';
+import { trackEvent } from '@/lib/analytics';
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -28,6 +29,7 @@ export function ContactForm() {
 
     if (response.success) {
       setStatus('success');
+      trackEvent('form_submission', { form_type: 'contact_inquiry' });
     } else {
       setStatus('error');
       setErrorMessage(response.error || 'Something went wrong. Please try again.');

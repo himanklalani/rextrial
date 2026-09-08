@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
           <p>When you use our website, we may collect the following types of information:</p>
           <ul>
             <li><strong>Contact Form Data:</strong> Name, Email address, Phone number, and specific message content regarding your hardware inquiries.</li>
-            <li><strong>Usage Data:</strong> We utilize Vercel Web Analytics to monitor website performance. This service is privacy-first, uses no tracking cookies, and does not collect Personally Identifiable Information (PII).</li>
+            <li><strong>Usage Data:</strong> We may collect anonymized usage analytics (via Google Analytics 4) to monitor website performance, understand service demand, and optimize technical documentation. All analytics signals respect user cookie preferences and do not collect personally identifiable information (PII).</li>
           </ul>
           <h3>2. How We Store Your Information</h3>
           <p>Data submitted via our contact forms is securely stored in an encrypted MongoDB database. This data is strictly used for fulfilling business inquiries (such as quoting repairs or arranging AMCs). We do not sell, rent, or lease your personal information to any third parties under any circumstances.</p>

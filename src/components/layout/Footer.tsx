@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { siteSettings, navLinks } from '@/lib/data/site-settings';
+import { TrackedLink } from '@/components/ui/TrackedLink';
 
 export default function Footer() {
   return (
@@ -63,12 +64,27 @@ export default function Footer() {
               <li className="flex flex-col items-center sm:items-start gap-1">
                 <span className="text-brand-white-pure font-semibold">Phone Support:</span>
                 {siteSettings.phones.map((phone) => (
-                  <span key={phone}>{phone}</span>
+                  <TrackedLink
+                    key={phone}
+                    href={`tel:${phone.replace(/\s+/g, '')}`}
+                    eventType="phone_click"
+                    eventLabel={`footer_phone_${phone}`}
+                    className="hover:text-brand-green transition-colors"
+                  >
+                    {phone}
+                  </TrackedLink>
                 ))}
               </li>
               <li className="flex flex-col items-center sm:items-start gap-1 mt-2">
                 <span className="text-brand-white-pure font-semibold">Email:</span>
-                <a href={`mailto:${siteSettings.email}`} className="hover:text-brand-green transition-colors">{siteSettings.email}</a>
+                <TrackedLink
+                  href={`mailto:${siteSettings.email}`}
+                  eventType="email_click"
+                  eventLabel="footer_email"
+                  className="hover:text-brand-green transition-colors"
+                >
+                  {siteSettings.email}
+                </TrackedLink>
               </li>
               <li className="flex flex-col items-center sm:items-start gap-1 mt-2">
                 <span className="text-brand-white-pure font-semibold">Headquarters:</span>

@@ -6,6 +6,13 @@ import { getBaseUrl } from '@/lib/seo';
 import ProductDetailClient from '@/components/features/ProductDetailClient';
 import Link from 'next/link';
 
+export async function generateStaticParams() {
+  const products = await getAllProducts();
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
@@ -32,11 +39,15 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   
   const whatsappUrl = createWhatsAppProductUrl(product.name);
 
+  const productImage = product.imageUrl 
+    ? (product.imageUrl.startsWith('http') ? product.imageUrl : `${getBaseUrl()}${product.imageUrl}`)
+    : `${getBaseUrl()}/og-image.jpg`;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "image": product.imageUrl ? `${getBaseUrl()}${product.imageUrl}` : `${getBaseUrl()}/og-image.jpg`,
+    "image": productImage,
     "description": product.detailedDescription,
     "sku": product.id,
     "brand": {

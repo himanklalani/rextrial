@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 import { services } from '@/lib/data/services';
 import Link from 'next/link';
 import { createWhatsAppGeneralUrl } from '@/lib/utils';
+import { WhatsAppCTA } from '@/components/ui/WhatsAppCTA';
+import { getBaseUrl } from '@/lib/seo';
 
 // Tell Next.js to pre-render these pages at build time
 export function generateStaticParams() {
@@ -16,6 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = services.find((s) => s.slug === slug);
   if (!service) return { title: 'Service Not Found' };
 
+  const ogImageUrl = 'https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656160/nvqsiexrp4hs3hpb5xeh.jpg';
+  const pageUrl = `${getBaseUrl()}/services/${service.slug}`;
+
   return {
     title: `${service.seo.title} | Rex International Mumbai`,
     description: service.seo.description,
@@ -26,7 +31,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: `${service.seo.title} | Rex International Mumbai`,
       description: service.seo.description,
-    }
+      url: pageUrl,
+      siteName: 'Rex International',
+      type: 'article',
+      locale: 'en_IN',
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${service.name} - Rex International Mumbai`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${service.seo.title} | Rex International Mumbai`,
+      description: service.seo.description,
+      images: [ogImageUrl],
+    },
   };
 }
 
@@ -86,9 +109,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rexinternational.vercel.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rexinternational.vercel.app/services" },
-      { "@type": "ListItem", "position": 3, "name": service.name, "item": `https://rexinternational.vercel.app/services/${service.slug}` }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${getBaseUrl()}/` },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": `${getBaseUrl()}/services` },
+      { "@type": "ListItem", "position": 3, "name": service.name, "item": `${getBaseUrl()}/services/${service.slug}` }
     ]
   };
 
@@ -171,15 +194,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               >
                 Get a Free Quote
               </Link>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppCTA
+                url={whatsappUrl}
+                label="WhatsApp Us"
+                variant="custom"
                 className="inline-flex items-center justify-center gap-2 bg-brand-white-pure/10 text-brand-white-pure font-bold border border-brand-white-pure/20 px-8 py-4 rounded hover:bg-brand-white-pure hover:text-brand-dark transition-colors w-full sm:w-auto"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.858L.058 23.926l6.264-1.641A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.5-5.24-1.373l-.376-.223-3.894 1.022 1.038-3.793-.245-.39A9.95 9.95 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-                WhatsApp Us
-              </a>
+              />
             </div>
           </div>
 

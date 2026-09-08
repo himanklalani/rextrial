@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { services } from '@/lib/data/services';
 import { connectDB, Blog } from '@/lib/db';
+import { getBaseUrl } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${blog.title} | Rex Insights`,
     description: blog.excerpt,
     alternates: {
-      canonical: `https://www.lalanicomputers.com/blogs/${blog.slug}`,
+      canonical: `${getBaseUrl()}/blogs/${blog.slug}`,
     },
   };
 }

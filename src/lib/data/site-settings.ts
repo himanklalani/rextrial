@@ -3,7 +3,7 @@ import { SiteSettings } from '@/types';
 export const siteSettings: SiteSettings = {
   name: "Rex International",
   description: "Specialized enterprise and retail solutions for Dotmatrix, Laser, and Ink tank printing systems. Supplying high grade parts, peripherals, and consumables since 1980.",
-  url: "https://rexinternational.example.com",
+  url: "https://rexinternational.store",
   founders: ["Hansraj Lalani", "Virat Lalani"],
   experienceYears: 45,
   phones: ["+91 9323906493", "+91 8928606368"],

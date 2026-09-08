@@ -4,6 +4,8 @@ import React, { useState, useRef } from "react";
 import { motion, useMotionValue, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Mail, Phone, Globe, MessageCircle } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
+import { siteSettings } from "@/lib/data/site-settings";
 
 interface iNavItem {
 	heading: string;
@@ -76,20 +78,42 @@ const defaultNavItems: iNavItem[] = [
 ];
 
 const CustomFooter: React.FC = () => {
+	const phoneRaw = siteSettings.phones[0].replace(/\s+/g, '');
 	return (
 		<div className="flex w-full text-sm justify-between text-black px-6 md:px-12 py-5">
-			<a href="mailto:rexribbon@gmail.com" target="_blank" rel="noopener noreferrer">
+			<a 
+				href={`mailto:${siteSettings.email}`}
+				onClick={() => trackEvent('email_click', { label: 'curved_menu_email', target: `mailto:${siteSettings.email}` })}
+				className="hover:text-brand-green transition-colors"
+				aria-label="Email Rex International"
+			>
 				<Mail size={24} />
 			</a>
-			<a href="tel:+919323906493" target="_blank" rel="noopener noreferrer">
+			<a 
+				href={`tel:${phoneRaw}`}
+				onClick={() => trackEvent('phone_click', { label: 'curved_menu_phone', target: `tel:${phoneRaw}` })}
+				className="hover:text-brand-green transition-colors"
+				aria-label="Call Rex International"
+			>
 				<Phone size={24} />
 			</a>
-			<a href="https://wa.me/919323906493" target="_blank" rel="noopener noreferrer">
+			<a 
+				href={`https://wa.me/${siteSettings.whatsappNumber}`} 
+				target="_blank" 
+				rel="noopener noreferrer"
+				onClick={() => trackEvent('whatsapp_click', { service: 'curved_menu_whatsapp', target_url: `https://wa.me/${siteSettings.whatsappNumber}` })}
+				className="hover:text-brand-green transition-colors"
+				aria-label="Chat on WhatsApp"
+			>
 				<MessageCircle size={24} />
 			</a>
-			<a href="/" target="_blank" rel="noopener noreferrer">
+			<Link 
+				href="/"
+				className="hover:text-brand-green transition-colors"
+				aria-label="Rex International Home"
+			>
 				<Globe size={24} />
-			</a>
+			</Link>
 		</div>
 	);
 };

@@ -1,5 +1,6 @@
 import { getSiteSettings } from "@/lib/data/queries";
 import { Metadata } from "next";
+import { getBaseUrl } from "@/lib/seo";
 import TextType from "@/components/ui/TextType";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import BlockTextReveal from "@/components/ui/BlockTextReveal";
@@ -17,9 +18,45 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AboutPage() {
   const settings = await getSiteSettings();
+  const baseUrl = getBaseUrl();
+
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${baseUrl}/about#hansraj-lalani`,
+        "name": "Hansraj Lalani",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@type": "LocalBusiness",
+          "@id": baseUrl,
+          "name": settings.name
+        },
+        "image": "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto/q_auto/v1784970762/vdlx8g5rgwnaqiafmbnn.png",
+        "description": "Founder of Rex International, pioneering industrial dotmatrix printer and ribbon cartridge manufacturing in Mumbai since 1980."
+      },
+      {
+        "@type": "Person",
+        "@id": `${baseUrl}/about#virat-lalani`,
+        "name": "Virat Lalani",
+        "jobTitle": "Managing Partner & Technical Director",
+        "worksFor": {
+          "@type": "LocalBusiness",
+          "@id": baseUrl,
+          "name": settings.name
+        },
+        "description": "Managing Partner at Rex International, leading enterprise AMC contracts and component-level printer repair operations in Mumbai."
+      }
+    ]
+  };
 
   return (
     <main className="flex-1 bg-brand-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <section className="pt-16 pb-16 md:pt-24 md:pb-24 border-b border-brand-gray/20 bg-brand-white-pure">
         <div className="container-inner text-center max-w-4xl mx-auto">
           <TextType
