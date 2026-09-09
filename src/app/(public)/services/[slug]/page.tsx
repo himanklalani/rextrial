@@ -5,7 +5,9 @@ import Link from 'next/link';
 import { createWhatsAppGeneralUrl } from '@/lib/utils';
 import { WhatsAppCTA } from '@/components/ui/WhatsAppCTA';
 import { getBaseUrl } from '@/lib/seo';
+import { siteSettings } from '@/lib/data/site-settings';
 import { ExecutiveAmcProposal } from '@/components/features/ExecutiveAmcProposal';
+import { RepairCostEstimator } from '@/components/features/RepairCostEstimator';
 
 // Tell Next.js to pre-render these pages at build time
 export function generateStaticParams() {
@@ -79,6 +81,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         "postalCode": "400080",
         "addressRegion": "Maharashtra",
         "addressCountry": "IN"
+      },
+      "hasMap": siteSettings.googleMapsUrl,
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 19.1743158,
+        "longitude": 72.954961
       }
     },
     "areaServed": [
@@ -213,9 +221,15 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             </>
           )}
 
-          {/* Dedicated B2B Executive AMC Teardown (Only for corporate-amc) */}
-          {service.slug === 'corporate-amc' && (
+          {/* Dedicated B2B Executive AMC Teardown (corporate-amc) or Component-Level Repair Cost Estimator */}
+          {service.slug === 'corporate-amc' ? (
             <ExecutiveAmcProposal canonicalUrl={pageUrl} />
+          ) : (
+            <RepairCostEstimator
+              serviceSlug={service.slug}
+              serviceName={service.name}
+              canonicalUrl={pageUrl}
+            />
           )}
 
           {/* CTA Block */}

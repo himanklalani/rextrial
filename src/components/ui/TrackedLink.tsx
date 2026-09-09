@@ -5,7 +5,7 @@ import { trackEvent } from '@/lib/analytics';
 
 interface TrackedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
-  eventType: 'phone_click' | 'email_click';
+  eventType: 'phone_click' | 'email_click' | 'navigation_click';
   eventLabel: string;
   children: React.ReactNode;
 }

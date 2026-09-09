@@ -15,6 +15,8 @@ export interface SiteSettings {
   whatsappNumber: string;
   email: string;
   address: string;
+  googleMapsUrl: string;
+  googleMapsEmbedUrl: string;
   socialLinks?: Record<string, string>;
   directories?: string[];
   seo: SeoMetadata;

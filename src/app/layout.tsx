@@ -58,10 +58,11 @@ export default function RootLayout({
       "addressRegion": "Maharashtra",
       "addressCountry": "IN"
     },
+    "hasMap": siteSettings.googleMapsUrl,
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 19.1747064,
-      "longitude": 72.9548683
+      "latitude": 19.1743158,
+      "longitude": 72.954961
     },
     "openingHoursSpecification": [
       {

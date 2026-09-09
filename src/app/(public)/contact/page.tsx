@@ -2,6 +2,8 @@ import { ContactCard } from "@/components/ui/ContactCard";
 import { ContactForm } from "@/components/features/ContactForm";
 import TextType from "@/components/ui/TextType";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { siteSettings } from "@/lib/data/site-settings";
+import { TrackedLink } from "@/components/ui/TrackedLink";
 
 export const metadata = {
   title: "Contact Our Printer Experts | Rex International Mumbai",
@@ -59,19 +61,35 @@ export default async function ContactPage() {
               <ContactForm />
             </div>
 
-            <div className="h-[400px] w-full rounded-3xl overflow-hidden border border-brand-gray/20 relative">
-              <div className="absolute inset-0 bg-brand-gray-light/30 z-0"></div>
-              <iframe
-                src="https://maps.google.com/maps?q=19.1747064,72.9548683&z=17&hl=en&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Rex International Location Map"
-                className="absolute inset-0 w-full h-full grayscale contrast-[1.1] opacity-90 mix-blend-multiply z-10"
-              />
+            <div className="flex flex-col gap-3">
+              <div className="h-[400px] w-full rounded-3xl overflow-hidden border border-brand-gray/20 relative shadow-sm">
+                <iframe
+                  src={siteSettings.googleMapsEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Rex International Location Map"
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="flex items-center justify-between px-2">
+                <span className="text-xs font-mono text-brand-dark-muted">
+                  📍 Office No. 8, Kamala Nehru Shopping Centre, Mulund West
+                </span>
+                <TrackedLink
+                  href={siteSettings.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  eventType="navigation_click"
+                  eventLabel="contact_page_open_maps"
+                  className="text-xs font-mono font-bold text-brand-green-dark hover:underline flex items-center gap-1"
+                >
+                  Open in Google Maps App →
+                </TrackedLink>
+              </div>
             </div>
           </div>
 

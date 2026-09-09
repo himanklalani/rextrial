@@ -10,6 +10,8 @@ export const siteSettings: SiteSettings = {
   whatsappNumber: "919323906493",
   email: "rexribbon@gmail.com",
   address: "REX INTERNATIONAL, OFFICE NO. 8, GROUND FLOOR, NEXT TO VIKAS CENTRE, KAMALA NEHRU SHOPPING CENTRE, NETAJI SUBHASH ROAD, MULUND WEST, MUMBAI - 400080.",
+  googleMapsUrl: "https://www.google.com/maps/place/Rex+International/@19.1745027,72.9549569,20.19z/data=!4m15!1m8!3m7!1s0x3be7b8faf51eaaab:0x6425fc2497d4106a!2sKamla+Nehru+Shopping+Centre,+22,+Netaji+Subhash+Chandra+Rd,+Mulund+West,+Mumbai,+Maharashtra+400080!3b1!8m2!3d19.1744876!4d72.9550764!16s%2Fg%2F11z68my9g2!3m5!1s0x3be7b904854ffa51:0xde6c921db50bd4b5!8m2!3d19.1743158!4d72.954961!16s%2Fg%2F11gmch_s8g",
+  googleMapsEmbedUrl: "https://maps.google.com/maps?q=Rex+International,+Mulund+West,+Mumbai&t=&z=19&ie=UTF8&iwloc=&output=embed",
   directories: [
     "https://www.tradeindia.com/rex-international-2865400/",
     "https://www.exportersindia.com/rex-international-3737020/#about_details",

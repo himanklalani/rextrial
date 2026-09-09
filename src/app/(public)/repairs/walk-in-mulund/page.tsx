@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function MulundWalkInPage() {
   const baseUrl = getBaseUrl();
-  const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Kamala+Nehru+Shopping+Centre+Mulund+West+Mumbai";
+  const mapsUrl = siteSettings.googleMapsUrl;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -33,6 +33,7 @@ export default function MulundWalkInPage() {
     "name": "Rex International - Printer Repair Workshop Mulund West",
     "image": `${baseUrl}/og-image.jpg`,
     "url": `${baseUrl}/repairs/walk-in-mulund`,
+    "hasMap": siteSettings.googleMapsUrl,
     "telephone": siteSettings.phones[0],
     "priceRange": "₹₹",
     "sameAs": siteSettings.directories || [],
@@ -46,8 +47,8 @@ export default function MulundWalkInPage() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 19.1747064,
-      "longitude": 72.9548683
+      "latitude": 19.1743158,
+      "longitude": 72.954961
     },
     "openingHoursSpecification": [
       {

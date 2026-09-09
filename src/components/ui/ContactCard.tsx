@@ -57,6 +57,16 @@ export async function ContactCard() {
           <div>
             <h4 className="font-bold text-xs text-brand-gray-light/60 uppercase tracking-wider mb-1">Location</h4>
             <p className="font-medium leading-relaxed text-brand-white-pure">{settings.address}</p>
+            <TrackedLink
+              href={settings.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              eventType="navigation_click"
+              eventLabel="contact_card_google_maps"
+              className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-lg bg-brand-white-pure/10 hover:bg-brand-white-pure/20 text-brand-white-pure hover:text-brand-green border border-brand-white-pure/20 transition-all mt-3 font-semibold"
+            >
+              <span>📍 Open Rex International on Google Maps →</span>
+            </TrackedLink>
           </div>
         </div>
       </div>

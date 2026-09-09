@@ -89,6 +89,16 @@ export default function Footer() {
               <li className="flex flex-col items-center sm:items-start gap-1 mt-2">
                 <span className="text-brand-white-pure font-semibold">Headquarters:</span>
                 <span className="max-w-[200px] leading-relaxed">{siteSettings.address}</span>
+                <TrackedLink
+                  href={siteSettings.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  eventType="navigation_click"
+                  eventLabel="footer_google_maps"
+                  className="text-xs font-mono text-brand-green hover:underline mt-1 font-semibold flex items-center gap-1"
+                >
+                  📍 View on Google Maps →
+                </TrackedLink>
               </li>
             </ul>
           </div>
