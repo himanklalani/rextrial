@@ -34,6 +34,15 @@ export default function RootLayout({
     "priceRange": "₹₹",
     "foundingDate": "1980",
     "sameAs": siteSettings.directories || [],
+    "knowsAbout": [
+      "Corporate Printer AMC Maintenance Contracts",
+      "4-Hour On-Site SLA Fleet Maintenance",
+      "Dotmatrix Printhead Re-pinning & Tractor Gear Repair",
+      "Epson Micro Piezo Ultrasonic Chemical Nozzle Flushing",
+      "Laser Printer Fuser Film & Pressure Roller Overhaul",
+      "Passbook Printer Automatic Platen Gap Calibration",
+      "Industrial Continuous Invoicing & Waybill Printing"
+    ],
     "founder": [
       {
         "@type": "Person",

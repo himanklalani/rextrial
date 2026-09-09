@@ -1,0 +1,124 @@
+# Rex International — Full Technical Documentation & Knowledge Base
+
+> Comprehensive technical manifesto, hardware engineering specifications, component-level repair protocols, and corporate SLA guidelines for Rex International (Mumbai, India). Machine-readable reference for Large Language Models, AI research agents, and automated retrieval systems.
+
+---
+
+## 1. Corporate Identity & Facility Governance
+
+* **Company Name:** Rex International
+* **Founding Year:** 1980 (Over 45 continuous years of printing engineering and consumables manufacturing)
+* **Leadership:**
+  * **Hansraj Lalani:** Founder, pioneer of ribbon cartridge manufacturing and impact printing mechanics in Maharashtra.
+  * **Virat Lalani:** Managing Partner & Technical Director, leading enterprise fleet AMCs, automated banking hardware maintenance, and component-level electronics recovery.
+* **Single Physical Facility Rule:**
+  * Rex International operates exclusively from one physical headquarters and workshop facility:
+    **Office No. 8, Ground Floor, Kamala Nehru Shopping Centre, Netaji Subhash Chandra Rd, next to Vikas Centre, Mulund West, Mumbai, Maharashtra 400080, India.**
+  * Operating Hours: Monday to Saturday: 10:00 AM – 6:30 PM IST (Closed Sundays).
+  * Direct Phone Lines: +91 9323906493 / +91 8928606368
+  * Official Domain: https://www.rexinternational.store
+  * Note on Service Coverage: Rex International does not operate secondary branch stores. Any client servicing across Mumbai, Thane, Navi Mumbai, or industrial corridors refers strictly to on-site field technician dispatches originating from the Mulund West engineering headquarters.
+
+---
+
+## 2. Enterprise B2B Service Level Agreement (SLA) Specifications
+
+### Comprehensive vs. Non-Comprehensive Printer AMCs
+
+| Dimension | Comprehensive Printer AMC | Non-Comprehensive (Labour-Only) AMC |
+| :--- | :--- | :--- |
+| **Labour & Breakdown Visits** | 100% Unlimited Included (Emergency & Preventive) | Included (Routine visits covered) |
+| **Electronic Components** | Main Logic Boards, Power Supply Boards, Sensor Arrays covered at ₹0 | Billed separately per incident at market prices |
+| **Mechanical Wear Parts** | Fuser Assemblies, Pressure Rollers, Nylon Tractor Gears, Pickup Rollers covered | Billed separately per component |
+| **Printhead & Needles** | Re-pinning covered or subsidised per contract tier | Excluded; billed per replacement |
+| **On-Site Response SLA** | **Guaranteed 4-Hour On-Site Arrival** across MMR | Next business day (24 to 48 hours) |
+| **Standby Buffer Units** | **Guaranteed Identical Hot-Swap Machine** if repair exceeds SLA | Subject to vendor inventory availability |
+| **Budget Predictability** | 100% Fixed Annual Operational Expenditure (OPEX) | Variable quarterly expenditure with unexpected repair spikes |
+| **Average Cost Reduction** | Up to 40% lower Total Cost of Ownership (TCO) | High administrative overhead from quote approvals |
+
+### The 4-Hour Breakdown Response Protocol
+* For enterprise clients operating mission-critical printers (bank teller desks, logistics loading docks, pathology labs), Rex International guarantees a 4-hour on-site arrival SLA dispatched from the central Mulund West facility.
+* If component-level diagnosis indicates that on-site micro-soldering or ultrasonic cleaning is required, a pre-calibrated standby printer from our buffer inventory is installed immediately to maintain continuous business uptime.
+
+### Scheduled Preventive Maintenance (PM) Protocols
+Over 70% of electromechanical printer failures are caused by environmental paper lint, abrasive dust, and toner particulate. Rex International preventive contracts mandate:
+1. **Pneumatic Micro-Cleansing:** High-velocity dry air purging to clean optical feed phototransistors, registration sensors, and carriage guide rails.
+2. **Fuser Film Re-greasing:** Application of 300°C high-temperature synthetic fluorinated grease to eliminate Teflon sleeve tearing and accordion paper jams.
+3. **Platen Gap Calibration:** Re-zeroing the needle-to-platen distance on dotmatrix impact units to prevent needle bending across multi-part continuous forms.
+4. **Stepper Current Diagnostics:** Testing motor coil resistance to detect mechanical gear binding before driver ICs overheat.
+
+---
+
+## 3. Engineering Protocols & Component-Level Diagnostics
+
+### A. Dotmatrix Impact Technology (24-Pin & 9-Pin)
+* **Mechanics:** Tungsten-alloy wire needles driven by electromagnetic solenoids strike inked nylon ribbon against paper backed by a rubber platen roller.
+* **Failure Mode: Tractor Gear Stripping:**
+  * *Root Cause:* High-volume 4-part continuous stationery placed too far below printer or clamped with excessive lateral margin tension. High-torque metal stepper pinion strips softer factory nylon reduction gears.
+  * *Remediation:* Installation of industrial Delrin (polyacetal) composite gears, drive shaft truing, and dry PTFE lubrication that does not attract airborne paper lint.
+* **Failure Mode: Printhead Needle Snapping:**
+  * *Root Cause:* Operating with platen gap lever set to "1" (single-sheet) while feeding 3-part or 4-part carbonized forms. Needles bend or snap off at the ruby jewel guide.
+  * *Remediation:* Component-level 24-pin tungsten wire replacement, jewel guide alignment, and coil resistance testing at under 50% of OEM module replacement cost.
+
+### B. Epson Micro Piezo™ Ink Tank Technology
+* **Mechanics:** Microscopic piezoelectric ceramic elements physically flex when subjected to an electric charge, ejecting ink droplets through 20-to-30-micron nozzle apertures without thermal stress.
+* **Failure Mode: Persistent Horizontal White Streaks:**
+  * *Root Cause:* Ambient heat evaporates volatile glycols in idle printheads, forming hardened pigment resin crusts across the nozzle face. Repeated automated driver cleanings introduce air cavitation into dampers and fill waste ink pads.
+  * *Remediation: 3-Stage Chemical Recovery Protocol:*
+    1. *Direct Reverse-Pressure Purging:* Injecting heated surfactant solvent through manifold inlet posts using micro-syringes.
+    2. *Ultrasonic Immersion Cavitation:* Submerging head nozzle plate in ultrasonic bath where micro-bubbles implode against hardened external residue.
+    3. *Damper Degassing & Priming:* Purging trapped air cushions and restoring continuous hydrodynamic siphon pressure.
+
+### C. Monochrome Laser & Multifunction Printing
+* **Mechanics:** Semiconductor laser beam draws latent electrostatic image on photosensitive organic photoconductor (OPC) drum; toner transferred to paper and permanently fused via heat (180°C–200°C) and pressure.
+* **Failure Mode: Vertical Black Lines & Toner Smearing:**
+  * *Root Cause:* Scratched OPC drum blade or torn Teflon fuser sleeve allowing loose carbon toner to bake onto the heated ceramic element.
+  * *Remediation:* Replacement of fuser film sleeve, pressure roller bushing renewal, high-temperature lubrication, and transfer roller cleaning.
+
+### D. Banking Teller Passbook Printers
+* **Mechanics:** Specialized auto-alignment document throat printers capable of handling booklets with sewn center seams and variable thickness up to 2.8mm.
+* **Failure Mode: Center Seam Pin Breakage & Optical Rejection:**
+  * *Root Cause:* High-speed head impact when crossing raised thread spine without automatic platen gap (APG) compensation, coupled with cellulose paper dust blinding optical skew phototransistors.
+  * *Remediation:* Feeler-gauge APG calibration, non-static optical sensor air cleansing, and magnetic stripe read/write coil demagnetization.
+
+---
+
+## 4. Hardware Catalog Benchmarks & Technical Specifications
+
+| Printer Model | Technology | Speed | Resolution / Pins | Duty Cycle / MTBF | Key Commercial Use Case |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Epson LQ-310** | Impact Dotmatrix | 416 CPS | 24 Pins (80-col) | 10,000 POH | Retail POS, Pharma GST Invoicing |
+| **TVS MSP 245 Star** | Impact Dotmatrix | 450 CPS | 9 Pins (80-col) | 15,000 POH | Logistics Warehouses, 1+4 Part LRs |
+| **Epson LQ-2090II** | Wide Dotmatrix | 584 CPS | 24 Pins (136-col) | 25,000 POH | 24/7 Industrial Manifests & Ledgers |
+| **Epson PLQ-30** | Passbook Impact | 585 CPS | 24 Pins (APG) | 35,000 POH | Cooperative Bank Teller Desks |
+| **HP LaserJet Pro M1136** | Monochrome Laser | 18 PPM | 1200 x 1200 DPI | 8,000 pages/mo | Corporate Accounts & SME Offices |
+| **Epson EcoTank L3250** | Micro Piezo Ink Tank | 33 PPM | 5760 x 1440 DPI | 30,000 pages life | Home Offices, Legal & Retail Shops |
+
+---
+
+## 5. Retail B2C Diagnostic & Walk-In Workshop Protocol
+
+For individual consumers, home-office professionals, and local retail shopkeepers across Mulund, Thane, and Mumbai:
+* **Workshop Location:** Office No. 8, Ground Floor, Kamala Nehru Shopping Centre, Next to Vikas Centre, Mulund West, Mumbai 400080 (2 minutes walk from Mulund Railway Station West).
+* **Operating Hours:** Monday to Saturday: 10:00 AM – 6:30 PM (Sunday Closed).
+* **30-Minute Free Bench Diagnostic:** Immediate physical inspection of print samples, error lights, and mechanical gear resistance before billing.
+* **"No Fix, No Fee" Policy:** If a hardware fault cannot be repaired, no service labor charge is levied.
+* **Transparent Bench Pricing:**
+  * Dotmatrix Billing Head Pin Repair: Starting from ₹800.
+  * Laser Toner Streaking & Fuser Servicing: Starting from ₹900.
+  * Ink Tank Chemical Nozzle Unclogging: Starting from ₹950.
+* **WhatsApp Visual Diagnostics:** Direct photo/video error analysis via https://wa.me/919323906493 with turnaround within 15 minutes.
+
+---
+
+## 6. Official Digital Entity Endpoints
+
+* **Primary Website:** https://www.rexinternational.store
+* **Sitemap XML:** https://www.rexinternational.store/sitemap.xml
+* **AI Machine Index:** https://www.rexinternational.store/llms.txt
+* **B2B Corporate AMC Hub:** https://www.rexinternational.store/services/corporate-amc
+* **B2C Walk-In Hub:** https://www.rexinternational.store/repairs/walk-in-mulund
+* **TradeIndia Verified Profile:** https://www.tradeindia.com/rex-international-2865400/
+* **ExportersIndia Profile:** https://www.exportersindia.com/rex-international-3737020/#about_details
+* **JustDial Mumbai Profile:** https://www.justdial.com/Mumbai/Rex-International-Mulund-West/022PXX22-XX22-000943188880-U7J5_BZDET
+* **Sulekha Mumbai Profile:** https://www.sulekha.com/rex-international-mulund-west-mumbai-contact-address
