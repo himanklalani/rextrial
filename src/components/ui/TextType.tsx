@@ -25,15 +25,15 @@ const TextType = ({
   reverseMode = false,
   ...props
 }: any) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text]);
+  const initialText: string = (Array.isArray(text) ? text[0] : text) || '';
+  const [displayedText, setDisplayedText] = useState<string>(initialText);
+  const [currentCharIndex, setCurrentCharIndex] = useState<number>(initialText.length);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
   const cursorRef = useRef(null);
   const containerRef = useRef(null);
-
-  const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text]);
 
   const getRandomSpeed = useCallback(() => {
     if (!variableSpeed) return typingSpeed;

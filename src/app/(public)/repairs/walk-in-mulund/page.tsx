@@ -6,6 +6,7 @@ import TextType from '@/components/ui/TextType';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { SnapEstimateCTA } from '@/components/ui/SnapEstimateCTA';
 import { TrackedLink } from '@/components/ui/TrackedLink';
+import { WhatsAppShareButton } from '@/components/ui/WhatsAppShareButton';
 
 export const metadata: Metadata = {
   title: 'Printer Repair Shop Mulund West | Walk-In Diagnostics | Rex International',
@@ -126,6 +127,13 @@ export default function MulundWalkInPage() {
             >
               Call Workshop Desk: {siteSettings.phones[0]}
             </TrackedLink>
+            <WhatsAppShareButton
+              title="Rex International Printer Workshop (Mulund West)"
+              url={`${baseUrl}/repairs/walk-in-mulund`}
+              context="repair"
+              label="Forward Workshop Address"
+              className="py-3.5 px-6 rounded-full self-center sm:self-auto"
+            />
           </div>
         </div>
       </section>

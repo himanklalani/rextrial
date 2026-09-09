@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { createWhatsAppGeneralUrl } from '@/lib/utils';
 import { WhatsAppCTA } from '@/components/ui/WhatsAppCTA';
 import { getBaseUrl } from '@/lib/seo';
+import { ExecutiveAmcProposal } from '@/components/features/ExecutiveAmcProposal';
 
 // Tell Next.js to pre-render these pages at build time
 export function generateStaticParams() {
@@ -59,9 +60,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   if (!service) return notFound();
 
   const whatsappUrl = createWhatsAppGeneralUrl();
+  const pageUrl = `${getBaseUrl()}/services/${service.slug}`;
 
   // Service Structured Data
-  const serviceJsonLd = {
+  const serviceJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": service.name,
@@ -72,7 +74,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       "telephone": "+919323906493",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Mumbai",
+        "streetAddress": "Office No. 8, Ground Floor, Kamala Nehru Shopping Centre, Netaji Subhash Road, Next to Vikas Centre",
+        "addressLocality": "Mulund West, Mumbai",
+        "postalCode": "400080",
         "addressRegion": "Maharashtra",
         "addressCountry": "IN"
       }
@@ -89,6 +93,32 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       "price": service.startingPrice.replace(/[^0-9]/g, '')
     }
   };
+
+  if (service.slug === 'corporate-amc') {
+    serviceJsonLd.serviceOutput = "Guaranteed 4-Hour On-Site SLA with Standby Buffer Units";
+    serviceJsonLd.termsOfService = "Comprehensive and Non-Comprehensive Corporate Annual Maintenance Contracts";
+    serviceJsonLd.hasOfferCatalog = {
+      "@type": "OfferCatalog",
+      "name": "Corporate Printer AMC Fleet Tiers",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Small Fleet AMC (3 to 10 Printers)",
+          "description": "Quarterly bench maintenance, 4-hour on-site response SLA, standby buffer guarantee."
+        },
+        {
+          "@type": "Offer",
+          "name": "Mid-Enterprise Fleet AMC (11 to 50 Printers)",
+          "description": "Bi-monthly maintenance, 3-to-4 hour SLA, dedicated hot-swap standby units."
+        },
+        {
+          "@type": "Offer",
+          "name": "Institutional & Banking Network AMC (51 to 500+ Printers)",
+          "description": "Priority 2-to-4 hour escalation SLA, monthly maintenance, passbook & continuous dotmatrix coverage."
+        }
+      ]
+    };
+  }
 
   // FAQ Structured Data
   const faqJsonLd = service.faqs && service.faqs.length > 0 ? {
@@ -181,6 +211,11 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 ))}
               </div>
             </>
+          )}
+
+          {/* Dedicated B2B Executive AMC Teardown (Only for corporate-amc) */}
+          {service.slug === 'corporate-amc' && (
+            <ExecutiveAmcProposal canonicalUrl={pageUrl} />
           )}
 
           {/* CTA Block */}

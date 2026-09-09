@@ -17,6 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const industry = industries.find((i) => i.slug === slug);
   if (!industry) return { title: 'Industry Not Found' };
 
+  const ogImageUrl = 'https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656160/nvqsiexrp4hs3hpb5xeh.jpg';
+
   return {
     title: industry.metaTitle,
     description: industry.metaDescription,
@@ -30,7 +32,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       siteName: 'Rex International',
       type: 'website',
       locale: 'en_IN',
-    }
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${industry.title} - Rex International Mumbai`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: industry.metaTitle,
+      description: industry.metaDescription,
+      images: [ogImageUrl],
+    },
   };
 }
 

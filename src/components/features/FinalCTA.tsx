@@ -26,7 +26,7 @@ export default function FinalCTA() {
       
       {/* Background Graphic */}
       <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
-        <h1 className="text-[20vw] font-bold font-outfit leading-none select-none text-brand-white-pure">REX</h1>
+        <div aria-hidden="true" className="text-[20vw] font-bold font-outfit leading-none select-none text-brand-white-pure">REX</div>
       </div>
 
       <div className="container-inner max-w-4xl mx-auto px-6 text-center relative z-10">

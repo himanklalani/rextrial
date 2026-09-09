@@ -5,6 +5,7 @@ import { services } from '@/lib/data/services';
 import { connectDB, Blog } from '@/lib/db';
 import { getBaseUrl } from '@/lib/seo';
 import { staticBlogs } from '@/lib/data/blogs';
+import { WhatsAppShareButton } from '@/components/ui/WhatsAppShareButton';
 
 export async function generateStaticParams() {
   return staticBlogs.map(blog => ({
@@ -112,21 +113,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         "image": heroImage,
         "author": {
           "@type": "Person",
-          "name": blog.author || "Virat Lalani",
-          "jobTitle": "Lead Printing Systems Engineer",
+          "name": blog.author || "Hansraj Lalani",
+          "jobTitle": "Co-Founder & Senior Hardware Specialist",
           "worksFor": {
-            "@type": "Organization",
-            "name": "Rex International",
-            "url": siteUrl
+            "@type": "LocalBusiness",
+            "name": "Rex International"
           }
         },
         "publisher": {
           "@type": "Organization",
           "name": "Rex International",
-          "url": siteUrl,
           "logo": {
             "@type": "ImageObject",
-            "url": `${siteUrl}/icon.png`
+            "url": `${siteUrl}/og-image.jpg`
           }
         },
         "datePublished": blog.publishedAt,
@@ -168,12 +167,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {blog.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-brand-dark-muted font-mono">
-            <span className="font-semibold text-brand-dark">By {blog.author}</span>
-            <span>•</span>
-            <time suppressHydrationWarning>
-              {new Date(blog.publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
-            </time>
+          <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-brand-dark-muted font-mono">
+            <div className="flex items-center gap-4">
+              <span className="font-semibold text-brand-dark">By {blog.author}</span>
+              <span>•</span>
+              <time suppressHydrationWarning>
+                {new Date(blog.publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+              </time>
+            </div>
+            <WhatsAppShareButton
+              title={blog.title}
+              url={`${siteUrl}/blogs/${blog.slug}`}
+              context="blog"
+              label="Forward on WhatsApp"
+            />
           </div>
 
           {/* Hero Featured Article Image */}
@@ -192,6 +199,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           className="prose prose-lg prose-brand max-w-none text-brand-dark/85 leading-relaxed font-sans"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
+
+        {/* Article Bottom Share & Community Forward */}
+        <div className="mt-10 p-6 bg-brand-white-pure rounded-2xl border border-brand-gray/20 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-green block mb-1">
+              Found this analysis useful?
+            </span>
+            <p className="text-sm text-brand-dark font-medium">
+              Forward this technical teardown to your CFO, IT administrator, or operations team.
+            </p>
+          </div>
+          <WhatsAppShareButton
+            title={blog.title}
+            url={`${siteUrl}/blogs/${blog.slug}`}
+            context="blog"
+            label="Share via WhatsApp"
+            className="shrink-0"
+          />
+        </div>
 
         {/* Dual-Intent B2B + B2C Conversion & SEO Internal Linking Firewall */}
         <section className="mt-16 pt-12 border-t border-brand-gray/20">

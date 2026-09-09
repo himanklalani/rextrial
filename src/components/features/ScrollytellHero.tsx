@@ -287,7 +287,7 @@ export default function ScrollytellHero({ children }: ScrollytellHeroProps) {
             willChange:    'opacity',
           }}
         >
-          {heroOpacity > 0 && children}
+          {children}
         </div>
       </div>
     </div>

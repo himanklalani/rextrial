@@ -6,6 +6,7 @@ import { getBaseUrl } from '@/lib/seo';
 import TextType from '@/components/ui/TextType';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { SnapEstimateCTA } from '@/components/ui/SnapEstimateCTA';
+import { WhatsAppShareButton } from '@/components/ui/WhatsAppShareButton';
 
 export function generateStaticParams() {
   return repairs.map((rep) => ({
@@ -17,6 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const repair = repairs.find((r) => r.slug === slug);
   if (!repair) return { title: 'Repair Solution Not Found' };
+
+  const ogImageUrl = 'https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782656160/nvqsiexrp4hs3hpb5xeh.jpg';
 
   return {
     title: repair.metaTitle,
@@ -31,7 +34,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       siteName: 'Rex International',
       type: 'article',
       locale: 'en_IN',
-    }
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${repair.title} - Rex International Mumbai`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: repair.metaTitle,
+      description: repair.metaDescription,
+      images: [ogImageUrl],
+    },
   };
 }
 
@@ -101,48 +118,56 @@ export default async function RepairDetailPage({ params }: { params: Promise<{ s
               <li>/</li>
               <li><Link href="/repairs" className="hover:text-brand-green transition-colors">Repairs</Link></li>
               <li>/</li>
-              <li className="text-brand-white-pure font-bold truncate">{repair.title}</li>
+              <li className="text-brand-white-pure font-semibold truncate">{repair.printerCategory}</li>
             </ol>
           </nav>
         </div>
       </div>
 
-      {/* Hero Header */}
-      <section className="py-16 md:py-24 bg-brand-dark text-brand-white-pure border-b-4 border-brand-green">
+      {/* Hero Section */}
+      <section className="bg-brand-dark text-brand-white-pure pt-10 pb-16">
         <div className="container-inner max-w-6xl mx-auto px-4">
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-green border border-brand-green/30 px-3.5 py-1.5 rounded-full">
-              {repair.printerCategory}
-            </span>
-            <span className="text-xs font-mono text-brand-gray-light/60">
-              Starting from {repair.startingPrice} • {repair.turnaroundTime}
-            </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-mono font-semibold tracking-wider uppercase mb-6">
+            <span>🔧</span>
+            <span>Diagnostic & Repair Protocol</span>
           </div>
 
           <TextType
             as="h1"
-            className="text-3xl sm:text-5xl md:text-6xl font-bold font-outfit tracking-tight mb-6 leading-[1.1] max-w-4xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-outfit tracking-tight mb-6 leading-tight max-w-4xl"
             text={repair.headline}
-            typingSpeed={35}
+            typingSpeed={30}
             startOnVisible={true}
             loop={false}
           />
+
           <p className="text-lg md:text-xl text-brand-gray-light/80 max-w-3xl font-light leading-relaxed mb-8">
             {repair.subheadline}
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-2">
-            <div className="bg-brand-white-pure/10 border border-brand-white-pure/15 px-5 py-3 rounded-2xl">
-              <span className="text-xs text-brand-gray-light/60 uppercase tracking-wider block">Transparent Price</span>
-              <span className="text-xl font-bold font-outfit text-brand-green">{repair.startingPrice}</span>
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-brand-white-pure/10">
+            <div className="flex flex-wrap gap-3">
+              <div className="bg-brand-white-pure/10 border border-brand-white-pure/15 px-4 py-2.5 rounded-xl">
+                <span className="text-[11px] text-brand-gray-light/60 uppercase tracking-wider block">Transparent Price</span>
+                <span className="text-lg font-bold font-outfit text-brand-green">{repair.startingPrice}</span>
+              </div>
+              <div className="bg-brand-white-pure/10 border border-brand-white-pure/15 px-4 py-2.5 rounded-xl">
+                <span className="text-[11px] text-brand-gray-light/60 uppercase tracking-wider block">Turnaround</span>
+                <span className="text-lg font-bold font-outfit text-brand-white-pure">{repair.turnaroundTime}</span>
+              </div>
+              <div className="bg-brand-white-pure/10 border border-brand-white-pure/15 px-4 py-2.5 rounded-xl">
+                <span className="text-[11px] text-brand-gray-light/60 uppercase tracking-wider block">Warranty</span>
+                <span className="text-lg font-bold font-outfit text-brand-white-pure">{repair.warranty}</span>
+              </div>
             </div>
-            <div className="bg-brand-white-pure/10 border border-brand-white-pure/15 px-5 py-3 rounded-2xl">
-              <span className="text-xs text-brand-gray-light/60 uppercase tracking-wider block">Turnaround</span>
-              <span className="text-xl font-bold font-outfit text-brand-white-pure">{repair.turnaroundTime}</span>
-            </div>
-            <div className="bg-brand-white-pure/10 border border-brand-white-pure/15 px-5 py-3 rounded-2xl">
-              <span className="text-xs text-brand-gray-light/60 uppercase tracking-wider block">Warranty</span>
-              <span className="text-xl font-bold font-outfit text-brand-white-pure">{repair.warranty}</span>
+
+            <div>
+              <WhatsAppShareButton
+                title={repair.title}
+                url={`${baseUrl}/repairs/${repair.slug}`}
+                context="repair"
+                label="Forward Guide on WhatsApp"
+              />
             </div>
           </div>
         </div>
