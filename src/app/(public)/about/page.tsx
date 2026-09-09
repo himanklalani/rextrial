@@ -47,6 +47,13 @@ export default async function AboutPage() {
           "name": settings.name
         },
         "description": "Managing Partner at Rex International, leading enterprise AMC contracts and component-level printer repair operations in Mumbai."
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": baseUrl,
+        "name": settings.name,
+        "url": baseUrl,
+        "sameAs": settings.directories || []
       }
     ]
   };

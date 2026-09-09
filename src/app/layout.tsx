@@ -33,6 +33,7 @@ export default function RootLayout({
     "email": siteSettings.email,
     "priceRange": "₹₹",
     "foundingDate": "1980",
+    "sameAs": siteSettings.directories || [],
     "founder": [
       {
         "@type": "Person",

@@ -16,6 +16,7 @@ export interface SiteSettings {
   email: string;
   address: string;
   socialLinks?: Record<string, string>;
+  directories?: string[];
   seo: SeoMetadata;
 }
 

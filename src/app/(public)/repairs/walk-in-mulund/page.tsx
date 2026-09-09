@@ -34,6 +34,7 @@ export default function MulundWalkInPage() {
     "url": `${baseUrl}/repairs/walk-in-mulund`,
     "telephone": siteSettings.phones[0],
     "priceRange": "₹₹",
+    "sameAs": siteSettings.directories || [],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Office No. 8, Ground Floor, Next to Vikas Centre, Kamala Nehru Shopping Centre, Netaji Subhash Road",
