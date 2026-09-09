@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "Rex International",
   description: "Professional B2B & B2C provider of printers, parts, peripherals, and consumables.",
-  url: "https://rexinternational.store",
+  url: "https://www.rexinternational.store",
+
 };
 
 export const navLinks = [
