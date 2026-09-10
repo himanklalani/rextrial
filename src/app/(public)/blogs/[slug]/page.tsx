@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${blog.title} | Rex Technical Insights`,
     description: blog.excerpt,
     alternates: {
-      canonical: `${getBaseUrl()}/blogs/${blog.slug}`,
+      canonical: `/blogs/${blog.slug}`,
     },
     openGraph: {
       title: blog.title,

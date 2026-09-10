@@ -1,15 +1,15 @@
 import { siteSettings } from './data/site-settings';
 import { Metadata } from 'next';
 
+export const CANONICAL_DOMAIN = 'https://www.rexinternational.store';
+
 export const getBaseUrl = () => {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
-  if (process.env.NODE_ENV === 'production') return 'https://www.rexinternational.store';
-  if (process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  return 'http://localhost:3000';
+  return CANONICAL_DOMAIN;
 };
 
 export const defaultMetadata: Metadata = {
-  metadataBase: new URL(getBaseUrl()),
+  metadataBase: new URL(CANONICAL_DOMAIN),
   title: {
     default: siteSettings.seo.title,
     template: `%s | ${siteSettings.name}`,

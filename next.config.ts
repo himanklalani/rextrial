@@ -47,12 +47,27 @@ const nextConfig: NextConfig = {
     ],
   },
   async headers() {
-    return [
+    const headers = [
       {
         source: '/(.*)',
         headers: securityHeaders,
       },
     ];
+
+    // Block search engines from crawling or indexing Vercel preview deployments
+    if (process.env.VERCEL_ENV === 'preview') {
+      headers.push({
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      });
+    }
+
+    return headers;
   },
 };
 
