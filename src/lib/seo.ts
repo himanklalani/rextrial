@@ -42,9 +42,16 @@ export const defaultMetadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/v1782656902/wur9hcztdgxrocavrgep.png',
-    shortcut: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/v1782656902/wur9hcztdgxrocavrgep.png',
-    apple: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/v1782656902/wur9hcztdgxrocavrgep.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+      { url: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/v1782656902/wur9hcztdgxrocavrgep.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: 'https://res.cloudinary.com/dl4ohcjuk/image/upload/v1782656902/wur9hcztdgxrocavrgep.png' },
+    ],
   },
   robots: {
     index: true,
