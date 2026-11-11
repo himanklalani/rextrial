@@ -34,7 +34,7 @@ export default async function AboutPage() {
           "name": settings.name
         },
         "image": "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto/q_auto/v1784970762/vdlx8g5rgwnaqiafmbnn.png",
-        "description": "Founder of Rex International, pioneering industrial dotmatrix printer and ribbon cartridge manufacturing in Mumbai since 1980."
+        "description": "Founder of Rex International, pioneering corporate dotmatrix printer solutions and ribbon cartridge manufacturing in Mumbai since 1980."
       },
       {
         "@type": "Person",
@@ -95,7 +95,7 @@ export default async function AboutPage() {
               />
               <div className="h-1 w-24 bg-brand-green mb-8"></div>
               <p className="text-xl md:text-2xl text-brand-dark-muted leading-relaxed font-outfit font-light mb-8">
-                Engineering uptime for Mumbai's industrial sector since 1980.
+                Engineering uptime for Mumbai's corporate and commercial sectors since 1980.
               </p>
               
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-gray/30 group">

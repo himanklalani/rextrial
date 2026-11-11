@@ -115,7 +115,7 @@ export function ScrollChoreography({
               {content?.topLeftText || (
                 <>
                   <h3 className="text-2xl font-bold mb-2 font-outfit text-brand-green">Global Reach</h3>
-                  <p className="text-sm text-brand-dark-muted">Connecting enterprises worldwide with reliable industrial printing hardware.</p>
+                  <p className="text-sm text-brand-dark-muted">Connecting enterprises and businesses with reliable corporate printing hardware.</p>
                 </>
               )}
             </div>

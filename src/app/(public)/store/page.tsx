@@ -1,13 +1,16 @@
+import type { Metadata } from "next";
 import { getAllProducts } from "@/lib/data/queries";
 import { ProductCard } from "@/components/features/ProductCard";
 import StoreClientMobile from "@/components/features/StoreClientMobile";
 import TextType from "@/components/ui/TextType";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata = {
-  title: "Printers & Parts Catalog | Rex International Mumbai",
-  description: "Browse Rex International's hardware catalog of industrial dotmatrix, laser, and ink tank printers in Mumbai. Epson, HP, Canon, Brother, TVS. B2B & B2C pricing available.",
-  alternates: { canonical: '/store' }
+export const metadata: Metadata = {
+  title: "Printer Hardware & Peripherals Store | Rex International",
+  description: "Browse Rex International's hardware catalog of corporate dotmatrix, laser, and ink tank printers in Mumbai. Epson, HP, Canon, Brother, TVS. B2B & B2C pricing available.",
+  alternates: {
+    canonical: "/store",
+  },
 };
 
 export default async function StorePage() {
@@ -43,7 +46,7 @@ export default async function StorePage() {
           <div className="md:col-span-4 lg:col-span-3 pb-2">
             <div className="text-base md:text-lg text-brand-dark-muted border-l border-brand-green pl-6 py-2">
               <ScrollReveal baseOpacity={0} blurStrength={10} enableBlur={true}>
-                Curated inventory of industrial dotmatrix machines, laser units, and ink tank systems.
+                Curated inventory of corporate dotmatrix machines, laser units, and ink tank systems for B2B and B2C.
               </ScrollReveal>
             </div>
           </div>

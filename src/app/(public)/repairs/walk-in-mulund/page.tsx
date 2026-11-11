@@ -9,7 +9,7 @@ import { TrackedLink } from '@/components/ui/TrackedLink';
 import { WhatsAppShareButton } from '@/components/ui/WhatsAppShareButton';
 
 export const metadata: Metadata = {
-  title: 'Printer Repair Shop Mulund West | Walk-In Diagnostics | Rex International',
+  title: 'Printer Repair Shop Mulund West | Walk-In Diagnostics',
   description: 'Walk-in printer repair workshop in Mulund West. Fast 30-minute bench diagnostic, No Fix No Fee, Epson, HP, Canon, TVS. 2 mins from Mulund Station.',
   alternates: { canonical: '/repairs/walk-in-mulund' },
   keywords: [

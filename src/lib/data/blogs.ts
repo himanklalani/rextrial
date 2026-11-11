@@ -195,13 +195,13 @@ export const staticBlogs: StaticBlog[] = [
   {
     id: "blog-top-dotmatrix-printers-2026",
     slug: "top-industrial-dotmatrix-printers-invoicing-2026",
-    title: "Top 5 Industrial Dotmatrix Printers for High-Volume Invoicing in 2026 (Epson vs. TVS Comparison)",
-    excerpt: "Comprehensive technical comparison of the top 5 industrial dotmatrix workhorses for GST continuous invoicing, transport waybills, and retail billing. We compare Epson LQ-310, TVS MSP 245, Epson LQ-2090II, TVS MSP 250 Champion, and Epson PLQ-30 on print speed, multi-part carbon copy penetration, MTBF, and ribbon cost-per-page.",
+    title: "Top 5 Corporate Dotmatrix Printers for High-Volume Invoicing in 2026 (Epson vs. TVS Comparison)",
+    excerpt: "Comprehensive technical comparison of the top 5 corporate dotmatrix workhorses for GST continuous invoicing, transport waybills, and retail billing. We compare Epson LQ-310, TVS MSP 245, Epson LQ-2090II, TVS MSP 250 Champion, and Epson PLQ-30 on print speed, multi-part carbon copy penetration, MTBF, and ribbon cost-per-page.",
     relatedServiceSlug: "dotmatrix-head-repair",
     author: "Virat Lalani",
     publishedAt: "2026-08-28T10:00:00.000Z",
     readTime: "9 min read",
-    category: "Industrial Hardware & Logistics",
+    category: "Corporate Hardware & Logistics",
     imageUrl: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782653597/ub0fz4fjv6ineu68wtrb.png",
     content: `
       <div class="bg-brand-gray-light/40 border-l-4 border-brand-green p-5 my-6 rounded-r-xl">
@@ -214,7 +214,7 @@ export const staticBlogs: StaticBlog[] = [
       <h2>Why Dotmatrix Remains Indispensable for Indian Commerce</h2>
       <p>In an era dominated by laser and cloud invoicing, high-volume logistics hubs, pharma clearing & forwarding agencies, wholesale grain mandis, and retail supermarkets throughout Mumbai rely on impact dotmatrix printers. The reasons are economic and operational: unmatched cost-per-page (less than 15 paise), total resistance to warehouse dust and extreme heat, and the legal requirement to generate physical carbon-copy multi-part receipts (such as 4-part LRs and delivery challans) in a single pass.</p>
 
-      <p>Having serviced, repaired, and supplied impact printing hardware since 1980, Rex International provides an unvarnished engineering comparison of the 5 top industrial dotmatrix machines in the Indian market for 2026.</p>
+      <p>Having serviced, repaired, and supplied impact printing hardware since 1980, Rex International provides an unvarnished engineering comparison of the 5 top corporate dotmatrix machines in the Indian market for 2026.</p>
 
       <h2>The Top 5 Heavy-Duty Workhorses Compared</h2>
 
@@ -253,7 +253,7 @@ export const staticBlogs: StaticBlog[] = [
               <td class="p-3 font-semibold text-brand-green">584 CPS</td>
               <td class="p-3">1 + 6 Copies</td>
               <td class="p-3">25,000 POH</td>
-              <td class="p-3">136-Col Industrial Wide Ledger</td>
+              <td class="p-3">136-Col Corporate Wide Ledger</td>
             </tr>
             <tr class="border-b border-brand-gray/20 bg-brand-gray-light/20">
               <td class="p-3 font-bold text-brand-dark">4. TVS MSP 250 Champion</td>

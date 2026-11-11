@@ -24,7 +24,7 @@ export function WhatsAppShareButton({
   if (context === 'repair') {
     shareText = `Check out this printer repair guide / workshop in Mulund West (Rex International):\n\n*${title}*\n${targetUrl}\n\n📍 Office No. 8, Kamala Nehru Shopping Centre, Mulund West, Mumbai. Mon–Sat 10am–6:30pm.`;
   } else if (context === 'blog') {
-    shareText = `Check out this technical printer guide by Rex International (Mulund West):\n\n*${title}*\n${targetUrl}\n\nIndustrial printer specialists since 1980.`;
+    shareText = `Check out this technical printer guide by Rex International (Mulund West):\n\n*${title}*\n${targetUrl}\n\nCorporate & commercial printer specialists since 1980.`;
   } else {
     shareText = `Check out ${title} from Rex International (Mulund West):\n${targetUrl}`;
   }

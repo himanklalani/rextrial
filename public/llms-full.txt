@@ -89,7 +89,7 @@ Over 70% of electromechanical printer failures are caused by environmental paper
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Epson LQ-310** | Impact Dotmatrix | 416 CPS | 24 Pins (80-col) | 10,000 POH | Retail POS, Pharma GST Invoicing |
 | **TVS MSP 245 Star** | Impact Dotmatrix | 450 CPS | 9 Pins (80-col) | 15,000 POH | Logistics Warehouses, 1+4 Part LRs |
-| **Epson LQ-2090II** | Wide Dotmatrix | 584 CPS | 24 Pins (136-col) | 25,000 POH | 24/7 Industrial Manifests & Ledgers |
+| **Epson LQ-2090II** | Wide Dotmatrix | 584 CPS | 24 Pins (136-col) | 25,000 POH | 24/7 Warehouse Manifests & Corporate Ledgers |
 | **Epson PLQ-30** | Passbook Impact | 585 CPS | 24 Pins (APG) | 35,000 POH | Cooperative Bank Teller Desks |
 | **HP LaserJet Pro M1136** | Monochrome Laser | 18 PPM | 1200 x 1200 DPI | 8,000 pages/mo | Corporate Accounts & SME Offices |
 | **Epson EcoTank L3250** | Micro Piezo Ink Tank | 33 PPM | 5760 x 1440 DPI | 30,000 pages life | Home Offices, Legal & Retail Shops |

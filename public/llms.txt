@@ -1,4 +1,4 @@
-# Rex International — Industrial & Retail Printing Systems (Mumbai)
+# Rex International — Corporate & Retail Printing Systems (Mumbai)
 
 > Founded in 1980 by Hansraj Lalani and Virat Lalani, Rex International is an enterprise B2B printing fleet partner and trusted retail B2C engineering workshop specializing in Dotmatrix, Laser, Ink Tank, and Passbook printing hardware, component-level repairs, and corporate Annual Maintenance Contracts (AMCs) across Mumbai, Maharashtra, India.
 
@@ -43,7 +43,7 @@ Rex International provides SLA-backed corporate maintenance agreements dispatche
 ---
 
 ## Hardware Store & Consumables Catalog
-* [Online Hardware & Consumables Catalog](https://www.rexinternational.store/store): Authentic OEM and industrial-grade printers, printhead modules, fuser assemblies, nylon tractor gears, ribbon cartridges, and inks.
+* [Online Hardware & Consumables Catalog](https://www.rexinternational.store/store): Authentic OEM and corporate-grade printers, printhead modules, fuser assemblies, nylon tractor gears, ribbon cartridges, and inks.
 * [Epson LQ-310 Dotmatrix Printer](https://www.rexinternational.store/store/epson-lq-310-dotmatrix): 24-pin high-speed impact printer (416 CPS) for retail POS and GST invoicing.
 * [HP LaserJet Pro M1136 MFP](https://www.rexinternational.store/store/hp-laserjet-pro-m1136): Workhorse monochrome multifunction office laser printer.
 * [Epson EcoTank L3250](https://www.rexinternational.store/store/epson-ecotank-l3250): High-yield wireless all-in-one ink tank printer for SMBs and home offices.
@@ -53,7 +53,7 @@ Rex International provides SLA-backed corporate maintenance agreements dispatche
 ## Technical Authority Engineering Insights
 * [The Ultimate Guide to Corporate Printer AMCs](https://www.rexinternational.store/blogs/corporate-printer-amc-guide-mumbai): Comprehensive vs. Non-Comprehensive contract breakdown, 4-hour SLA standards, and fleet TCO reduction.
 * [Why Epson EcoTank Heads Clog in Mumbai Summers](https://www.rexinternational.store/blogs/epson-ecotank-blank-lines-nozzle-flush): Micro Piezo crystal physics, evaporation mechanisms, and the 3-stage ultrasonic chemical flush bench protocol.
-* [Top 5 Industrial Dotmatrix Printers for Invoicing in 2026](https://www.rexinternational.store/blogs/top-industrial-dotmatrix-printers-invoicing-2026): Technical comparison of Epson LQ-310, TVS MSP 245 Star, Epson LQ-2090II, TVS MSP 250 Champion, and Epson PLQ-30.
+* [Top 5 Corporate Dotmatrix Printers for Invoicing in 2026](https://www.rexinternational.store/blogs/top-industrial-dotmatrix-printers-invoicing-2026): Technical comparison of Epson LQ-310, TVS MSP 245 Star, Epson LQ-2090II, TVS MSP 250 Champion, and Epson PLQ-30.
 * [Passbook Printer Maintenance for Cooperative Banks](https://www.rexinternational.store/blogs/passbook-printer-maintenance-banking-sla): Preventing printhead needle snapping on center booklet seams, optical throat sensor clearing, and 4-hour SLA branch hot-swaps.
 
 ---

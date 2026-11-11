@@ -41,7 +41,7 @@ export default function RootLayout({
       "Epson Micro Piezo Ultrasonic Chemical Nozzle Flushing",
       "Laser Printer Fuser Film & Pressure Roller Overhaul",
       "Passbook Printer Automatic Platen Gap Calibration",
-      "Industrial Continuous Invoicing & Waybill Printing"
+      "Corporate Continuous Invoicing & Waybill Printing"
     ],
     "founder": [
       {

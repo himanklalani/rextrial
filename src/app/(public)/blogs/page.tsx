@@ -6,7 +6,7 @@ import { staticBlogs } from '@/lib/data/blogs';
 
 export const metadata: Metadata = {
   title: 'Technical Insights & Engineering Guides | Rex International Mumbai',
-  description: 'Authoritative engineering guides on corporate printer AMCs, Epson EcoTank nozzle chemical flushes, industrial dotmatrix printers, and banking passbook SLAs.',
+  description: 'Authoritative engineering guides on corporate printer AMCs, Epson EcoTank nozzle chemical flushes, corporate dotmatrix printers, and banking passbook SLAs.',
   alternates: { canonical: '/blogs' }
 };
 
@@ -210,7 +210,7 @@ export default async function BlogsPage() {
                 href="/industries"
                 className="border border-white/20 text-white font-medium px-5 py-2.5 rounded text-sm hover:bg-white/10 transition-colors"
               >
-                Browse Industries
+                Corporate Fleet Solutions
               </Link>
             </div>
           </div>

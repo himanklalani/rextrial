@@ -19,9 +19,9 @@ export const siteSettings: SiteSettings = {
     "https://www.sulekha.com/rex-international-mulund-west-mumbai-contact-address"
   ],
   seo: {
-    title: "Rex International | Industrial Printers, Parts & Peripherals",
+    title: "Rex International | Corporate & Commercial Printers, Parts & Peripherals",
     description: "Your trusted B2B & B2C provider of Dotmatrix, Laser, and Ink Tank printers, essential spare parts, and dedicated repair services with over 45 years of industry expertise.",
-    keywords: ["Dotmatrix printers", "Laser printers", "Ink tank printers", "Printer parts", "Computer peripherals", "Printer consumables", "Rex International", "Printer repair Mumbai"]
+    keywords: ["Corporate printers", "Commercial printers", "Dotmatrix printers", "Laser printers", "Ink tank printers", "Printer parts", "Computer peripherals", "Printer consumables", "Rex International", "Printer repair Mumbai"]
   }
 };
 

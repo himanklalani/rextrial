@@ -163,8 +163,8 @@ export const products: Product[] = [
         description: "Many government departments and statutory bodies still require physical carbon copy impressions for official documents. The MSP 250 Champion's multipart printing capability, supporting 1 original and 3 carbon copies simultaneously, fulfils this requirement reliably."
       },
       {
-        title: "Workshop & Industrial Environments",
-        description: "In dusty automotive workshops, manufacturing floors, and industrial units, the MSP 250 Champion's sealed dustproof mechanism and wide voltage tolerance make it the only printer category that can operate reliably without constant cleaning and maintenance."
+        title: "Commercial & Business Environments",
+        description: "In dusty automotive workshops, dispatch offices, and commercial units, the MSP 250 Champion's sealed dustproof mechanism and wide voltage tolerance make it the only printer category that can operate reliably without constant cleaning and maintenance."
       }
     ],
     specifications: {
@@ -178,7 +178,7 @@ export const products: Product[] = [
     isAvailable: true,
     seo: {
       title: "TVS MSP 250 Champion Dotmatrix Printer | Buy in Mumbai",
-      description: "Buy the TVS MSP 250 Champion heavy duty dotmatrix printer in Mumbai. ₹9,000–₹11,000. 450 cps, 40M char ribbon life. Ideal for FMCG distribution, pharma & industrial environments."
+      description: "Buy the TVS MSP 250 Champion heavy duty dotmatrix printer in Mumbai. ₹9,000–₹11,000. 450 cps, 40M char ribbon life. Ideal for FMCG distribution, pharma & corporate environments."
     }
   },
   {
@@ -314,7 +314,7 @@ export const products: Product[] = [
       },
       {
         title: "Demanding Print Environments",
-        description: "Ideal for industrial, warehousing, and wholesale environments needing robust, continuous operation with minimal downtime."
+        description: "Ideal for corporate, warehousing, and wholesale environments needing robust, continuous operation with minimal downtime."
       }
     ],
     specifications: {

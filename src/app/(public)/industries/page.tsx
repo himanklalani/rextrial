@@ -7,7 +7,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import { getBaseUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Industry Vertical Printing Solutions & Fleet AMCs | Rex International Mumbai',
+  title: 'Corporate Sector Printing Solutions & Fleet AMCs | Rex International Mumbai',
   description: 'Enterprise printer fleet management, dedicated 4-hour SLA AMCs, and heavy-duty hardware supply for Banking, Logistics, and Healthcare across Mumbai & Maharashtra.',
   alternates: { canonical: '/industries' }
 };
@@ -16,7 +16,7 @@ export default function IndustriesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Rex International Industry Printing Solutions",
+    "name": "Rex International Corporate Printing Solutions",
     "itemListElement": industries.map((ind, idx) => ({
       "@type": "ListItem",
       "position": idx + 1,
@@ -41,13 +41,13 @@ export default function IndustriesPage() {
           <TextType
             as="h1"
             className="text-4xl sm:text-5xl md:text-7xl font-bold font-outfit tracking-tight mb-6 leading-[1.05]"
-            text="Industry-Tailored Fleet Infrastructure."
+            text="Corporate & Enterprise Fleet Infrastructure."
             typingSpeed={40}
             startOnVisible={true}
             loop={false}
           />
           <p className="text-lg md:text-2xl text-brand-gray-light/80 max-w-3xl font-light leading-relaxed mb-8">
-            Standard multi-brand IT vendors provide generic reactive repairs. Rex International engineers dedicated hardware fleets, spare buffers, and guaranteed on-site SLAs for sectors where printer downtime directly halts business operations.
+            Standard multi-brand IT vendors provide generic reactive repairs. Rex International engineers dedicated corporate hardware fleets, spare buffers, and guaranteed on-site SLAs for sectors where printer downtime directly halts business operations.
           </p>
 
           {/* Quick Metrics */}
@@ -121,7 +121,7 @@ export default function IndustriesPage() {
                   href={`/industries/${ind.slug}`}
                   className="w-full text-center py-3.5 px-6 rounded-xl bg-brand-dark text-brand-white-pure font-bold text-sm hover:bg-brand-green transition-colors"
                 >
-                  Explore Industry SLA →
+                  Explore Corporate SLA →
                 </Link>
               </div>
             ))}

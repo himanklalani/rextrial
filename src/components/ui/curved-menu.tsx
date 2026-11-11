@@ -58,7 +58,7 @@ const defaultNavItems: iNavItem[] = [
 		imgSrc: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654200/s81miperhij7z71hc8ph.png",
 	},
 	{
-		heading: "Industries",
+		heading: "Corporate Fleet",
 		href: "/industries",
 		subheading: "B2B Fleet AMCs & Solutions",
 		imgSrc: "https://res.cloudinary.com/dl4ohcjuk/image/upload/f_auto,q_auto/v1782654200/s81miperhij7z71hc8ph.png",
