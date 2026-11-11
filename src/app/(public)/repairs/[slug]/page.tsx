@@ -134,7 +134,7 @@ export default async function RepairDetailPage({ params }: { params: Promise<{ s
 
           <TextType
             as="h1"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-outfit tracking-tight mb-6 leading-tight max-w-4xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-outfit text-brand-white-pure tracking-tight mb-6 leading-tight max-w-4xl"
             text={repair.headline}
             typingSpeed={30}
             startOnVisible={true}

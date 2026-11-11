@@ -137,7 +137,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
 
           <TextType
             as="h1"
-            className="text-3xl sm:text-5xl md:text-6xl font-bold font-outfit tracking-tight mb-6 leading-[1.1] max-w-4xl"
+            className="text-3xl sm:text-5xl md:text-6xl font-bold font-outfit text-brand-white-pure tracking-tight mb-6 leading-[1.1] max-w-4xl"
             text={industry.headline}
             typingSpeed={35}
             startOnVisible={true}

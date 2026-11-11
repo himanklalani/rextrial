@@ -7,6 +7,7 @@ import { createWhatsAppGeneralUrl } from '@/lib/utils';
 import { ScrollChoreography } from '@/components/ui/scroll-choreography';
 import LegacyTrustSection from '@/components/features/LegacyTrustSection';
 import HardwareSection from '@/components/features/HardwareSection';
+import HomeKnowledgeSection from '@/components/features/HomeKnowledgeSection';
 import FinalCTA from '@/components/features/FinalCTA';
 
 import HeroOverlay from '@/components/features/HeroOverlay';
@@ -52,6 +53,9 @@ export default function HomePage() {
 
       {/* Hardware Section */}
       <HardwareSection />
+
+      {/* Engineering Insights & Technical Guides (Internal Crawl & Authority Engine) */}
+      <HomeKnowledgeSection />
 
       {/* Final CTA */}
       <FinalCTA />

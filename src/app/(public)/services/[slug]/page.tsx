@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { services } from '@/lib/data/services';
+import { staticBlogs } from '@/lib/data/blogs';
 import Link from 'next/link';
 import { createWhatsAppGeneralUrl } from '@/lib/utils';
 import { WhatsAppCTA } from '@/components/ui/WhatsAppCTA';
@@ -63,6 +64,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   const whatsappUrl = createWhatsAppGeneralUrl();
   const pageUrl = `${getBaseUrl()}/services/${service.slug}`;
+  const relatedBlog = staticBlogs.find((b) => b.relatedServiceSlug === slug);
 
   // Service Structured Data
   const serviceJsonLd: Record<string, unknown> = {
@@ -272,6 +274,29 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 ))}
               </div>
             </>
+          )}
+
+          {/* Deep-Dive Technical Field Guide Linking (Topic Cluster Crawl Boost) */}
+          {relatedBlog && (
+            <div className="mt-10 p-6 rounded-2xl bg-brand-white-pure/5 border border-brand-green/30 not-prose flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-brand-green block mb-1">
+                  Recommended In-Depth Guide
+                </span>
+                <h4 className="text-base font-bold text-brand-white-pure font-outfit">
+                  {relatedBlog.title}
+                </h4>
+                <p className="text-xs text-brand-gray-light/70 mt-1 line-clamp-1">
+                  {relatedBlog.excerpt}
+                </p>
+              </div>
+              <Link
+                href={`/blogs/${relatedBlog.slug}`}
+                className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand-green text-brand-white-pure text-xs font-bold font-mono hover:bg-brand-green-dark transition-colors"
+              >
+                Read Field Guide →
+              </Link>
+            </div>
           )}
 
           {/* Internal linking to related pages */}

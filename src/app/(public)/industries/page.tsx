@@ -40,7 +40,7 @@ export default function IndustriesPage() {
           </span>
           <TextType
             as="h1"
-            className="text-4xl sm:text-5xl md:text-7xl font-bold font-outfit tracking-tight mb-6 leading-[1.05]"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold font-outfit text-brand-white-pure tracking-tight mb-6 leading-[1.05]"
             text="Corporate & Enterprise Fleet Infrastructure."
             typingSpeed={40}
             startOnVisible={true}

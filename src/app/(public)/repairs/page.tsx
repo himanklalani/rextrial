@@ -42,7 +42,7 @@ export default function RepairsIndexPage() {
           </span>
           <TextType
             as="h1"
-            className="text-4xl sm:text-5xl md:text-7xl font-bold font-outfit tracking-tight mb-6 leading-[1.05]"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold font-outfit text-brand-white-pure tracking-tight mb-6 leading-[1.05]"
             text="Transparent Diagnostics. Real Component Repairs."
             typingSpeed={35}
             startOnVisible={true}

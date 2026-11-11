@@ -49,8 +49,9 @@ export default function Footer() {
           {/* Services & Solutions */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <h4 className="font-bold text-brand-white-pure mb-6 uppercase tracking-widest text-sm">Services & Repairs</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li><Link href="/services/corporate-amc" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Corporate Printer AMC</Link></li>
+              <li><Link href="/services/dotmatrix-head-repair" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Dotmatrix Printhead Repair</Link></li>
               <li><Link href="/industries" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Corporate Fleet Solutions</Link></li>
               <li><Link href="/repairs/walk-in-mulund" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Mulund Walk-In Workshop</Link></li>
               <li><Link href="/repairs" className="text-brand-gray-light/70 hover:text-brand-white-pure transition-colors text-sm font-medium">Troubleshooting & Repairs</Link></li>
@@ -103,6 +104,49 @@ export default function Footer() {
             </ul>
           </div>
 
+        </div>
+
+        {/* Technical Guides & Knowledge Strip for Crawler Indexing & User Value */}
+        <div className="pt-8 pb-10 border-t border-brand-white-pure/10 mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <h4 className="font-bold text-brand-white-pure uppercase tracking-widest text-xs flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-brand-green"></span>
+              Technical Guides & Engineering Field Manuals
+            </h4>
+            <Link href="/blogs" className="text-xs text-brand-green hover:underline font-mono">
+              View All Articles & Diagnostics →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <Link
+              href="/blogs/corporate-printer-amc-guide-mumbai"
+              className="p-3 rounded-xl bg-brand-white-pure/5 hover:bg-brand-white-pure/10 border border-brand-white-pure/5 hover:border-brand-green/30 transition-all text-brand-gray-light/80 hover:text-brand-white-pure"
+            >
+              <span className="text-brand-green font-bold block mb-1">Corporate AMC Guide</span>
+              Comprehensive vs. Non-Comprehensive contracts in Mumbai fleets.
+            </Link>
+            <Link
+              href="/blogs/top-industrial-dotmatrix-printers-invoicing-2026"
+              className="p-3 rounded-xl bg-brand-white-pure/5 hover:bg-brand-white-pure/10 border border-brand-white-pure/5 hover:border-brand-green/30 transition-all text-brand-gray-light/80 hover:text-brand-white-pure"
+            >
+              <span className="text-brand-green font-bold block mb-1">Continuous Billing Guide</span>
+              Top dotmatrix hardware for high-volume waybill & invoice printing.
+            </Link>
+            <Link
+              href="/blogs/epson-ecotank-blank-lines-nozzle-flush"
+              className="p-3 rounded-xl bg-brand-white-pure/5 hover:bg-brand-white-pure/10 border border-brand-white-pure/5 hover:border-brand-green/30 transition-all text-brand-gray-light/80 hover:text-brand-white-pure"
+            >
+              <span className="text-brand-green font-bold block mb-1">EcoTank Nozzle Recovery</span>
+              Purging stubborn airlocks & dried piezoceramic ink channels.
+            </Link>
+            <Link
+              href="/blogs/passbook-printer-maintenance-banking-sla"
+              className="p-3 rounded-xl bg-brand-white-pure/5 hover:bg-brand-white-pure/10 border border-brand-white-pure/5 hover:border-brand-green/30 transition-all text-brand-gray-light/80 hover:text-brand-white-pure"
+            >
+              <span className="text-brand-green font-bold block mb-1">Banking Passbook SLA</span>
+              Preventive maintenance for high-uptime financial teller desks.
+            </Link>
+          </div>
         </div>
 
         {/* Bottom Bar */}

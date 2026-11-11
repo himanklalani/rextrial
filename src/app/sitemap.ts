@@ -28,22 +28,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1.0 : (route === '/services' || route === '/store' || route === '/industries') ? 0.9 : 0.8,
+    priority: route === '' ? 1.0 : (route === '/services' || route === '/store' || route === '/industries' || route === '/blogs') ? 0.9 : (route === '/legal/privacy' || route === '/legal/terms') ? 0.7 : 0.85,
   }));
 
   // Dynamic service pages from our data layer (5 services)
   const serviceRoutes: MetadataRoute.Sitemap = services.map(s => ({
     url: `${SITE_URL}/services/${s.slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.9,
+    changeFrequency: 'weekly' as const,
+    priority: (s.slug === 'corporate-amc' || s.slug === 'dotmatrix-head-repair') ? 1.0 : 0.9,
   }));
 
   // Dynamic industry vertical fleet pages (3 industries)
   const industryRoutes: MetadataRoute.Sitemap = industries.map(i => ({
     url: `${SITE_URL}/industries/${i.slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'weekly' as const,
     priority: 0.9,
   }));
 
@@ -66,9 +66,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static authority blog articles (4 pillar articles)
   const staticBlogRoutes: MetadataRoute.Sitemap = staticBlogs.map(b => ({
     url: `${SITE_URL}/blogs/${b.slug}`,
-    lastModified: new Date(b.publishedAt),
+    lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.75,
+    priority: 0.9,
   }));
 
   // Additional dynamic blog articles from MongoDB (if any published)

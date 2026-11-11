@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { trackEvent } from '@/lib/analytics';
+import { cn } from '@/lib/utils';
 
 interface WhatsAppShareButtonProps {
   title: string;
@@ -46,7 +47,10 @@ export function WhatsAppShareButton({
       rel="noopener noreferrer"
       onClick={handleClick}
       aria-label={`Share ${title} on WhatsApp`}
-      className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-green/10 hover:bg-brand-green border border-brand-green/30 hover:border-brand-green text-brand-green hover:text-brand-dark transition-all duration-200 text-xs font-mono font-bold shadow-sm group cursor-pointer ${className}`}
+      className={cn(
+        'inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-green/10 hover:bg-brand-green border border-brand-green/30 hover:border-brand-green text-brand-green hover:text-brand-dark transition-all duration-200 text-xs font-mono font-bold shadow-sm group cursor-pointer',
+        className
+      )}
       title="Forward this guide directly on WhatsApp"
     >
       <svg

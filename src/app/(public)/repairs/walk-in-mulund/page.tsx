@@ -97,7 +97,7 @@ export default function MulundWalkInPage() {
 
           <TextType
             as="h1"
-            className="text-4xl sm:text-5xl md:text-7xl font-bold font-outfit tracking-tight mb-6 leading-[1.05]"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold font-outfit text-brand-white-pure tracking-tight mb-6 leading-[1.05]"
             text="Walk-In Printer Diagnostics in Mulund West."
             typingSpeed={35}
             startOnVisible={true}
@@ -133,7 +133,7 @@ export default function MulundWalkInPage() {
               url={`${baseUrl}/repairs/walk-in-mulund`}
               context="repair"
               label="Forward Workshop Address"
-              className="py-3.5 px-6 rounded-full self-center sm:self-auto"
+              className="py-4 px-8 rounded-full bg-brand-white-pure/10 text-brand-white-pure border border-brand-white-pure/20 font-bold text-center text-sm md:text-base hover:bg-brand-white-pure/20 transition-colors flex items-center justify-center gap-2"
             />
           </div>
         </div>

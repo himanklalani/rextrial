@@ -201,7 +201,7 @@ const NavLink: React.FC<iNavLinkProps> = ({
 										transition={{ type: "spring" }}
 										className="inline-block"
 									>
-										{letter}
+										{letter === " " ? "\u00A0" : letter}
 									</motion.span>
 								);
 							})}
