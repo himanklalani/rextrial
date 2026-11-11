@@ -10,7 +10,7 @@ import { StaggerCards } from "@/components/ui/StaggerCards";
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return {
-    title: `Corporate Profile | ${settings.name} Mumbai`,
+    title: "About Our 45-Year Engineering Legacy",
     description: `${settings.name}, Mumbai's trusted wholesale printer supplier and corporate printer AMC provider since 1980. 45+ years of industry excellence in dotmatrix, laser & ink tank systems.`,
     alternates: { canonical: '/about' }
   };

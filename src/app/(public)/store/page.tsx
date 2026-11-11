@@ -6,8 +6,8 @@ import TextType from "@/components/ui/TextType";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Printer Hardware & Peripherals Store | Rex International",
-  description: "Browse Rex International's hardware catalog of corporate dotmatrix, laser, and ink tank printers in Mumbai. Epson, HP, Canon, Brother, TVS. B2B & B2C pricing available.",
+  title: "Printer Store Mumbai - Dotmatrix & Laser",
+  description: "Buy corporate dotmatrix, laser, and ink tank printers in Mumbai from Rex International. Epson, TVS, HP & Canon. B2B fleet rates and fast local delivery.",
   alternates: {
     canonical: "/store",
   },

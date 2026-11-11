@@ -9,8 +9,8 @@ import { TrackedLink } from '@/components/ui/TrackedLink';
 import { WhatsAppShareButton } from '@/components/ui/WhatsAppShareButton';
 
 export const metadata: Metadata = {
-  title: 'Printer Repair Shop Mulund West | Walk-In Diagnostics',
-  description: 'Walk-in printer repair workshop in Mulund West. Fast 30-minute bench diagnostic, No Fix No Fee, Epson, HP, Canon, TVS. 2 mins from Mulund Station.',
+  title: "Walk-In Printer Repair Mulund West",
+  description: "Walk-in printer workshop in Mulund West (Kamala Nehru Shopping Centre, 2 mins from station). 30-min bench diagnostics, No Fix No Fee, Epson, HP, TVS parts.",
   alternates: { canonical: '/repairs/walk-in-mulund' },
   keywords: [
     'printer repair shop near me',

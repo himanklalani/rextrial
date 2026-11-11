@@ -5,7 +5,7 @@ import { connectDB, Blog } from '@/lib/db';
 import { staticBlogs } from '@/lib/data/blogs';
 
 export const metadata: Metadata = {
-  title: 'Technical Insights & Engineering Guides | Rex International Mumbai',
+  title: 'Printer Engineering Guides & Insights',
   description: 'Authoritative engineering guides on corporate printer AMCs, Epson EcoTank nozzle chemical flushes, corporate dotmatrix printers, and banking passbook SLAs.',
   alternates: { canonical: '/blogs' }
 };

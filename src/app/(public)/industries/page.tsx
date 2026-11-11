@@ -7,7 +7,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import { getBaseUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Corporate Sector Printing Solutions & Fleet AMCs | Rex International Mumbai',
+  title: 'Corporate Printer Fleet AMC Solutions',
   description: 'Enterprise printer fleet management, dedicated 4-hour SLA AMCs, and heavy-duty hardware supply for Banking, Logistics, and Healthcare across Mumbai & Maharashtra.',
   alternates: { canonical: '/industries' }
 };

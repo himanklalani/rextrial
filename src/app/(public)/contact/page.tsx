@@ -6,8 +6,8 @@ import { siteSettings } from "@/lib/data/site-settings";
 import { TrackedLink } from "@/components/ui/TrackedLink";
 
 export const metadata = {
-  title: "Contact Our Printer Experts | Rex International Mumbai",
-  description: "Get in touch with Rex International Mumbai for printer repair quotes, corporate AMC enquiries, bulk hardware orders, and on-site service bookings. Mon–Sat 10am–8pm.",
+  title: "Mulund West Office, Map & Contact",
+  description: "Visit Rex International in Mulund West (Office No. 8, Kamala Nehru Shopping Centre). Google Maps directions, phone desk +91 9323906493, and WhatsApp quotes.",
   alternates: { canonical: '/contact' }
 };
 

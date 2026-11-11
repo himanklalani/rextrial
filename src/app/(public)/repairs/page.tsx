@@ -7,7 +7,7 @@ import { SnapEstimateCTA } from '@/components/ui/SnapEstimateCTA';
 import { getBaseUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Printer Repair Services & Diagnostics Mumbai | Rex International',
+  title: 'Printer Repair & Diagnostics Mumbai',
   description: 'Fast, transparent printer repair in Mumbai. Epson ink tank chemical nozzle flush, HP laser fuser repair, TVS billing printhead repinning. Starting at ₹800.',
   alternates: { canonical: '/repairs' }
 };

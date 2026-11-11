@@ -9,8 +9,8 @@ import { siteSettings } from "@/lib/data/site-settings";
 import { createWhatsAppGeneralUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Expert Services | Rex International",
-  description: "Professional repair, maintenance, and AMC services for all types of printers by expert technicians.",
+  title: "Printer Repair & Corporate AMC Services",
+  description: "Multi-brand printer repair and Corporate AMC contracts in Mumbai & Thane. 4-hour breakdown response SLA, standby buffer inventory & component-level fixes.",
   alternates: { canonical: '/services' }
 };
 

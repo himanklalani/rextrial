@@ -29,7 +29,7 @@ export const repairs: RepairProblem[] = [
   {
     slug: "inktank-cleaning-mumbai",
     title: "Epson & Canon Ink Tank Nozzle Clog & Blank Page Repair",
-    metaTitle: "Epson & Canon Ink Tank Head Cleaning in Mumbai | ₹950 | Rex International",
+    metaTitle: "Epson & Canon Ink Tank Cleaning Mumbai",
     metaDescription: "Fix horizontal white banding lines and blank pages on Epson EcoTank (L3150, L3250) & Canon PIXMA in Mumbai. Same-day ultrasonic chemical nozzle flush from ₹950.",
     headline: "Fix Horizontal White Lines & Missing Colors on Ink Tank Printers",
     subheadline: "Professional ultrasonic chemical printhead flush and damper tube de-airing. Starting at ₹950 with same-day walk-in service in Mulund West.",
@@ -95,7 +95,7 @@ export const repairs: RepairProblem[] = [
   {
     slug: "laser-toner-repair-mumbai",
     title: "HP & Canon Laser Printer Vertical Black Streaks & Fuser Repair",
-    metaTitle: "Laser Printer Fuser & Drum Repair Mumbai | ₹900 | Rex International",
+    metaTitle: "Laser Printer Fuser & Drum Repair Mumbai",
     metaDescription: "Fix vertical black lines, toner smudges, and paper crinkling on HP LaserJet & Canon printers in Mumbai. Genuine Teflon sleeve & drum replacement from ₹900.",
     headline: "Eliminate Vertical Black Lines, Smudged Toner & Paper Crumpling",
     subheadline: "Factory-calibrated Teflon fuser sleeve replacement, OPC drum repairs, and laser scanner cleaning. Starting at ₹900 in Mulund West.",
@@ -161,7 +161,7 @@ export const repairs: RepairProblem[] = [
   {
     slug: "retail-billing-printer-mumbai",
     title: "TVS & Epson Dotmatrix Printhead Pin Repair for Billing Counters",
-    metaTitle: "Dotmatrix Printhead Repair in Mumbai | ₹800 | Rex International",
+    metaTitle: "Dotmatrix Printhead Repair in Mumbai",
     metaDescription: "Same-day 9-pin & 24-pin printhead repair and repinning in Mumbai. Fast turnaround for retail chemist & grocery billing printers (TVS MSP, Epson LQ-310) from ₹800.",
     headline: "Restore Faded, Broken Lines on Retail GST Bill Book Printers",
     subheadline: "Specialized 24-pin and 9-pin printhead rebuilding, pin replacement, and platen gap calibration. Starting at ₹800 with 2-hour express turnaround.",

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!blog) return { title: 'Not Found' };
 
   return {
-    title: `${blog.title} | Rex Technical Insights`,
+    title: blog.title,
     description: blog.excerpt,
     alternates: {
       canonical: `/blogs/${blog.slug}`,

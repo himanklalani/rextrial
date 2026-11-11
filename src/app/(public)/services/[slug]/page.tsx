@@ -26,14 +26,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const pageUrl = `${getBaseUrl()}/services/${service.slug}`;
 
   return {
-    title: `${service.seo.title} | Rex International Mumbai`,
+    title: service.seo.title,
     description: service.seo.description,
     keywords: [service.name, 'Mumbai', 'Printer Repair', 'Rex International', 'printer service Mumbai', service.supportedBrands?.[0] ?? ''],
     alternates: {
       canonical: `/services/${service.slug}`,
     },
     openGraph: {
-      title: `${service.seo.title} | Rex International Mumbai`,
+      title: `${service.seo.title} | Rex International`,
       description: service.seo.description,
       url: pageUrl,
       siteName: 'Rex International',
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${service.seo.title} | Rex International Mumbai`,
+      title: `${service.seo.title} | Rex International`,
       description: service.seo.description,
       images: [ogImageUrl],
     },

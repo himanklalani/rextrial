@@ -45,7 +45,7 @@ export const industries: IndustryVertical[] = [
   {
     slug: "banking-finance",
     title: "Banking & Financial Services",
-    metaTitle: "Banking & Passbook Printer Fleet AMC Mumbai | Rex International",
+    metaTitle: "Banking & Passbook Printer AMC Mumbai",
     metaDescription: "Mission-critical printing infrastructure for cooperative & commercial banks. 4-hour on-site SLA, passbook printer head repair, and zero-downtime teller desks.",
     headline: "Zero-Downtime Printing for Bank Branches & Teller Desks",
     subheadline: "Guaranteed 4-hour on-site response SLA, passbook platen calibrations, and dedicated standby machines across Mumbai, Thane & Navi Mumbai.",
@@ -129,7 +129,7 @@ export const industries: IndustryVertical[] = [
   {
     slug: "logistics-warehousing",
     title: "Logistics, Warehousing & Supply Chain",
-    metaTitle: "Logistics Warehouse Printer AMC & Fleet Supply Mumbai | Rex International",
+    metaTitle: "Logistics & Warehouse Printer AMC Mumbai",
     metaDescription: "Heavy-duty continuous dotmatrix & waybill printer maintenance for Mumbai logistics hubs. Rapid on-site technician dispatch from our central Mulund West facility.",
     headline: "Non-Stop Dispatch Invoicing for Logistics & Warehouse Hubs",
     subheadline: "Heavy-duty dotmatrix dispatch printers, high-volume waybills, and overnight standby fleets. Dispatched on-site across Mumbai MMR from our central Mulund workshop.",
@@ -213,7 +213,7 @@ export const industries: IndustryVertical[] = [
   {
     slug: "healthcare-diagnostics",
     title: "Healthcare, Pathology & Diagnostic Labs",
-    metaTitle: "Healthcare & Pathology Lab Printer AMC Mumbai | Rex International",
+    metaTitle: "Healthcare & Lab Printer AMC Mumbai",
     metaDescription: "Medical-grade print clarity for pathology reports, diagnostic charts & barcode specimen labels. 4-hour SLA and preventive printer maintenance for clinics & hospitals.",
     headline: "Flawless Diagnostic Report Printing & Barcode Clarity",
     subheadline: "Medical-grade laser report calibration, lab specimen label printing, and infection-free clean maintenance for hospitals and pathology networks.",
